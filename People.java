@@ -3,7 +3,6 @@
  * @Section: 001
  *
  * @Group 08
- * @Round 2
  */
 public class People 
 {

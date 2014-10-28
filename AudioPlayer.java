@@ -1,11 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
+ * @Course: IST 240 (FA 14)
+ * @Section: 001
  *
- * @author Bill Ganley
+ * @Group 08
  */
 import java.io.*;
 import java.net.URL;

@@ -33,6 +33,16 @@ public class People
         return intPlayer;
     }
     
+    public String getPlayerName()
+    {
+        return strName;
+    }
+    
+    public int getPlayerLevel()
+    {
+        return intLevel;
+    }
+    
     public void setPlayerNumber(int informedPlayerNumber)
     {
         intPlayer = informedPlayerNumber;
@@ -41,10 +51,5 @@ public class People
     public int getLastLevelPlayed()
     {
         return intLevel;
-    }
-    
-    public String getPlayerName()
-    {
-        return strName;
     }
 }

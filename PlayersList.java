@@ -1,15 +1,12 @@
+/*
+ * @Course: IST 240 (FA 14)
+ * @Section: 001
+ *
+ * @Group 08
+ */
 
 import javax.swing.DefaultListModel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author zfayaz
- */
 public class PlayersList extends DefaultListModel
 {            
     public PlayersList()

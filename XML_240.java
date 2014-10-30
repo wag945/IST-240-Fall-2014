@@ -51,6 +51,7 @@ public class XML_240
         {
             de = new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
         }
+        catch(java.io.FileNotFoundException ex){}
         catch(Exception xx) 
         {
             xx.printStackTrace();
@@ -106,7 +107,10 @@ public class XML_240
     {
         try 
         {
-            de.close();
+            if (de!=null)
+            {
+                de.close();
+            }
         }
         catch(Exception xx) {xx.printStackTrace();}
     }

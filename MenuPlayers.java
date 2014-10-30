@@ -194,7 +194,12 @@ public class MenuPlayers extends JPanel implements ActionListener
                 Person pCurrent = (Person)obj;
                 pCurrent.getName();
                 tPlayerNames.addItem(pCurrent.getName());
+                if (pCurrent.getPlayer() == p)
+                {
+                    tPlayerNames.setSelectedItem(pCurrent.getName());
+                }
             }
+            
             
             //tPlayerNames.addItem("");
             pPlayerProfileMenu.add(tPlayerNames);
@@ -441,7 +446,7 @@ public class MenuPlayers extends JPanel implements ActionListener
             case "bAdd":
                 if (!tName.getText().trim().equals(""))
                 {
-                    Person tempPlayer = new Person(tName.getText(),1);
+                    Person tempPlayer = new Person(tName.getText(),1,listOfAllPlayers.getSize());
                     boolean pFound = false;
                     for (Object pExistObj: listOfAllPlayers.toArray())
                     {

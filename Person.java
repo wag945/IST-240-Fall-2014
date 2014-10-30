@@ -15,11 +15,12 @@ public class Person
     {        
     }
     
-    public Person(String informedName, int informedLevel)
+    public Person(String informedName, int informedLevel, int informedPlayerCount)
     {
         super();
         Name = informedName;
         Level = informedLevel;
+        Player = informedPlayerCount+1;
     } 
 
     /**

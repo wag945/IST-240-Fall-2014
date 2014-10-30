@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.ButtonGroup;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -22,8 +21,8 @@ public class MenuPlayers extends JPanel implements ActionListener
     //int NumberOfPlayers;    
     ButtonGroup NumberOfPlayers; //used for radio button
 
-    DefaultListModel SelectedPlayers; // used for saving selected players
-    DefaultListModel listOfAllPlayers = new DefaultListModel(); //list of all Players using Player Class
+    PlayersList SelectedPlayers; // used for saving selected players
+    PlayersList listOfAllPlayers = new PlayersList(); //list of all Players using Player Class
     
     JPanel pPlayerSelection;
     JPanel pPlayerProfileMenu;
@@ -39,13 +38,13 @@ public class MenuPlayers extends JPanel implements ActionListener
     
     PanelAnimate PanelToAnimate;
     
-    public MenuPlayers(DefaultListModel previousSelectedPlayers, DefaultListModel previouslistOfAllPlayers) 
+    public MenuPlayers(PlayersList previousSelectedPlayers, PlayersList previouslistOfAllPlayers) 
     {
         super();
         setLayout(null);
         setBackground(Color.gray);
                 
-        SelectedPlayers = new DefaultListModel();
+        SelectedPlayers = new PlayersList();
 
         SelectedPlayers = previousSelectedPlayers;
         listOfAllPlayers = previouslistOfAllPlayers;
@@ -192,9 +191,9 @@ public class MenuPlayers extends JPanel implements ActionListener
             
             for (Object obj : listOfAllPlayers.toArray())
             {        
-                People pCurrent = (People)obj;
-                pCurrent.getPlayerName();
-                tPlayerNames.addItem(pCurrent.getPlayerName());
+                Person pCurrent = (Person)obj;
+                pCurrent.getName();
+                tPlayerNames.addItem(pCurrent.getName());
             }
             
             //tPlayerNames.addItem("");
@@ -217,8 +216,8 @@ public class MenuPlayers extends JPanel implements ActionListener
         //Load previous players on current run   
         for (Object objPCheck : SelectedPlayers.toArray())
         {        
-            People pCurrent = (People)objPCheck;
-            switch (pCurrent.getPlayerNumber())
+            Person pCurrent = (Person)objPCheck;
+            switch (pCurrent.getPlayer())
             {
                 case 1:
                     for (Object o: pPlayerProfileMenu.getComponents())
@@ -228,7 +227,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                             JComboBox t = (JComboBox) o;
                             if (t.getName().equals("Player_1"))
                             {                                
-                                t.setSelectedItem(pCurrent.getPlayerName());
+                                t.setSelectedItem(pCurrent.getName());
                             }
                         }
                     }
@@ -241,7 +240,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                             JComboBox t = (JComboBox) o;
                             if (t.getName().equals("Player_2"))
                             {                                
-                                t.setSelectedItem(pCurrent.getPlayerName());
+                                t.setSelectedItem(pCurrent.getName());
                             }
                         }
                     }
@@ -254,7 +253,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                             JComboBox t = (JComboBox) o;
                             if (t.getName().equals("Player_3"))
                             {                                
-                                t.setSelectedItem(pCurrent.getPlayerName());
+                                t.setSelectedItem(pCurrent.getName());
                             }
                         }
                     }
@@ -355,7 +354,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                         break;
                     case 2:
                     case 3:
-                        SelectedPlayers = new DefaultListModel();
+                        SelectedPlayers = new PlayersList();
                         for (Object o: pPlayerProfileMenu.getComponents())
                         {
                             if (o.getClass().getName().equals("javax.swing.JComboBox"))
@@ -365,15 +364,15 @@ public class MenuPlayers extends JPanel implements ActionListener
                                 
                                 for (Object objP : listOfAllPlayers.toArray())
                                 {        
-                                    People pCurrent = (People)objP;
-                                    if (t.getSelectedItem().equals(pCurrent.getPlayerName()))
+                                    Person pCurrent = (Person)objP;
+                                    if (t.getSelectedItem().equals(pCurrent.getName()))
                                     {
                                         boolean AlreadyAdded = false;
                                         //This loop check if the player is already added to player list or not
                                         for (Object objPCheck : SelectedPlayers.toArray())
                                         {        
-                                            People pCurrentCheck = (People)objPCheck;
-                                            if (pCurrent.getPlayerName().equals(pCurrentCheck.getPlayerName()))
+                                            Person pCurrentCheck = (Person)objPCheck;
+                                            if (pCurrent.getName().equals(pCurrentCheck.getName()))
                                             {
                                                 AlreadyAdded = true;
                                                 break;
@@ -383,7 +382,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                                         {
                                             //Adds the player if its not in current play list
                                             SelectedPlayers.addElement(pCurrent);
-                                            pCurrent.setPlayerNumber(Integer.parseInt(t.getName().replaceAll("Player_", "")));
+                                            pCurrent.setPlayer(Integer.parseInt(t.getName().replaceAll("Player_", "")));
                                         }
                                         break;
                                     }
@@ -442,12 +441,12 @@ public class MenuPlayers extends JPanel implements ActionListener
             case "bAdd":
                 if (!tName.getText().trim().equals(""))
                 {
-                    People tempPlayer = new People(tName.getText(),1);
+                    Person tempPlayer = new Person(tName.getText(),1);
                     boolean pFound = false;
                     for (Object pExistObj: listOfAllPlayers.toArray())
                     {
-                        People pCurrent = (People)pExistObj;
-                        if (pCurrent.getPlayerName().equals(tName.getText()))
+                        Person pCurrent = (Person)pExistObj;
+                        if (pCurrent.getName().equals(tName.getText()))
                         {
                             pFound = true;
                             break;

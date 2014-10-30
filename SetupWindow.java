@@ -13,8 +13,8 @@ public class SetupWindow extends JPanel implements ActionListener {
     
     JButton bPlayers;
     JButton bDifficulty;
-    DefaultListModel SelectedPlayers = new DefaultListModel();
-    DefaultListModel ListOfAllPlayers = new DefaultListModel();
+    PlayersList SelectedPlayers = new PlayersList();
+    PlayersList ListOfAllPlayers = new PlayersList();
     myJFrame ParentFrame;
     int DifficultyLevel = 0;
     
@@ -87,13 +87,41 @@ public class SetupWindow extends JPanel implements ActionListener {
     }
 
     void SaveDataInXML()
-    {
+    {        
         //save all players and their high score in XML (ListOfAllPlayers)
         //save difficulty level in XML (DifficultyLevel)
+        XML_240 XMLWriter = new XML_240();
+        XMLWriter.openWriterXML("setup.xml");
+        XMLWriter.writeObject(ListOfAllPlayers);
+        XMLWriter.writeObject(SelectedPlayers);
+        XMLWriter.writeObject(DifficultyLevel);        
+        XMLWriter.closeWriterXML();
     }
     
     private void LoadDataFromXML()
     {
-        //Load all players and their high score in listOfAllPlayers;        
+        //Load all players and their high score in ListOfAllPlayers;        
+        XML_240 XMLReader = new XML_240();
+        XMLReader.openReaderXML("setup.xml");
+        ListOfAllPlayers = (PlayersList) XMLReader.ReadObject();
+        SelectedPlayers = (PlayersList) XMLReader.ReadObject();
+        Object tempObj = XMLReader.ReadObject();
+        if (tempObj!=null)
+        {
+            DifficultyLevel = (int)tempObj;
+        }
+
+        
+        if (ListOfAllPlayers == null)
+        {
+            ListOfAllPlayers = new PlayersList();
+        }
+
+        if (SelectedPlayers == null)
+        {
+            SelectedPlayers = new PlayersList();
+        }
+        
+        XMLReader.closeReaderXML();
     }
 }

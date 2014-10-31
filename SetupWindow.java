@@ -8,6 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SetupWindow extends JPanel implements ActionListener {
     
@@ -91,18 +99,68 @@ public class SetupWindow extends JPanel implements ActionListener {
         //save all players and their high score in XML (ListOfAllPlayers)
         //save difficulty level in XML (DifficultyLevel)
         XML_240 XMLWriter = new XML_240();
-        XMLWriter.openWriterXML("setup.xml");
+        
+        File dir = new File("settings");
+        if (!dir.exists())
+        {
+            dir.mkdir();
+        }
+        
+        XMLWriter.openWriterXML("//settings//setup.xml");
         XMLWriter.writeObject(ListOfAllPlayers);
         XMLWriter.writeObject(SelectedPlayers);
         XMLWriter.writeObject(DifficultyLevel);        
         XMLWriter.closeWriterXML();
+        
+        
+        //ftp.ai-dot.net
+        //xml@ai-dot.net
+        //XMLReadWrite!1
+        
+        //File f = new File("setup.xml");
+        InputStream f;
+        try 
+        {
+            f = new FileInputStream(System.getProperty("user.dir") + "\\settings\\setup.xml");
+            FTP_javabeat fUpload = new FTP_javabeat ();
+            try {
+                fUpload.upload("ftp.ai-dot.net", "xml%40ai-dot.net ", "XMLReadWrite!1", "setup.xml", f);
+            } catch (IOException ex) {
+                Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
+        catch (FileNotFoundException ex) 
+        {
+            Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     private void LoadDataFromXML()
     {
+        FileOutputStream f;
+        try 
+        {
+            f = new FileOutputStream(System.getProperty("user.dir") + "\\settings\\setup.xml");
+            FTP_javabeat fDownload = new FTP_javabeat ();
+            try 
+            {
+                fDownload.download("ftp.ai-dot.net", "xml%40ai-dot.net ", "XMLReadWrite!1", "setup.xml", f);
+            } 
+            catch (IOException ex) 
+            {
+                Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
+        catch (FileNotFoundException ex) 
+        {
+            Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          
         //Load all players and their high score in ListOfAllPlayers;        
         XML_240 XMLReader = new XML_240();
-        XMLReader.openReaderXML("setup.xml");
+        XMLReader.openReaderXML("\\settings\\setup.xml");
         ListOfAllPlayers = (PlayersList) XMLReader.ReadObject();
         SelectedPlayers = (PlayersList) XMLReader.ReadObject();
         Object tempObj = XMLReader.ReadObject();

@@ -49,7 +49,7 @@ public class XML_240
     {
         try 
         {
-            de = new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
+            de = new XMLDecoder(new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + filename)));
         }
         catch(java.io.FileNotFoundException ex){}
         catch(Exception xx) 
@@ -63,7 +63,7 @@ public class XML_240
     {
         try 
         {
-            xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(filename)));
+            xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(System.getProperty("user.dir") + filename)));
         }
         catch(Exception xx) 
         {

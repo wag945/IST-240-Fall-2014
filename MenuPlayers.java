@@ -164,15 +164,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         pPlayerProfileMenu.setBounds(100, 50, 300, 300);
         add(pPlayerProfileMenu);
 
-        //Get list of players that already has profiles from XML
-        
-        //loop start
-            //Player tempPlayer = new Player("Create Profile...",1);
-            //listOfAllPlayers.addElement(tempPlayer.getPlayerName());
-        //loop end
-
-        
-        
         //Create combo boxes based on number of players
         int lableLocationY=37;
         for (int p=1 ; p<=NumOfPlayers;p++)
@@ -198,10 +189,8 @@ public class MenuPlayers extends JPanel implements ActionListener
                 {
                     tPlayerNames.setSelectedItem(pCurrent.getName());
                 }
-            }
+            }            
             
-            
-            //tPlayerNames.addItem("");
             pPlayerProfileMenu.add(tPlayerNames);
             
         }

@@ -28,7 +28,7 @@ public class myJFrame extends JFrame
         introductionWindow = new IntroductionWindow(this);
         instructionsWindow = new InstructionsWindow();
         aboutWindow = new AboutWindow();
-        highScoresWindow = new HighScoresWindow();
+        highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         
         //------------------------------------------------------

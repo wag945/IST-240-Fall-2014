@@ -1,8 +1,15 @@
+
+import java.util.Date;
+
 /*
  * @Course: IST 240 (FA 14)
  * @Section: 001
  *
  * @Group 08
+ */
+
+/**
+ * This class is used keep the user info together
  */
 public class Person 
 {
@@ -10,6 +17,7 @@ public class Person
     private int Score;
     private int Level;
     private int Player;
+    private Date DateLastPlayed;
     
     public Person()
     {        
@@ -21,6 +29,7 @@ public class Person
         Name = informedName;
         Level = informedLevel;
         Player = informedPlayerCount+1;
+        DateLastPlayed = new Date();
     } 
 
     /**
@@ -78,5 +87,20 @@ public class Person
     public void setPlayer(int Player) {
         this.Player = Player;
     }
+
+    /**
+     * @return the DateLastPlayed
+     */
+    public Date getDateLastPlayed() {
+        return DateLastPlayed;
+    }
+
+    /**
+     * @param DateLastPlayed the DateLastPlayed to set
+     */
+    public void setDateLastPlayed(Date DateLastPlayed) {
+        this.DateLastPlayed = DateLastPlayed;
+    }
+
    
 }

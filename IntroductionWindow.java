@@ -64,6 +64,7 @@ public class IntroductionWindow extends JPanel implements ActionListener {
             System.out.println("newGameButton pressed");
             SoundPlayer.play("jboardfill.wav");
             parentFrame.newGame();
+            newGameButton.setEnabled(false);
         }
         else if (aboutButton == e.getSource())
         {

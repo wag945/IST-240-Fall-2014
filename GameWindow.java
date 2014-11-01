@@ -50,7 +50,7 @@ public class GameWindow extends JPanel implements ActionListener
         {
             if (e.getSource() == answerButtons[i])
             {
-//                answerButtons[i].onButtonPressed();
+                answerButtons[i].onButtonPressed();
             }
         }
         if (0 == numberAvailableAnswers)
@@ -63,6 +63,7 @@ public class GameWindow extends JPanel implements ActionListener
     {
         for (int i = 0; i < answerButtons.length; i++)
         {
+            //Temp till we have questions read from XML
             if (i < 6)
             {
                 answerButtons[i] = new AnswerButton(oneHundred,"What","test");
@@ -91,7 +92,9 @@ public class GameWindow extends JPanel implements ActionListener
     {
         for (int i = 0; i < categoryButtons.length; i++)
         {
-            categoryButtons[i] = new CategoryButton("Category");
+            //Temp till we have actual categories read from XML
+            Integer iStr = i+1;
+            categoryButtons[i] = new CategoryButton("Category"+iStr.toString());
         }
     }
     

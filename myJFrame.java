@@ -174,7 +174,7 @@ public class myJFrame extends JFrame
         if (true == highScoresWindow.isVisible())
         {
             getContentPane().remove(highScoresWindow);
-            highScoresWindow.setVisible(true);
+            highScoresWindow.setVisible(false);
         }
     }
     
@@ -192,7 +192,7 @@ public class myJFrame extends JFrame
         if (true == splashWindow.isVisible())
         {
             getContentPane().remove(splashWindow);
-            splashWindow.setVisible(true);
+            splashWindow.setVisible(false);
         }
     }
     

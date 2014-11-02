@@ -99,13 +99,7 @@ public class SetupWindow extends JPanel implements ActionListener
         //save all players and their high score in XML (ListOfAllPlayers)
         //save difficulty level in XML (DifficultyLevel)
         XML_240 XMLWriter = new XML_240();
-        
-        File dir = new File("settings");
-        if (!dir.exists())
-        {
-            dir.mkdir();
-        }
-        
+
         XMLWriter.openWriterXML("//settings//setup.xml");
         XMLWriter.writeObject(ListOfAllPlayers);
         XMLWriter.writeObject(SelectedPlayers);
@@ -138,6 +132,12 @@ public class SetupWindow extends JPanel implements ActionListener
     
     private void LoadDataFromXML()
     {
+        File dir = new File("settings");
+        if (!dir.exists())
+        {
+            dir.mkdir();
+        }
+        
         FileOutputStream f;
         try 
         {

@@ -2,7 +2,8 @@
  * @Course: IST 240 (FA 14)
  * @Section: 001
  *
- * @Group 08
+ * @Group 04
+ * @Round 2
  */
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -50,7 +51,7 @@ public class GameWindow extends JPanel implements ActionListener
         {
             if (e.getSource() == answerButtons[i])
             {
-//                answerButtons[i].onButtonPressed();
+                answerButtons[i].onButtonPressed();
             }
         }
         if (0 == numberAvailableAnswers)
@@ -63,25 +64,26 @@ public class GameWindow extends JPanel implements ActionListener
     {
         for (int i = 0; i < answerButtons.length; i++)
         {
+            //Temp till we have questions read from XML
             if (i < 6)
             {
-                answerButtons[i] = new AnswerButton(oneHundred,"What","test");
+                answerButtons[i] = new AnswerButton(oneHundred,"What (type test to check)","test");
             }
             else if (i >= 6 && i < 12)
             {
-                answerButtons[i] = new AnswerButton(twoHundred,"What","test");
+                answerButtons[i] = new AnswerButton(twoHundred,"What (type test to check)","test");
             }
             else if (i >= 12 && i < 18)
             {
-                answerButtons[i] = new AnswerButton(threeHundred,"What","test");
+                answerButtons[i] = new AnswerButton(threeHundred,"What (type test to check)","test");
             }
             else if (i >= 18 && i < 24)
             {
-                answerButtons[i] = new AnswerButton(fourHundred,"What","test");
+                answerButtons[i] = new AnswerButton(fourHundred,"What (type test to check)","test");
             }
             else
             {
-                answerButtons[i] = new AnswerButton(fiveHundred,"What","test");                
+                answerButtons[i] = new AnswerButton(fiveHundred,"What (type test to check)","test");                
             }
             answerButtons[i].addActionListener(this);
         }
@@ -91,7 +93,9 @@ public class GameWindow extends JPanel implements ActionListener
     {
         for (int i = 0; i < categoryButtons.length; i++)
         {
-            categoryButtons[i] = new CategoryButton("Category");
+            //Temp till we have actual categories read from XML
+            Integer iStr = i+1;
+            categoryButtons[i] = new CategoryButton("Category"+iStr.toString());
         }
     }
     

@@ -17,7 +17,8 @@ public class myJFrame extends JFrame
     HighScoresWindow highScoresWindow;
     SplashWindow splashWindow;
     JButton jeopardy;
-    
+    GameTimerFrame timerFrame;
+
     public myJFrame ()
     {
         super("PSU Jeopardy");
@@ -30,7 +31,8 @@ public class myJFrame extends JFrame
         aboutWindow = new AboutWindow();
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
-        
+        timerFrame = new GameTimerFrame();
+
         //------------------------------------------------------
         // Choose a Layout for JFrame and 
         // add Jpanel to JFrame according to layout    	
@@ -94,6 +96,7 @@ public class myJFrame extends JFrame
         {
             getContentPane().add(gameWindow,BorderLayout.CENTER);
             gameWindow.setVisible(true);
+            timerFrame.displayWindow();
         }
     }
     
@@ -103,6 +106,7 @@ public class myJFrame extends JFrame
         {
             getContentPane().remove(gameWindow);
             gameWindow.setVisible(false);
+            timerFrame.hideWindow();
         }        
     }
     

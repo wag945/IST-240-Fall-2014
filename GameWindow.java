@@ -94,7 +94,7 @@ public class GameWindow extends JPanel implements ActionListener
         {
             //Temp till we have actual categories read from XML
             Integer iStr = i+1;
-            categoryButtons[i] = new CategoryButton("Category"+iStr.toString());
+            categoryButtons[i] = new CategoryButton("Category "+iStr.toString());
         }
     }
     

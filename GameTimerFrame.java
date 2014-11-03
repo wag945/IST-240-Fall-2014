@@ -13,7 +13,7 @@ public class GameTimerFrame extends JFrame
     GameTimerWindow window;
     public GameTimerFrame ()
     {
-        super("Game Timer");
+        super("Timer");
         //------------------------------------------------------
         // Create components
         window = new GameTimerWindow();

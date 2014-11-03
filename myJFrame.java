@@ -5,6 +5,8 @@
  * @Group 08
  */
 import java.awt.*;
+import java.awt.event.HierarchyBoundsListener;
+import java.awt.event.HierarchyEvent;
 import javax.swing.*;
 
 public class myJFrame extends JFrame
@@ -32,6 +34,26 @@ public class myJFrame extends JFrame
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
+        
+        this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
+        {
+ 
+            @Override
+            public void ancestorMoved(HierarchyEvent e) 
+            {
+                if (timerFrame.isVisible())
+                {
+                    timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 200, 100);
+                }
+            }
+            @Override
+            public void ancestorResized(HierarchyEvent e) 
+            {
+                //System.out.println(e);                 
+            }           
+
+        });
+
 
         //------------------------------------------------------
         // Choose a Layout for JFrame and 
@@ -50,6 +72,8 @@ public class myJFrame extends JFrame
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (840, 800);
+        //setMinimumSize(new Dimension(840,800));
+        this.setResizable(false);
         setVisible(true);
         splashWindow();
     }
@@ -96,6 +120,7 @@ public class myJFrame extends JFrame
         {
             getContentPane().add(gameWindow,BorderLayout.CENTER);
             gameWindow.setVisible(true);
+            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 200, 100);
             timerFrame.displayWindow();
         }
     }

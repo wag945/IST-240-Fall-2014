@@ -15,7 +15,7 @@ public class IntroductionWindow extends JPanel implements ActionListener {
     AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
     public IntroductionWindow(myJFrame mjf) {
         super();
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
 
         parentFrame = mjf;
         instructionsButton = new JButton();

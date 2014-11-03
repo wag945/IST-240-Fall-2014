@@ -20,16 +20,21 @@ public class GameTimerWindow extends JPanel implements ActionListener {
     public GameTimerWindow()
     {
         super();
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         setVisible(true);
         timeLeft = 180;
         minutes = 5;
         seconds = 0;
-        timeTextField = new JTextField("TIMER START");
+        timeTextField = new JTextField("5:00");
         add(timeTextField);
         timer = new Timer(1000,this);
-	Font font = new Font("SansSerif", Font.BOLD, 22);
+	Font font = new Font("SansSerif", Font.BOLD, 32);
 	timeTextField.setFont(font);
+        timeTextField.setBackground(Color.darkGray);
+        timeTextField.setForeground(Color.green);
+        timeTextField.setBorder(null);
+        timeTextField.setEditable(false);
+        timeTextField.addActionListener(this);
 	timeTextField.setHorizontalAlignment(JTextField.CENTER);
     }
 
@@ -49,6 +54,11 @@ public class GameTimerWindow extends JPanel implements ActionListener {
         {
             updateTime();
         }
+        if (e.getSource().equals(timeTextField))
+        {
+            timeTextField.setSelectionEnd(0);
+            timeTextField.setSelectionStart(0);
+        }
     }
     
     public void updateTime()
@@ -60,6 +70,10 @@ public class GameTimerWindow extends JPanel implements ActionListener {
             if (minutes >= 0)
             {
                 timeTextField.setText(minutes.toString()+":"+seconds.toString());
+                if (minutes <= 1)
+                {
+                    timeTextField.setForeground(Color.red);
+                }
             }
             else
             {

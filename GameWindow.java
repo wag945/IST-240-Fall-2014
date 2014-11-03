@@ -23,7 +23,7 @@ public class GameWindow extends JPanel implements ActionListener
     public GameWindow()
     {
         super();
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         oneHundred = "$100";
         twoHundred = "$200";
         threeHundred = "$300";

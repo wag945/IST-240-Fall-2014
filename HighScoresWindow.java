@@ -8,10 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.GridLayout;
 
 public class HighScoresWindow extends JPanel implements ActionListener {
 
-    //JTextField text;
+//    JTextField text;
     HighScore_Todays TodaysHighScore;
     HighScore_AllTime AllTimeHighScore;
     
@@ -23,33 +24,41 @@ public class HighScoresWindow extends JPanel implements ActionListener {
     public HighScoresWindow(myJFrame mjf)
     {
         super();
-        setBackground(Color.BLUE);
+        
+        setLayout(null);
+        
+        setBackground(Color.DARK_GRAY);
+        //setBackground(new Color(0, 255, 0, 0));
+        //this.setOpaque(true);
 //        text = new JTextField();
 //        text.setText("High scores go here...");
 //        add(text);
         
         bAHS = new JButton("All Time High Score");
         bAHS.addActionListener(this);
+        bAHS.setBounds(165, 0, 226, 27);
         add(bAHS);
         
         bTHS = new JButton("Today's High Score");
         bTHS.addActionListener(this);
+        bTHS.setBounds(395, 0, 226, 27);
         add(bTHS);
         
         
         ParentJFrame = mjf;
         
-        setVisible(false);
+        setVisible(true);
         
         TodaysHighScore= new HighScore_Todays(ParentJFrame.setupWindow.ListOfAllPlayers);
-        TodaysHighScore.setVisible(false);
+        TodaysHighScore.setBounds(148, 50, 500, 500); 
+        TodaysHighScore.setVisible(false);        
         add(TodaysHighScore);
-        TodaysHighScore.setBounds(150, 50, 500, 500); 
         
-        AllTimeHighScore= new HighScore_AllTime(ParentJFrame.setupWindow.ListOfAllPlayers);
+        
+        AllTimeHighScore= new HighScore_AllTime(ParentJFrame.setupWindow.ListOfAllPlayers);                
+        AllTimeHighScore.setBounds(148, 50, 500, 500);
         AllTimeHighScore.setVisible(false);
         add(AllTimeHighScore);
-        AllTimeHighScore.setBounds(150, 50, 500, 500);
     }
 
     @Override
@@ -67,13 +76,17 @@ public class HighScoresWindow extends JPanel implements ActionListener {
 
     private void LoadAllTimeHighScore() 
     {
-        AllTimeHighScore.setVisible(false);
-        TodaysHighScore.setVisible(true);
+        TodaysHighScore.setVisible(false);
+        //AllTimeHighScore.setBounds(150, 50, 500, 500);         
+        AllTimeHighScore.setVisible(true);        
+        //repaint();
     }
 
     private void LoadTodaysTimeHighScore() 
     {
-        TodaysHighScore.setVisible(false);
-        AllTimeHighScore.setVisible(true);
+        AllTimeHighScore.setVisible(false);
+        //TodaysHighScore.setBounds(150, 50, 500, 500);                 
+        TodaysHighScore.setVisible(true);
+        //TodaysHighScore.repaint();
     }
 }

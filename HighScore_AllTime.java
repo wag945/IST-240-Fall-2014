@@ -21,13 +21,15 @@ public class HighScore_AllTime extends JPanel
         setLayout(null);
         setBackground(Color.gray);
         
-        //Font font ;
-        //font = Font.deriveFont(20.0f);
-        
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);      
         
         JLabel lHeading = new JLabel();
         lHeading.setText("All Time High Score");
-        lHeading.setFont(null);
+        lHeading.setFont(font);
+        lHeading.setBounds(120, 10, 300, 36);
+        lHeading.setVisible(true);
+        add(lHeading);
         
+
     }
 }

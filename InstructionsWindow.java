@@ -19,7 +19,7 @@ public class InstructionsWindow extends JPanel implements ActionListener
     public InstructionsWindow()
     {
         super();
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         
     }
 

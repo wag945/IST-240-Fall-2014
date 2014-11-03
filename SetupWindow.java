@@ -33,7 +33,7 @@ public class SetupWindow extends JPanel implements ActionListener
     {
         super();
         //setLayout(new GridLayout(2,2));
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         //setLayout(null);
         ParentFrame = mjf;
         

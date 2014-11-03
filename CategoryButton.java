@@ -13,7 +13,10 @@ public class CategoryButton extends JButton {
     public CategoryButton(String text)
     {
         super();
+        setBackground(new Color(105, 105, 105, 255));
         setFont(new Font("Dialog", 1, 20));
+        this.setForeground(new Color(0, 206, 209, 255));
+        //this.setDisabledIcon(null);
         setText(text);
     }
 }

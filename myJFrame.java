@@ -49,7 +49,7 @@ public class myJFrame extends JFrame
         
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize (800, 800);
+        setSize (840, 800);
         setVisible(true);
         splashWindow();
     }

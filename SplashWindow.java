@@ -16,9 +16,11 @@ public class SplashWindow extends JPanel implements ActionListener {
     public SplashWindow()
     {
         super();
-        setBackground(Color.BLUE);
-        JButton jeopardy = new JButton("");
+        setBackground(Color.DARK_GRAY);
+        setLayout(null);
+        JLabel jeopardy = new JLabel("");
         jeopardy.setIcon(new ImageIcon(getClass().getResource("/images/jeopardy.jpg")));
+        jeopardy.setBounds(320, 100, 176, 176);
         add(jeopardy);
         setVisible(false);
     }

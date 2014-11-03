@@ -15,7 +15,7 @@ public class AboutWindow extends JPanel implements ActionListener {
     public AboutWindow()
     {
         super();
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         text = new JTextField();
         text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
         add(text);

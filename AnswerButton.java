@@ -14,8 +14,9 @@ class AnswerButton extends JButton {
     AnswerButton(String text,String inputQuestion,String inputAnswer) {
         super();
         setOpaque(true);
-        setBackground(Color.BLUE);
+        setBackground(Color.DARK_GRAY);
         setFont(new Font("Dialog", 1, 20));
+        this.setForeground(new Color(0, 205, 0, 255));
         setText(text);
         question = inputQuestion;
         answer = inputAnswer;

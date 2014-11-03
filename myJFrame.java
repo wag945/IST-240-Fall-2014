@@ -29,7 +29,7 @@ public class myJFrame extends JFrame
         introductionWindow = new IntroductionWindow(this);
         instructionsWindow = new InstructionsWindow();
         aboutWindow = new AboutWindow();
-        highScoresWindow = new HighScoresWindow();
+        highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
         
@@ -179,7 +179,7 @@ public class myJFrame extends JFrame
         if (true == highScoresWindow.isVisible())
         {
             getContentPane().remove(highScoresWindow);
-            highScoresWindow.setVisible(true);
+            highScoresWindow.setVisible(false);
         }
     }
     
@@ -197,7 +197,7 @@ public class myJFrame extends JFrame
         if (true == splashWindow.isVisible())
         {
             getContentPane().remove(splashWindow);
-            splashWindow.setVisible(true);
+            splashWindow.setVisible(false);
         }
     }
     

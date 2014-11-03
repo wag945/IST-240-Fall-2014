@@ -26,8 +26,7 @@ public class GameTimerFrame extends JFrame
         
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize (200, 200);
-        setBounds(840,0,200,100);
+        //setBounds(840,0,300,100);
         setVisible(false);
     }
     

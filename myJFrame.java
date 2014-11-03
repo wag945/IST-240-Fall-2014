@@ -43,7 +43,8 @@ public class myJFrame extends JFrame
             {
                 if (timerFrame.isVisible())
                 {
-                    timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 200, 100);
+                    //timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 300, 100);
+                    timerFrame.setLocation(getBounds().x+840+4, getBounds().y-5);
                 }
             }
             @Override
@@ -120,7 +121,7 @@ public class myJFrame extends JFrame
         {
             getContentPane().add(gameWindow,BorderLayout.CENTER);
             gameWindow.setVisible(true);
-            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 200, 100);
+            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 260, 100);
             timerFrame.displayWindow();
         }
     }

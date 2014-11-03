@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 
 class AnswerButton extends JButton {
     String question,answer;
+    QuestionFrame questionFrame;
+
     AnswerButton(String text,String inputQuestion,String inputAnswer) {
         super();
         setOpaque(true);
@@ -32,11 +34,8 @@ class AnswerButton extends JButton {
     
     public void displayQuestion()
     {
-        String str = JOptionPane.showInputDialog(null, question, "", 1);
-        if (true == isAnswerCorrect(str))
-        {
-            System.out.println("correct!");
-        }
+        questionFrame = new QuestionFrame();
+        questionFrame.displayWindow();
     }
     
     public boolean isAnswerCorrect(String input)

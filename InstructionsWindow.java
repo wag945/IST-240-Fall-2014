@@ -34,7 +34,7 @@ public class InstructionsWindow extends JPanel implements ActionListener
         {
             super.paintComponent(g);
 
-            ImageIcon instructionImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions.jpg"));
+            ImageIcon instructionImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
             Image gameInstructionImage = instructionImage.getImage();
             g.drawImage(gameInstructionImage, 50, 10, this);
         }

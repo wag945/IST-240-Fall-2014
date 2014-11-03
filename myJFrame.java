@@ -20,6 +20,7 @@ public class myJFrame extends JFrame
     SplashWindow splashWindow;
     JButton jeopardy;
     GameTimerFrame timerFrame;
+    AudioPlayer SoundPlayer;
 
     public myJFrame ()
     {
@@ -34,6 +35,7 @@ public class myJFrame extends JFrame
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
+        SoundPlayer = new AudioPlayer();
         
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
         {
@@ -214,6 +216,7 @@ public class myJFrame extends JFrame
         {
             getContentPane().add(splashWindow,BorderLayout.CENTER);
             splashWindow.setVisible(true);
+            SoundPlayer.play("lionroar.wav");
         }
     }
     

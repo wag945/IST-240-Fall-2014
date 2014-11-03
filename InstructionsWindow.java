@@ -20,14 +20,7 @@ public class InstructionsWindow extends JPanel implements ActionListener
     {
         super();
         setBackground(Color.BLUE);
-//        text = new JTextField();
-//        text.setText("Instructions go here...\n");
-//        text.setText("test test test\n");
-//        text.setText("test test1, test2, test3 \n");
-//        add(text);
-//        setVisible(false);
         
-//        instructionWindow = new JButton();
     }
 
         public void paintComponent(Graphics g)

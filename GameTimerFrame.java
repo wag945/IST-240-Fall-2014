@@ -2,8 +2,7 @@
  * @Course: IST 240 (FA 14)
  * @Section: 001
  *
- * @Group 04
- * @Round 2
+ * @Group 08
  */
 import java.awt.*;
 import javax.swing.*;
@@ -14,7 +13,7 @@ public class GameTimerFrame extends JFrame
     GameTimerWindow window;
     public GameTimerFrame ()
     {
-        super("Game Timer");
+        super("Timer");
         //------------------------------------------------------
         // Create components
         window = new GameTimerWindow();
@@ -28,7 +27,7 @@ public class GameTimerFrame extends JFrame
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (200, 200);
-        setBounds(800,0,200,100);
+        setBounds(840,0,200,100);
         setVisible(false);
     }
     

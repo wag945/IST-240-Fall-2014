@@ -37,16 +37,10 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         bTHS.addActionListener(this);
         bTHS.setBounds(395, 0, 226, 27);
         add(bTHS);
-        
-        
+           
         ParentJFrame = mjf;
         
         setVisible(true);
-        
-        
-        
-        
-        
     }
 
     @Override

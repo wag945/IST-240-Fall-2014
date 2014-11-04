@@ -23,7 +23,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
         setBackground(Color.DARK_GRAY);
         setVisible(true);
         timeLeft = 180;
-        minutes = 1;
+        minutes = 5;
         seconds = 0;
         timeTextField = new JTextField("5:00");
         add(timeTextField);
@@ -65,7 +65,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
     {
         if (seconds == 0)
         {
-            seconds = 2;
+            seconds = 59;
             minutes--;
             if (minutes >= 0)
             {
@@ -81,8 +81,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
                 timer.stop();
                 AudioPlayer player = new AudioPlayer();
                 player.play("endround.wav");
-                timeTextField.setBounds(20, 0,200,50);
-                timeTextField.repaint();
+                timeTextField.setBounds(20, 5,200,50);
             }
         }
         else

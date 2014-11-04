@@ -4,17 +4,16 @@
  *
  * @Group 08
  */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
-import java.awt.GridLayout;
 
 public class HighScoresWindow extends JPanel implements ActionListener {
 
-//    JTextField text;
-    HighScore_Todays TodaysHighScore;
-    HighScore_AllTime AllTimeHighScore;
+    HighScore_Panel TodaysHighScore;
+    HighScore_Panel AllTimeHighScore;
     
     myJFrame ParentJFrame;
     JButton bAHS;
@@ -28,11 +27,6 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         setLayout(null);
         
         setBackground(Color.DARK_GRAY);
-        //setBackground(new Color(0, 255, 0, 0));
-        //this.setOpaque(true);
-//        text = new JTextField();
-//        text.setText("High scores go here...");
-//        add(text);
         
         bAHS = new JButton("All Time High Score");
         bAHS.addActionListener(this);
@@ -49,13 +43,13 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         
         setVisible(true);
         
-        TodaysHighScore= new HighScore_Todays(ParentJFrame.setupWindow.ListOfAllPlayers);
+        TodaysHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "Today's High Scores", false);
         TodaysHighScore.setBounds(148, 50, 500, 500); 
         TodaysHighScore.setVisible(false);        
         add(TodaysHighScore);
         
         
-        AllTimeHighScore= new HighScore_AllTime(ParentJFrame.setupWindow.ListOfAllPlayers);                
+        AllTimeHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "All Time High Scores", true);                
         AllTimeHighScore.setBounds(148, 50, 500, 500);
         AllTimeHighScore.setVisible(false);
         add(AllTimeHighScore);

@@ -132,6 +132,35 @@ public class SetupWindow extends JPanel implements ActionListener
     }
     
     private void LoadDataFromXML()
+    {         
+        DownloadSetupXML();
+        
+        //Load all players and their high score in ListOfAllPlayers;        
+        XML_240 XMLReader = new XML_240();
+        XMLReader.openReaderXML("\\settings\\setup.xml");
+        ListOfAllPlayers = (PlayersList) XMLReader.ReadObject();
+        SelectedPlayers = (PlayersList) XMLReader.ReadObject();
+        Object tempObj = XMLReader.ReadObject();
+        if (tempObj!=null)
+        {
+            DifficultyLevel = (int)tempObj;
+        }
+
+        
+        if (ListOfAllPlayers == null)
+        {
+            ListOfAllPlayers = new PlayersList();
+        }
+
+        if (SelectedPlayers == null)
+        {
+            SelectedPlayers = new PlayersList();
+        }
+        
+        XMLReader.closeReaderXML();
+    }
+    
+    private void DownloadSetupXML()
     {
         File dir = new File("settings");
         if (!dir.exists())
@@ -157,30 +186,5 @@ public class SetupWindow extends JPanel implements ActionListener
         {
             Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-          
-        //Load all players and their high score in ListOfAllPlayers;        
-        XML_240 XMLReader = new XML_240();
-        XMLReader.openReaderXML("\\settings\\setup.xml");
-        ListOfAllPlayers = (PlayersList) XMLReader.ReadObject();
-        SelectedPlayers = (PlayersList) XMLReader.ReadObject();
-        Object tempObj = XMLReader.ReadObject();
-        if (tempObj!=null)
-        {
-            DifficultyLevel = (int)tempObj;
-        }
-
-        
-        if (ListOfAllPlayers == null)
-        {
-            ListOfAllPlayers = new PlayersList();
-        }
-
-        if (SelectedPlayers == null)
-        {
-            SelectedPlayers = new PlayersList();
-        }
-        
-        XMLReader.closeReaderXML();
     }
 }

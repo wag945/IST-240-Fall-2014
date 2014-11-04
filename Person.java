@@ -14,7 +14,7 @@ import java.util.Date;
 public class Person 
 {
     private String Name;
-    private int Score;
+    private Integer Score;
     private int Level;
     private int Player;
     private Date DateLastPlayed;
@@ -50,7 +50,14 @@ public class Person
      * @return the Score
      */
     public int getScore() {
-        return Score;
+         if (Score != null)
+        {
+            return Score;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**

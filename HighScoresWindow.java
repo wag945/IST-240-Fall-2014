@@ -43,16 +43,10 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         
         setVisible(true);
         
-        TodaysHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "Today's High Scores", false);
-        TodaysHighScore.setBounds(148, 50, 500, 500); 
-        TodaysHighScore.setVisible(false);        
-        add(TodaysHighScore);
         
         
-        AllTimeHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "All Time High Scores", true);                
-        AllTimeHighScore.setBounds(148, 50, 500, 500);
-        AllTimeHighScore.setVisible(false);
-        add(AllTimeHighScore);
+        
+        
     }
 
     @Override
@@ -69,18 +63,55 @@ public class HighScoresWindow extends JPanel implements ActionListener {
     }
 
     private void LoadAllTimeHighScore() 
-    {
-        TodaysHighScore.setVisible(false);
-        //AllTimeHighScore.setBounds(150, 50, 500, 500);         
-        AllTimeHighScore.setVisible(true);        
-        //repaint();
+    {        
+        if (TodaysHighScore!=null)
+        {
+            TodaysHighScore.setVisible(false);
+            TodaysHighScore.removeAll();
+            TodaysHighScore.repaint();
+            TodaysHighScore = null;
+        }
+        
+        if (AllTimeHighScore!=null)
+        {
+            AllTimeHighScore.setVisible(false);
+            AllTimeHighScore.removeAll();
+            AllTimeHighScore.repaint();
+            AllTimeHighScore = null;
+        }
+         
+        AllTimeHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "All Time High Scores", true);                
+        AllTimeHighScore.setBounds(148, 50, 500, 500);
+        AllTimeHighScore.setVisible(true);
+        AllTimeHighScore.setVisible(true);
+        this.add(AllTimeHighScore);
+        this.repaint();
+        
     }
 
     private void LoadTodaysTimeHighScore() 
     {
-        AllTimeHighScore.setVisible(false);
-        //TodaysHighScore.setBounds(150, 50, 500, 500);                 
-        TodaysHighScore.setVisible(true);
-        //TodaysHighScore.repaint();
+        if (AllTimeHighScore!=null)
+        {
+            AllTimeHighScore.setVisible(false);
+            AllTimeHighScore.removeAll();
+            AllTimeHighScore.repaint();
+            AllTimeHighScore = null;
+        }
+        
+        if (TodaysHighScore!=null)
+        {
+            TodaysHighScore.setVisible(false);
+            TodaysHighScore.removeAll();
+            TodaysHighScore.repaint();
+            TodaysHighScore = null;
+        }        
+        
+        TodaysHighScore = new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "Today's High Scores", false);
+        TodaysHighScore.setBounds(148, 50, 500, 500); 
+        TodaysHighScore.setVisible(true);        
+        TodaysHighScore.setVisible(true);        
+        this.add(TodaysHighScore);   
+        this.repaint();
     }
 }

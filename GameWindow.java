@@ -20,9 +20,20 @@ public class GameWindow extends JPanel implements ActionListener
     String oneHundred,twoHundred,threeHundred,fourHundred,fiveHundred;
     int numberAvailableAnswers;
     
-    public GameWindow()
+    myJFrame ParentFrame;
+    
+    //Settings
+    int DifficultyLevel = 0;    
+    PlayersList SelectedPlayers;    
+    
+    public GameWindow(myJFrame mjf, GameTimerWindow gtw)
     {
         super();
+        ParentFrame = mjf;
+        SelectedPlayers = ParentFrame.setupWindow.SelectedPlayers;
+        DifficultyLevel = ParentFrame.setupWindow.DifficultyLevel;
+        gtw.resetTimer();
+        
         setBackground(Color.DARK_GRAY);
         oneHundred = "$100";
         twoHundred = "$200";

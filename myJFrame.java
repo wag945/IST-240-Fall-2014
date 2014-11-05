@@ -27,7 +27,7 @@ public class myJFrame extends JFrame
         super("PSU Jeopardy");
         //------------------------------------------------------
         // Create components
-        gameWindow = new GameWindow();
+        //gameWindow = new GameWindow(this);
         setupWindow = new SetupWindow(this);
         introductionWindow = new IntroductionWindow(this);
         instructionsWindow = new InstructionsWindow();
@@ -63,7 +63,7 @@ public class myJFrame extends JFrame
         // add Jpanel to JFrame according to layout    	
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(introductionWindow,BorderLayout.NORTH);
-        getContentPane().add(gameWindow,BorderLayout.CENTER);
+        //getContentPane().add(gameWindow,BorderLayout.CENTER);
         getContentPane().add(instructionsWindow,BorderLayout.CENTER);
         getContentPane().add(highScoresWindow,BorderLayout.CENTER);
         getContentPane().add(aboutWindow,BorderLayout.CENTER);
@@ -84,6 +84,7 @@ public class myJFrame extends JFrame
     public void newGame()
     {
         allOff();
+        gameCreateNew();
         gameBoardOn();
     }
     
@@ -123,19 +124,27 @@ public class myJFrame extends JFrame
         {
             getContentPane().add(gameWindow,BorderLayout.CENTER);
             gameWindow.setVisible(true);
-            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 260, 100);
+            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);
             timerFrame.displayWindow();
         }
     }
     
     public void gameBoardOff()
     {
-        if (true == gameWindow.isVisible())
+        if (gameWindow!=null)
         {
+//            if (true == gameWindow.isVisible())
+//            {
+//                getContentPane().remove(gameWindow);
+//                gameWindow.setVisible(false);
+//                timerFrame.hideWindow();
+//            }
+
+            gameWindow.removeAll();
+            gameWindow.repaint();
             getContentPane().remove(gameWindow);
-            gameWindow.setVisible(false);
-            timerFrame.hideWindow();
-        }        
+            gameWindow = null;
+        }
     }
     
     public void setupWindowOn()
@@ -237,5 +246,18 @@ public class myJFrame extends JFrame
         aboutWindowOff();
         highScoresWindowOff();
         splashWindowOff();
+    }
+
+    private void gameCreateNew() 
+    {
+        if (gameWindow!=null)
+        {
+            gameWindow.removeAll();
+            gameWindow.repaint();
+            getContentPane().remove(gameWindow);
+            gameWindow = null;
+        }
+        gameWindow = new GameWindow(this, timerFrame.window);
+        getContentPane().add(gameWindow,BorderLayout.CENTER);
     }
 }

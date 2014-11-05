@@ -20,17 +20,16 @@ public class InstructionsWindow extends JPanel implements ActionListener
     {
         super();
         setBackground(Color.DARK_GRAY);
-        
     }
 
-        public void paintComponent(Graphics g)
-        {
-            super.paintComponent(g);
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
 
-            ImageIcon instructionImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
-            Image gameInstructionImage = instructionImage.getImage();
-            g.drawImage(gameInstructionImage, 50, 10, this);
-        }
+        ImageIcon instructionImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
+        Image gameInstructionImage = instructionImage.getImage();
+        g.drawImage(gameInstructionImage, 50, 10, this);
+    }
         
     @Override
     public void actionPerformed(ActionEvent e) 

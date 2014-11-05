@@ -24,7 +24,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
         setVisible(true);        
         timeTextField = new JTextField();
         resetTimer();
-        
+              
         add(timeTextField);
         timer = new Timer(1000,this);
 	Font font = new Font("SansSerif", Font.BOLD, 32);

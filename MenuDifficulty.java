@@ -86,6 +86,8 @@ public class MenuDifficulty extends JPanel implements ActionListener
         r2_Difficulty.setBounds(50, 137, 200, 37);
         r3_Difficulty.setBounds(50, 194, 200, 37);
 
+        //r1_Difficulty.setSelected(true);
+        
         setOpaque(true);
         //lDifficulty.setOpaque(true);
         r1_Difficulty.setOpaque(true);

@@ -7,9 +7,11 @@
 import java.awt.*;
 import java.awt.event.HierarchyBoundsListener;
 import java.awt.event.HierarchyEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.*;
 
-public class myJFrame extends JFrame
+public class myJFrame extends JFrame implements WindowListener
 {
     GameWindow gameWindow;
     SetupWindow setupWindow;
@@ -22,7 +24,7 @@ public class myJFrame extends JFrame
     GameTimerFrame timerFrame;
     AudioPlayer SoundPlayer;
 
-    public myJFrame ()
+    public myJFrame () 
     {
         super("PSU Jeopardy");
         //------------------------------------------------------
@@ -37,6 +39,7 @@ public class myJFrame extends JFrame
         timerFrame = new GameTimerFrame();
         SoundPlayer = new AudioPlayer();
         
+        this.addWindowListener(this);
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
         {
  
@@ -136,8 +139,8 @@ public class myJFrame extends JFrame
 //            if (true == gameWindow.isVisible())
 //            {
 //                getContentPane().remove(gameWindow);
-//                gameWindow.setVisible(false);
-//                timerFrame.hideWindow();
+                gameWindow.setVisible(false);
+                timerFrame.hideWindow();
 //            }
 
             gameWindow.removeAll();
@@ -258,6 +261,54 @@ public class myJFrame extends JFrame
             gameWindow = null;
         }
         gameWindow = new GameWindow(this, timerFrame.window);
-        getContentPane().add(gameWindow,BorderLayout.CENTER);
+        //getContentPane().add(gameWindow,BorderLayout.CENTER);
+    }
+
+    @Override
+    public void windowOpened(WindowEvent we) 
+    {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowClosing(WindowEvent we) 
+    {
+        int n = JOptionPane.showConfirmDialog(this,
+                    "Are you sure you want to exit?",
+                    "Exit",
+                    JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION)
+        {
+            setDefaultCloseOperation (WindowConstants.EXIT_ON_CLOSE);       
+        }
+        else
+        {
+            setDefaultCloseOperation (WindowConstants.DO_NOTHING_ON_CLOSE);                   
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent we) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowIconified(WindowEvent we) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent we) {
+        ///throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowActivated(WindowEvent we) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent we) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

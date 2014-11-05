@@ -25,7 +25,7 @@ public class SetupWindow extends JPanel implements ActionListener
     PlayersList SelectedPlayers = new PlayersList();
     PlayersList ListOfAllPlayers = new PlayersList();
     myJFrame ParentFrame;
-    int DifficultyLevel = 0;
+    int DifficultyLevel = 1; //Set level to K12 by default
     
     MenuDifficulty DifficultyMenu;
     MenuPlayers PlayerMenu;

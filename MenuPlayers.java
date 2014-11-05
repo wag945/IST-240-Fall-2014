@@ -431,7 +431,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                             if (setup.DifficultyLevel>0 && !setup.SelectedPlayers.isEmpty())
                             {                        
                                 setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);
-                                //SaveDataInXML();
+                                setup.SaveDataInXML();
                             }
                             //this.removeAll();
                             PanelToAnimate = new PanelAnimate(1,this);

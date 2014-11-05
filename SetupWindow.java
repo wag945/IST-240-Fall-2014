@@ -84,7 +84,7 @@ public class SetupWindow extends JPanel implements ActionListener
         PlayerMenu = new MenuPlayers(SelectedPlayers, ListOfAllPlayers);
         PlayerMenu.setVisible(true);
         add(PlayerMenu);
-        PlayerMenu.setBounds(150, 50, 500, 500);
+        PlayerMenu.setBounds(148, 50, 500, 500);
     }
     
     void bDifficulty_Pressed()
@@ -92,7 +92,7 @@ public class SetupWindow extends JPanel implements ActionListener
         DifficultyMenu = new MenuDifficulty(DifficultyLevel);
         DifficultyMenu.setVisible(true);
         add(DifficultyMenu);
-        DifficultyMenu.setBounds(150, 50, 500, 500);
+        DifficultyMenu.setBounds(148, 50, 500, 500);
     }
 
     void SaveDataInXML()
@@ -133,7 +133,7 @@ public class SetupWindow extends JPanel implements ActionListener
     
     private void LoadDataFromXML()
     {         
-        DownloadSetupXML();
+        //DownloadSetupXML();
         
         //Load all players and their high score in ListOfAllPlayers;        
         XML_240 XMLReader = new XML_240();
@@ -146,7 +146,6 @@ public class SetupWindow extends JPanel implements ActionListener
             DifficultyLevel = (int)tempObj;
         }
 
-        
         if (ListOfAllPlayers == null)
         {
             ListOfAllPlayers = new PlayersList();

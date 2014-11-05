@@ -5,9 +5,11 @@
  * @Group 08
  */
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -55,7 +57,7 @@ public class MenuPlayers extends JPanel implements ActionListener
         bNext = new JButton();
         bNext.setText("Select");  
         bNext.setName("bNext");
-        bNext.setBounds(320, 360, 80, 27);
+        bNext.setBounds(324, 420, 80, 27);
         bNext.addActionListener(this);
         add(bNext);
         
@@ -67,20 +69,35 @@ public class MenuPlayers extends JPanel implements ActionListener
         //Create new panel that will hold 3 players option and a lable
         pPlayerSelection = new JPanel();
         pPlayerSelection.setOpaque(true);
-        pPlayerSelection.setBackground(Color.BLACK);
+        pPlayerSelection.setBackground(Color.gray);
+        pPlayerSelection.setBorder(BorderFactory.createLineBorder(Color.black));
         pPlayerSelection.setVisible(true);
         pPlayerSelection.setLayout(null);
-        pPlayerSelection.setBounds(100, 50, 300, 300);
+        pPlayerSelection.setBounds(105, 60, 300, 350);
         add(pPlayerSelection);
         
         //Create Label
-        JLabel lPlayer = new JLabel();
-        lPlayer.setText("Select Number of Players:");
+        //JLabel lPlayer = new JLabel();
+        //lPlayer.setText("Select Number of Players:");
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);      
+
+        JLabel lHeading = new JLabel();
+        lHeading.setText("Number of Players");
+        lHeading.setForeground(Color.white);
+        lHeading.setFont(font);
+        lHeading.setBounds(126, 10, 300, 36);
+        lHeading.setVisible(true);
+        add(lHeading);
         
         //Create player choices
         JRadioButton r1_Player = new JRadioButton("One Player");
         JRadioButton r2_Player = new JRadioButton("Two Players");
         JRadioButton r3_Player = new JRadioButton("Three Players");
+        
+        font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
+        r1_Player.setFont(font);
+        r2_Player.setFont(font);
+        r3_Player.setFont(font);
         
         r1_Player.setMnemonic(KeyEvent.VK_O);
         r2_Player.setMnemonic(KeyEvent.VK_W);
@@ -99,25 +116,25 @@ public class MenuPlayers extends JPanel implements ActionListener
         NumberOfPlayers.add(r3_Player);
         
         //SetLocation
-        lPlayer.setBounds(50, 060, 200, 40);
-        r1_Player.setBounds(50, 100, 200, 37);
+        //lPlayer.setBounds(50, 060, 200, 40);
+        r1_Player.setBounds(50, 70, 200, 37);
         r2_Player.setBounds(50, 137, 200, 37);
-        r3_Player.setBounds(50, 174, 200, 37);
+        r3_Player.setBounds(50, 204, 200, 37);
 
         setOpaque(true);
-        lPlayer.setOpaque(true);
+        //lPlayer.setOpaque(true);
         r1_Player.setOpaque(true);
         r2_Player.setOpaque(true);
         r3_Player.setOpaque(true);
         
         setBackground(Color.DARK_GRAY);
-        lPlayer.setBackground(null);
+        //lPlayer.setBackground(null);
         r1_Player.setBackground(null);
         r2_Player.setBackground(null);
         r3_Player.setBackground(null);
         
         
-        lPlayer.setForeground(Color.white);
+        //lPlayer.setForeground(Color.white);
         r1_Player.setForeground(Color.white);
         r2_Player.setForeground(Color.white);
         r3_Player.setForeground(Color.white);
@@ -127,7 +144,7 @@ public class MenuPlayers extends JPanel implements ActionListener
         //bNext.setEnabled(false);
                 
         //Add elements to the panel
-        pPlayerSelection.add(lPlayer);
+        //pPlayerSelection.add(lPlayer);
         pPlayerSelection.add(r1_Player);
         pPlayerSelection.add(r2_Player);
         pPlayerSelection.add(r3_Player);      
@@ -158,17 +175,18 @@ public class MenuPlayers extends JPanel implements ActionListener
         //Create new panel that will hold player profile name, a lable and a button to create new profile 
         pPlayerProfileMenu = new JPanel();
         pPlayerProfileMenu.setOpaque(true);
-        pPlayerProfileMenu.setBackground(Color.BLACK);
+        pPlayerProfileMenu.setBackground(Color.gray);
+        pPlayerProfileMenu.setBorder(BorderFactory.createLineBorder(Color.black));
         pPlayerProfileMenu.setVisible(true);
         pPlayerProfileMenu.setLayout(null);
-        pPlayerProfileMenu.setBounds(100, 50, 300, 300);
+        pPlayerProfileMenu.setBounds(105, 60, 300, 350);
         add(pPlayerProfileMenu);
 
         //Create combo boxes based on number of players
-        int lableLocationY=37;
+        int lableLocationY=27;
         for (int p=1 ; p<=NumOfPlayers;p++)
         {
-            lableLocationY+=37;
+            lableLocationY+=47;
                     
             //Create label
             JLabel lPlayerName = new JLabel("Player " + p + " Name:");
@@ -196,16 +214,16 @@ public class MenuPlayers extends JPanel implements ActionListener
         }
         
         JButton bCreatePlayer = new JButton("Create Player...");
-        bCreatePlayer.setBounds(120, lableLocationY + 37, 130, 27); 
+        bCreatePlayer.setBounds(120, lableLocationY + 47, 130, 27); 
         bCreatePlayer.setName("bCreatePlayer");
         bCreatePlayer.addActionListener(this);
         pPlayerProfileMenu.add(bCreatePlayer);
 
         //Create label
-        JLabel lPlayerSelection = new JLabel("Add Player:");
-        lPlayerSelection.setBounds(5, 0, 280, 37);
-        lPlayerSelection.setForeground(Color.white);
-        pPlayerProfileMenu.add(lPlayerSelection);
+//        JLabel lPlayerSelection = new JLabel("Add Player:");
+//        lPlayerSelection.setBounds(5, 0, 280, 37);
+//        lPlayerSelection.setForeground(Color.white);
+//        pPlayerProfileMenu.add(lPlayerSelection);
         
         //Load previous players on current run   
         for (Object objPCheck : SelectedPlayers.toArray())
@@ -270,10 +288,10 @@ public class MenuPlayers extends JPanel implements ActionListener
         //Create new panel that will hold player profile name input, a lable and image selection
         pCreatePlayerProfile = new JPanel();        
         pCreatePlayerProfile.setOpaque(true);
-        pCreatePlayerProfile.setBackground(Color.BLACK);
+        pCreatePlayerProfile.setBackground(Color.gray);
         pCreatePlayerProfile.setVisible(true);
         pCreatePlayerProfile.setLayout(null);
-        pCreatePlayerProfile.setBounds(100, 50, 300, 300);
+        pCreatePlayerProfile.setBounds(105, 60, 300, 350);
         add(pCreatePlayerProfile);
         
         //Create label

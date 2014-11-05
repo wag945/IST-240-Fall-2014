@@ -51,7 +51,7 @@ public class PanelAnimate implements ActionListener
         switch (AnimationDirection)
         {
             case "Left":
-                if (PanelToAnimate.getX() > -400)
+                if (PanelToAnimate.getX() > -420)
                 {
                     PanelToAnimate.setBounds(PanelToAnimate.getX()-2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
@@ -63,7 +63,7 @@ public class PanelAnimate implements ActionListener
                 }
                 break;
             case "Right":
-                if (PanelToAnimate.getX() < 400)
+                if (PanelToAnimate.getX() < 420)
                 {
                     PanelToAnimate.setBounds(PanelToAnimate.getX()+2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
@@ -78,11 +78,11 @@ public class PanelAnimate implements ActionListener
                 
                 PanelToAnimate.setVisible(true);
                 
-                if (PanelToAnimate.getX() < 100)
+                if (PanelToAnimate.getX() < 105)
                 {
                     PanelToAnimate.setBounds(PanelToAnimate.getX()+2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
-                else if (PanelToAnimate.getX() > 100)
+                else if (PanelToAnimate.getX() > 105)
                 {
                     PanelToAnimate.setBounds(PanelToAnimate.getX()-2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
@@ -100,7 +100,11 @@ public class PanelAnimate implements ActionListener
         if (booRemovePanel)
         {
             SetupWindow setup = (SetupWindow)PanelToAnimate.getParent();
-            setup.remove(PanelToAnimate);
+            if (setup!=null)
+            {
+                setup.remove(PanelToAnimate);
+                setup.repaint();
+            }
         }
     }
 }

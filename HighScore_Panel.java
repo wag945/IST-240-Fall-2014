@@ -9,25 +9,24 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.Arrays;
 import java.util.Date;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class HighScore_Panel extends JPanel
-{
-    JLabel lHeading;
-    
-    
+{   
     HighScore_Panel(PlayersList ListOfAllPlayers, String Heading, boolean AllTime)
     {
         super();
         setLayout(null);
-        setBackground(Color.gray);
+        setBackground(Color.darkGray);
         
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);      
-        
-        lHeading = new JLabel();
+
+        JLabel lHeading = new JLabel();
         lHeading.setText(Heading);
-        
+        lHeading.setForeground(Color.white);
         lHeading.setFont(font);
         if (AllTime)
         {
@@ -44,6 +43,9 @@ public class HighScore_Panel extends JPanel
 
         scoreListDisplay.setLayout(null);
         scoreListDisplay.setBounds(105, 60, 300, 350);
+        //scoreListDisplay.setBorder(BorderFactory.createEtchedBorder(10,Color.darkGray,Color.gray));
+        scoreListDisplay.setBackground(Color.gray);
+        scoreListDisplay.setBorder(BorderFactory.createLineBorder(Color.black));
         add(scoreListDisplay);
         
         int lY = 30; // initial label
@@ -54,26 +56,35 @@ public class HighScore_Panel extends JPanel
         
         String[][] ArrayOfPlayersAndScores = GetScores(ListOfAllPlayers, AllTime);
         
-        if (ArrayOfPlayersAndScores!=null)
-        {
-            for(int i=0; i<10 ; i++) //reverse order of array
-            {                  
+        for(int i=0; i<10 ; i++) //reverse order of array
+        {                  
                 lNum[i] = new JLabel();
                 lNum[i].setName("lNum_" + (i+1));                
                 lNum[i].setText("" + (i+1));
                 lNum[i].setBounds(lX, lY, 16, 27);
-                scoreListDisplay.add(lNum[i]);        
-
+                lNum[i].setForeground(Color.white);
+                scoreListDisplay.add(lNum[i]);
+                lY += 30; 
+        }
+        
+        lY = 30;
+        if (ArrayOfPlayersAndScores!=null)
+        {
+            for(int i=0; i<10 ; i++) //reverse order of array
+            {
                 lName[i] = new JLabel();
                 lName[i].setName("lName_" + (i+1));                
                 lName[i].setText(ArrayOfPlayersAndScores[i][0]);
                 lName[i].setBounds(lX + 30, lY, 150, 27);
+                lName[i].setForeground(Color.white);
                 scoreListDisplay.add(lName[i]);        
 
                 lScore[i] = new JLabel();
                 lScore[i].setName("lScore_" + (i+1));
                 lScore[i].setText(ArrayOfPlayersAndScores[i][1].trim());
-                lScore[i].setBounds(lX + 170, lY, 140, 27);
+                lScore[i].setBounds(lX + 90, lY, 140, 27);
+                lScore[i].setForeground(Color.white);
+                lScore[i].setHorizontalAlignment(SwingConstants.RIGHT);
                 scoreListDisplay.add(lScore[i]);
                 lY += 30;   
 

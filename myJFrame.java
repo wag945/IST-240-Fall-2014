@@ -23,7 +23,8 @@ public class myJFrame extends JFrame implements WindowListener
     JButton jeopardy;
     GameTimerFrame timerFrame;
     AudioPlayer SoundPlayer;
-
+    SplashPlayerName PlayerNameSplasher;
+    
     public myJFrame () 
     {
         super("PSU Jeopardy");
@@ -38,11 +39,11 @@ public class myJFrame extends JFrame implements WindowListener
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
         SoundPlayer = new AudioPlayer();
+        PlayerNameSplasher = new SplashPlayerName();
         
         this.addWindowListener(this);
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
         {
- 
             @Override
             public void ancestorMoved(HierarchyEvent e) 
             {
@@ -70,6 +71,7 @@ public class myJFrame extends JFrame implements WindowListener
         getContentPane().add(instructionsWindow,BorderLayout.CENTER);
         getContentPane().add(highScoresWindow,BorderLayout.CENTER);
         getContentPane().add(aboutWindow,BorderLayout.CENTER);
+        getContentPane().add(PlayerNameSplasher,BorderLayout.CENTER);
 
         //jeopardy = new JButton("");
         //jeopardy.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/jeopardy.jpg")));

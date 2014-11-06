@@ -107,12 +107,11 @@ public class SetupWindow extends JPanel implements ActionListener
         XMLWriter.writeObject(DifficultyLevel);        
         XMLWriter.closeWriterXML();
         
-        
-        //ftp.ai-dot.net
-        //xml@ai-dot.net
-        //XMLReadWrite!1
-        
-        //File f = new File("setup.xml");
+        //UploadSetupXML();        
+    }
+    
+    private void UploadSetupXML()
+    {
         InputStream f;
         try 
         {
@@ -128,7 +127,6 @@ public class SetupWindow extends JPanel implements ActionListener
         {
             Logger.getLogger(SetupWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
     
     private void LoadDataFromXML()

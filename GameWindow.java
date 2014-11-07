@@ -103,10 +103,6 @@ public class GameWindow extends JPanel implements ActionListener
             if (e.getSource() == answerButtons[i])
             {
                 answerButtons[i].onButtonPressed();
-//                if (answerButtons[i].questionFrame.window.answerCorrect)
-//                {
-//                    addScore(Integer.parseInt(answerButtons[i].getText().replace("$", "")));
-//                }
             }
         }
         if (0 == numberAvailableAnswers)

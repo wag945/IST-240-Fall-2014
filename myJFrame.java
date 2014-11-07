@@ -23,6 +23,7 @@ public class myJFrame extends JFrame implements WindowListener
     JButton jeopardy;
     GameTimerFrame timerFrame;
     AudioPlayer SoundPlayer;
+    PlayerSelectsFrame playerTurnFrame;
 
     public myJFrame () 
     {
@@ -37,6 +38,7 @@ public class myJFrame extends JFrame implements WindowListener
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
+        playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer();
         
         this.addWindowListener(this);
@@ -50,6 +52,11 @@ public class myJFrame extends JFrame implements WindowListener
                 {
                     //timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 300, 100);
                     timerFrame.setLocation(getBounds().x+840+4, getBounds().y-5);
+                }
+                
+                if (playerTurnFrame.isVisible())
+                {
+                    playerTurnFrame.setLocation(getBounds().x+840+4, getBounds().y+100);
                 }
             }
             @Override
@@ -129,6 +136,9 @@ public class myJFrame extends JFrame implements WindowListener
             gameWindow.setVisible(true);
             timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);
             timerFrame.displayWindow();
+            playerTurnFrame.setBounds(getBounds().x+840+4, getBounds().y+100, 260, 100);
+            playerTurnFrame.displayWindow();
+            
         }
     }
     
@@ -141,6 +151,7 @@ public class myJFrame extends JFrame implements WindowListener
 //                getContentPane().remove(gameWindow);
                 gameWindow.setVisible(false);
                 timerFrame.hideWindow();
+                playerTurnFrame.hideWindow();
 //            }
 
             gameWindow.removeAll();

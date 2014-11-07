@@ -76,7 +76,8 @@ public class GameWindow extends JPanel implements ActionListener
             if (pCurrent.getPlayer() == PlayerNumber)
             {            
                 lPlayerName.setText(pCurrent.getName());
-                lScore.setText(String.valueOf(pCurrent.getScore()));            }
+                lScore.setText(String.valueOf(pCurrent.getScore()));            
+            }
         }
     }
     

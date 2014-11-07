@@ -12,8 +12,10 @@ import javax.swing.JOptionPane;
 class AnswerButton extends JButton {
     String question,answer;
     QuestionFrame questionFrame;
+    Boolean IsAnswerCorrect;
 
-    AnswerButton(String text,String inputQuestion,String inputAnswer) {
+    AnswerButton(String text,String inputQuestion,String inputAnswer) 
+    {
         super();
         setOpaque(true);
         setBackground(Color.DARK_GRAY);

@@ -23,8 +23,8 @@ public class myJFrame extends JFrame implements WindowListener
     JButton jeopardy;
     GameTimerFrame timerFrame;
     AudioPlayer SoundPlayer;
-    SplashPlayerName PlayerNameSplasher;
-    
+    PlayerSelectsFrame playerTurnFrame;
+
     public myJFrame () 
     {
         super("PSU Jeopardy");
@@ -38,8 +38,9 @@ public class myJFrame extends JFrame implements WindowListener
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();
+        playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer();
-        PlayerNameSplasher = new SplashPlayerName();
+        //PlayerNameSplasher = new SplashPlayerName();
         
         this.addWindowListener(this);
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
@@ -51,6 +52,11 @@ public class myJFrame extends JFrame implements WindowListener
                 {
                     //timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 300, 100);
                     timerFrame.setLocation(getBounds().x+840+4, getBounds().y-5);
+                }
+                
+                if (playerTurnFrame.isVisible())
+                {
+                    playerTurnFrame.setLocation(getBounds().x+840+4, getBounds().y+100);
                 }
             }
             @Override
@@ -71,7 +77,7 @@ public class myJFrame extends JFrame implements WindowListener
         getContentPane().add(instructionsWindow,BorderLayout.CENTER);
         getContentPane().add(highScoresWindow,BorderLayout.CENTER);
         getContentPane().add(aboutWindow,BorderLayout.CENTER);
-        getContentPane().add(PlayerNameSplasher,BorderLayout.CENTER);
+        //getContentPane().add(PlayerNameSplasher,BorderLayout.CENTER);
 
         //jeopardy = new JButton("");
         //jeopardy.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/jeopardy.jpg")));
@@ -83,7 +89,7 @@ public class myJFrame extends JFrame implements WindowListener
         //setMinimumSize(new Dimension(840,800));
         this.setResizable(false);
         setVisible(true);
-        splashWindow();
+        //splashWindow();
     }
     
     public void newGame()
@@ -131,6 +137,9 @@ public class myJFrame extends JFrame implements WindowListener
             gameWindow.setVisible(true);
             timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);
             timerFrame.displayWindow();
+            playerTurnFrame.setBounds(getBounds().x+840+4, getBounds().y+100, 260, 100);
+            playerTurnFrame.displayWindow();
+            
         }
     }
     
@@ -143,6 +152,7 @@ public class myJFrame extends JFrame implements WindowListener
 //                getContentPane().remove(gameWindow);
                 gameWindow.setVisible(false);
                 timerFrame.hideWindow();
+                playerTurnFrame.hideWindow();
 //            }
 
             gameWindow.removeAll();

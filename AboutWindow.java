@@ -12,6 +12,7 @@ import java.awt.Color;
 public class AboutWindow extends JPanel implements ActionListener {
 
     JTextField text;
+    JButton instructionButton;
     public AboutWindow()
     {
         super();
@@ -19,6 +20,12 @@ public class AboutWindow extends JPanel implements ActionListener {
         text = new JTextField();
         text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
         add(text);
+        
+        ImageIcon instructionsImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
+        instructionButton = new JButton(instructionsImage);
+        instructionButton.setIcon(instructionsImage);
+        add(instructionButton);
+        
         setVisible(false);
         
     }

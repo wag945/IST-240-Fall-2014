@@ -55,4 +55,268 @@
     <string>Who is John Madden?</string>
     <string>Who is Bobby Bowden?</string> 
     <int>1</int> 
+
+    <int>8</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>9</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>10</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>11</int>
+    <string>History</string>
+    <string>Year Penn State University was chartered</string> 
+    <string>What is 1776?</string>
+    <string>What is 1982?</string>
+    <string>What is 1855?</string> 
+    <int>3</int> 
+    
+    <int>12</int>
+    <string>History</string>
+    <string>Pennsylvania county of main campus</string> 
+    <string>What is Philadelphia County?</string>
+    <string>What is Centre County?</string>
+    <string>What is Nittany County?</string> 
+    <int>2</int> 
+
+    <int>13</int>
+    <string>History</string>
+    <string>Penn State's founding president</string> 
+    <string>Who is James Bond?</string>
+    <string>Who is Nathan Nittany?</string>
+    <string>Who is Evan Pugh?</string> 
+    <int>3</int> 
+
+    <int>14</int>
+    <string>History</string>
+    <string>Year Penn State first offered advanced degrees</string> 
+    <string>What is 1855?</string>
+    <string>What is 1996?</string>
+    <string>What is 1924?</string> 
+    <int>3</int> 
+    
+    <int>15</int>
+    <string>History</string>
+    <string>Year Penn State graduated its first class</string> 
+    <string>What is 1861?</string>
+    <string>What is 1859?</string>
+    <string>What is 1858?</string> 
+    <int>1</int> 
+
+    <int>16</int>
+    <string>History</string>
+    <string>Name of university when it was founded</string> 
+    <string>What is Penn State?</string>
+    <string>What is Central College?</string>
+    <string>What is Farmers High School of Pennsylvania?</string> 
+    <int>3</int> 
+
+    <int>17</int>
+    <string>History</string>
+    <string>Year university name changed to Penn State</string> 
+    <string>What is 1855?</string>
+    <string>What is 1988?</string>
+    <string>What is 1953?</string> 
+    <int>3</int> 
+
+    <int>18</int>
+    <string>History</string>
+    <string>Largest university in Pennsylvania</string> 
+    <string>What is Penn State?</string>
+    <string>What is Pitt?</string>
+    <string>What is Slippery Rock?</string> 
+    <int>1</int> 
+
+    <int>19</int>
+    <string>History</string>
+    <string>University motto</string> 
+    <string>What is making life better?</string>
+    <string>What is everything is going to be alright?</string>
+    <string>What is we are...?</string> 
+    <int>1</int> 
+
+    <int>20</int>
+    <string>History</string>
+    <string>Year Dickinson school of law merged with Penn State</string> 
+    <string>What is 1855?</string>
+    <string>What is 2000?</string>
+    <string>What is 1776?</string> 
+    <int>2</int>
+    
+    <int>21</int>
+    <string>JAVA</string>
+    <string>A member function of a class that is used to create objects of that class. It has the same name as the class itself, has no return type, and is invoked using the new operator.</string>
+    <string>What is Class?</string>
+    <string>What is Constructor?</string>
+    <string>What is Method?</string>
+    <int>2</int>
+
+    <int>22</int>
+    <string>JAVA</string>
+    <string>An ordinary member function of a class. It has its own name, a return type (which may be void), and is invoked using the dot operator.</string>
+    <string>What is Class?</string>
+    <string>What is Constructor?</string>
+    <string>What is Method?</string>
+    <int>3</int>
+
+    <int>23</int>
+    <string>JAVA</string>
+    <string>This class is visible in other packages.</string>
+    <string>What is public class?</string>
+    <string>What is private class?</string>
+    <string>What is protected class?</string>
+    <int>1</int>
+
+    <int>24</int>
+    <string>JAVA</string>
+    <string>May be used only by an instance of the same class that declares the method.</string>
+    <string>What is public method?</string>
+    <string>What is private method?</string>
+    <string>What is protected method?</string>
+    <int>2</int>
+
+    <int>25</int>
+    <string>JAVA</string>
+    <string>This variable is visible everywhere.</string>
+    <string>What is public variable?</string>
+    <string>What is private variable?</string>
+    <string>What is protected variable?</string>
+    <int>1</int>
+
+    <int>26</int>
+    <string>JAVA</string>
+    <string>These variables may be used only by an instance of the same class that declares the variable.</string>
+    <string>What is public modifier?</string>
+    <string>What is private modifier?</string>
+    <string>What is protected modifier?</string>
+    <int>2</int>
+
+    <int>27</int>
+    <string>JAVA</string>
+    <string>When a class defines a method using the same name, return type, and arguments as a method in its superclass.</string>
+    <string>What is overriding?</string>
+    <string>What is ruling?</string>
+    <string>What is classifing?</string>
+    <int>1</int>
+
+    <int>28</int>
+    <string>JAVA</string>
+    <string>We mention the type of the variable and it's name and initialize it.</string>
+    <string>What is declaring a variable?</string>
+    <string>What is defining a variable?</string>
+    <string>What is nulling a variable?</string>
+    <int>2</int>
+
+    <int>29</int>
+    <string>JAVA</string>
+    <string>We mention the type of the variable and it's name and we do not initialize it.</string>
+    <string>What is declaring a variable?</string>
+    <string>What is defining a variable?</string>
+    <string>What is nulling a variable?</string>
+    <int>1</int>
+
+    <int>30</int>
+    <string>JAVA</string>
+    <string>At runtime because of either wrong input data or because of wrong business logic etc. These are not checked by the compiler at compile time.</string>
+    <string>When are endtime exceptions thrown?</string>
+    <string>When are compile time excemption thrown?</string>
+    <string>When are runtime exceptions thrown?</string>
+    <int>3</int>
+ 
+    <int>31</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://www.bursar.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for a course</string>
+    <int>1</int>
+
+    <int>32</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://www.registrar.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for Courses</string>
+    <int>3</int>
+
+    <int>33</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://studentaid.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for courses</string>
+    <int>2</int>
+
+    <int>34</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://schedule.psu.edu/</string>
+    <string>How do change my PSU account password?</string>
+    <string>How do I find a course?</string>
+    <string>How to i register for a courses</string>
+    <int>1</int>
+
+    <int>35</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://equity.psu.edu/reporthate/</string>
+    <string>How do I report acts of hate Penn State?</string>
+    <string>How do I report acts of intolerance at Penn State?</string>
+    <string>All the above</string>
+    <int>3</int>
+
+    <int>36</int>
+    <string>PSU Web</string>
+    <string>A Course Management System</string>
+    <string>What is Angel?</string>
+    <string>What is Heaven?</string>
+    <string>What is PSU?</string>
+    <int>1</int>
+
+    <int>37</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/students/student-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>3</int>
+
+    <int>38</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/staff/staff-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>2</int>
+
+    <int>39</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/visitors/visitor-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>1</int>
+
+    <int>40</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/faculty/faculty-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU faculty guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>1</int>
 </java> 

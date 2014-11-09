@@ -49,7 +49,7 @@ public class XML_240
     {
         try 
         {
-            de = new XMLDecoder(new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + filename)));
+            de = new XMLDecoder(new BufferedInputStream(new FileInputStream(System.getProperty("user.dir")+filename)));
         }
         catch(java.io.FileNotFoundException ex){}
         catch(Exception xx) 
@@ -59,11 +59,21 @@ public class XML_240
     }
     
     //==========================================================================
+    //==========================================================================
+    //==========================================================================
+    public void openReaderXMLFromSrc(String filename)
+    {
+        try {
+            de = new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
+        }
+        catch(Exception xx) {xx.printStackTrace();}
+    }
+    
     public void openWriterXML(String filename)
     {
         try 
         {
-            xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(System.getProperty("user.dir") + filename)));
+            xe = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(System.getProperty("user.dir")+filename)));
         }
         catch(Exception xx) 
         {

@@ -7,6 +7,7 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import javax.swing.BorderFactory;
@@ -102,7 +103,8 @@ public class HighScore_Panel extends JPanel
         int PlayerCount = ListOfAllPlayers.toArray().length;
         String[][] ArrayOfAllPlayersAndScores = new String [PlayerCount][2];
         Date date = new Date();
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
         int i=0;
         for (Object obj : ListOfAllPlayers.toArray()) // Extract score from each person
         {            
@@ -117,7 +119,7 @@ public class HighScore_Panel extends JPanel
             {                
                 if (pCurrent.getDateLastPlayed() != null)
                 {
-                    if (date.equals(pCurrent.getDateLastPlayed()))
+                    if (sdf.format(date).equals(sdf.format(pCurrent.getDateLastPlayed())))
                     {
                         ArrayOfAllPlayersAndScores[i][0] = pCurrent.getName().toUpperCase();
                         ArrayOfAllPlayersAndScores[i][1] = String.format("%,10d", pCurrent.getScore()); //formats score in 10 digit string with commas

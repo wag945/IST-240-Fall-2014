@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
 import java.util.Arrays;
+import java.util.Date;
 
 public class GameWindow extends JPanel implements ActionListener
 {
@@ -20,6 +21,8 @@ public class GameWindow extends JPanel implements ActionListener
     String oneHundred,twoHundred,threeHundred,fourHundred,fiveHundred;
     int numberAvailableAnswers;
     
+    JLabel lPlayerWon;
+    JLabel lPlayerWonName;
     JLabel lPlayerName;
     JLabel lScore;
     String CurrentPlayer;
@@ -84,6 +87,27 @@ public class GameWindow extends JPanel implements ActionListener
         }
     }
     
+    public void UpdateLables()
+    {          
+        lPlayerName.setText("");
+        lScore.setText("");
+        
+        int MaxScore=0;
+        String Winner = "";
+        for (Object obj: CurrentPlayers.toArray())
+        {
+            Person pCurrent = (Person)obj;
+            if (pCurrent.getScore() > MaxScore)
+            {
+                MaxScore = pCurrent.getScore();
+                Winner = pCurrent.getName();
+            }
+        }
+        
+        lPlayerWon.setVisible(true);
+        lPlayerWonName.setText(Winner);
+    }
+    
     public void addScore(int Score)
     {    
         System.out.println("GameWindow addScore score = "+Score);
@@ -99,7 +123,7 @@ public class GameWindow extends JPanel implements ActionListener
                 CurrentPlayerNum++;
             }
         }
-          else
+        else
         {
             for (Object obj: CurrentPlayers.toArray())
             {
@@ -112,6 +136,22 @@ public class GameWindow extends JPanel implements ActionListener
             }
         }
         setPlayerNameOnLabel(CurrentPlayerNum);
+        
+        CheckIfGameIsEnding();
+    }
+    
+    public void CheckIfGameIsEnding()
+    {
+         if (0 == numberAvailableAnswers)
+        {
+            //Update lables telling who won
+            UpdateLables();
+
+            //Update full player list
+            UpdateAllPlayerList();
+            
+            ParentFrame.setupWindow.SaveDataInXML();
+        }
     }
     
     @Override
@@ -129,10 +169,31 @@ public class GameWindow extends JPanel implements ActionListener
         if (0 == numberAvailableAnswers)
         {
             //Complete the board and move to double jeopardy
+                    //maybe not lol(Z)
         }
     }
     
-     public final void createLabels()
+    public void UpdateAllPlayerList()
+    {
+        Date date = new Date();
+        for (Object obj: CurrentPlayers.toArray())
+        {
+            Person pCurrent = (Person)obj;
+            for (Object obj2: ParentFrame.setupWindow.ListOfAllPlayers.toArray())
+            {
+                Person pAll = (Person)obj2;
+                if (pCurrent.getPlayer() == pAll.getPlayer())
+                {
+                    pAll.setScore(pCurrent.getScore());
+                    pAll.setDateLastPlayed(date);
+                    break;
+                }
+            }
+        }
+    }
+    
+    
+    public final void createLabels()
     {
 
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
@@ -148,12 +209,18 @@ public class GameWindow extends JPanel implements ActionListener
         lPlayerName.setFont(font);
         add(lPlayerName);
                
-        JLabel lTemp2 = new JLabel();
-        add(lTemp2);
+        lPlayerWonName = new JLabel();
+        lPlayerWonName.setForeground(Color.green);
+        lPlayerWonName.setHorizontalAlignment(SwingConstants.RIGHT);
+        lPlayerWonName.setFont(font);
+        add(lPlayerWonName);
         
-        JLabel lTemp3 = new JLabel();
-        add(lTemp3);
-        
+        lPlayerWon = new JLabel(" Won!");        
+        lPlayerWon.setForeground(Color.green);
+        lPlayerWon.setVisible(false);
+        lPlayerWon.setFont(font);
+        add(lPlayerWon);
+                
         lTemp = new JLabel("Score: ");
         lTemp.setForeground(Color.white);
         lTemp.setHorizontalAlignment(SwingConstants.RIGHT);

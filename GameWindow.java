@@ -238,12 +238,12 @@ public class GameWindow extends JPanel implements ActionListener
     public void createAnswerButtons()
     {
         String label = "";
-        int categoryOneIndex = 0;
-        int categoryTwoIndex = 11;
-        int categoryThreeIndex = 21;
-        int categoryFourIndex = 31;
-        int categoryFiveIndex = 41;
-        int categorySixIndex = 0;
+        int categoryOneIndex = answer.getRandomQuestionNumberForCategory(1);
+        int categoryTwoIndex = answer.getRandomQuestionNumberForCategory(2);
+        int categoryThreeIndex = answer.getRandomQuestionNumberForCategory(3);
+        int categoryFourIndex = answer.getRandomQuestionNumberForCategory(4);
+        int categoryFiveIndex = answer.getRandomQuestionNumberForCategory(5);
+        int categorySixIndex = answer.getRandomQuestionNumberForCategory(6);
         for (int i = 0; i < answerButtons.length; i++)
         {
             //Temp till we have questions read from XML
@@ -275,8 +275,13 @@ public class GameWindow extends JPanel implements ActionListener
                 case 12:
                 case 18:
                 case 24:
+                    System.out.println("GameWindow categoryOneIndex = "+categoryOneIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryOneIndex].questionId,DifficultyLevel);
                     categoryOneIndex++;
+                    if (categoryOneIndex >= answer.getLastQuestionIdByCategoryId(1))
+                    {
+                        categoryOneIndex = answer.getFirstQuestionIdByCategoryId(1);
+                    }
                     break;
                 case 1:
                 case 7:
@@ -285,6 +290,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 25:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryTwoIndex].questionId,DifficultyLevel);
                     categoryTwoIndex++;
+                    if (categoryTwoIndex >= answer.getLastQuestionIdByCategoryId(2))
+                    {
+                        categoryTwoIndex = answer.getFirstQuestionIdByCategoryId(2);
+                    }
                     break;
                 case 2:
                 case 8:
@@ -293,6 +302,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 26:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryThreeIndex].questionId,DifficultyLevel);
                     categoryThreeIndex++;
+                    if (categoryThreeIndex >= answer.getLastQuestionIdByCategoryId(3))
+                    {
+                        categoryThreeIndex = answer.getFirstQuestionIdByCategoryId(3);
+                    }
                     break;
                 case 3:
                 case 9:
@@ -301,6 +314,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 27:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFourIndex].questionId,DifficultyLevel);
                     categoryFourIndex++;
+                    if (categoryFourIndex >= answer.getLastQuestionIdByCategoryId(4))
+                    {
+                        categoryFourIndex = answer.getFirstQuestionIdByCategoryId(4);
+                    }
                     break;
                 case 4:
                 case 10:
@@ -309,6 +326,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 28:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFiveIndex].questionId,DifficultyLevel);
                     categoryFiveIndex++;
+                    if (categoryFiveIndex >= answer.getLastQuestionIdByCategoryId(5))
+                    {
+                        categoryFiveIndex = answer.getFirstQuestionIdByCategoryId(5);
+                    }
                     break;
                 case 5:
                 case 11:
@@ -317,6 +338,11 @@ public class GameWindow extends JPanel implements ActionListener
                 case 29:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categorySixIndex].questionId,DifficultyLevel);
                     categorySixIndex++;
+                    System.out.println("GameWindow categorySixIndex = "+categorySixIndex);
+                      if (categorySixIndex >= answer.getLastQuestionIdByCategoryId(6))
+                    {
+                        categorySixIndex = answer.getFirstQuestionIdByCategoryId(6);
+                    }
                     break;
             }
             answerButtons[i].addActionListener(this);

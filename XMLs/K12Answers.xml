@@ -58,26 +58,26 @@
 
     <int>8</int>
     <string>Football</string>
-    <string>Current football coach of Penn State</string> 
-    <string>Who is James Franklin?</string>
-    <string>Who is John Madden?</string>
-    <string>Who is Bobby Bowden?</string> 
-    <int>1</int> 
+    <string>Finish the Penn State football cheer We are.....</string> 
+    <string>What is excited?</string>
+    <string>What is on fire?</string>
+    <string>What is Penn State?</string> 
+    <int>3</int> 
 
     <int>9</int>
     <string>Football</string>
-    <string>Current football coach of Penn State</string> 
-    <string>Who is James Franklin?</string>
-    <string>Who is John Madden?</string>
-    <string>Who is Bobby Bowden?</string> 
-    <int>1</int> 
+    <string>What is the Penn State band named?</string> 
+    <string>What is Penn State Band?</string>
+    <string>What is Blue Band?</string>
+    <string>What is The Band?</string> 
+    <int>2</int> 
 
     <int>10</int>
     <string>Football</string>
-    <string>Current football coach of Penn State</string> 
-    <string>Who is James Franklin?</string>
-    <string>Who is John Madden?</string>
-    <string>Who is Bobby Bowden?</string> 
+    <string>Who is the only Penn State Heisman winner?</string> 
+    <string>Who is John Cappelletti?</string>
+    <string>Who is Kijana Carter?</string>
+    <string>Who is Tony Sacca?</string> 
     <int>1</int> 
 
     <int>11</int>
@@ -399,4 +399,84 @@
     <string>Who is Herman Fisher</string>
     <string>Who is John Phillipe Sousa</string>
     <int>1</int>
+
+    <int>51</int>
+    <string>Football</string>
+    <string>University Joe Paterno played football for</string> 
+    <string>What is Penn State?</string>
+    <string>What is Brown?</string>
+    <string>What is Michigan?</string> 
+    <int>2</int> 
+    
+    <int>52</int>
+    <string>Football</string>
+    <string>Conference Penn State football plays in</string> 
+    <string>What is the ACC?</string>
+    <string>What is the SEC?</string>
+    <string>What is Big Ten?</string> 
+    <int>3</int> 
+
+    <int>53</int>
+    <string>Football</string>
+    <string>Name of annual spring football scrimmage</string> 
+    <string>What is the Blue and White game?</string>
+    <string>What is the spring scrimmage?</string>
+    <string>What is Nittany Lion Bowl?</string> 
+    <int>1</int> 
+
+    <int>54</int>
+    <string>Football</string>
+    <string>Color of home football jersey</string> 
+    <string>What is blue?</string>
+    <string>What is green?</string>
+    <string>What is red?</string> 
+    <int>1</int> 
+    
+    <int>55</int>
+    <string>Football</string>
+    <string>Name of Penn State football stadium</string> 
+    <string>What is recreation hall?</string>
+    <string>What is Beaver Stadium?</string>
+    <string>What is Nittany Stadium?</string> 
+    <int>2</int> 
+
+    <int>56</int>
+    <string>Football</string>
+    <string>Name of football team mascot</string> 
+    <string>What is Joe Penn State?</string>
+    <string>What is Sparty?</string>
+    <string>What is Nittany Lion?</string> 
+    <int>3</int> 
+
+    <int>57</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>58</int>
+    <string>Football</string>
+    <string>Finish the Penn State football cheer We are.....</string> 
+    <string>What is excited?</string>
+    <string>What is on fire?</string>
+    <string>What is Penn State?</string> 
+    <int>3</int> 
+
+    <int>59</int>
+    <string>Football</string>
+    <string>What is the Penn State band named?</string> 
+    <string>What is Penn State Band?</string>
+    <string>What is Blue Band?</string>
+    <string>What is The Band?</string> 
+    <int>2</int> 
+
+    <int>60</int>
+    <string>Football</string>
+    <string>Who is the only Penn State Heisman winner?</string> 
+    <string>Who is John Cappelletti?</string>
+    <string>Who is Kijana Carter?</string>
+    <string>Who is Tony Sacca?</string> 
+    <int>1</int> 
 </java> 

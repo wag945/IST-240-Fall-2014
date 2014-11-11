@@ -87,13 +87,28 @@ public class GameWindow extends JPanel implements ActionListener
     public void addScore(int Score)
     {    
         System.out.println("GameWindow addScore score = "+Score);
-        for (Object obj: CurrentPlayers.toArray())
+        
+        if (Score < 0)
         {
-            Person pCurrent = (Person)obj;
-            if (pCurrent.getPlayer() == CurrentPlayerNum)
-            {            
-                int oldScore = pCurrent.getScore();
-                pCurrent.setScore(Score+oldScore);
+            if (CurrentPlayerNum == CurrentPlayers.getSize())
+            {
+                CurrentPlayerNum=1;
+            }
+            else
+            {
+                CurrentPlayerNum++;
+            }
+        }
+          else
+        {
+            for (Object obj: CurrentPlayers.toArray())
+            {
+                Person pCurrent = (Person)obj;
+                if (pCurrent.getPlayer() == CurrentPlayerNum)
+                {            
+                    int oldScore = pCurrent.getScore();
+                    pCurrent.setScore(Score+oldScore);
+                }
             }
         }
         setPlayerNameOnLabel(CurrentPlayerNum);

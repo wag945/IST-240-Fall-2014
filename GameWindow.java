@@ -96,6 +96,7 @@ public class GameWindow extends JPanel implements ActionListener
                 pCurrent.setScore(Score+oldScore);
             }
         }
+        setPlayerNameOnLabel(CurrentPlayerNum);
     }
     
     @Override

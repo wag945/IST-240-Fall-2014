@@ -26,6 +26,7 @@ public class GameWindow extends JPanel implements ActionListener
     int CurrentPlayerNum;
     
     myJFrame ParentFrame;
+    Answer answer;
     
     //Settings
     int DifficultyLevel = 0;    
@@ -51,6 +52,8 @@ public class GameWindow extends JPanel implements ActionListener
         setLayout(new GridLayout(7,6));
         
         createLabels();
+        
+        answer = new Answer();
         
         createCategoryButtons();
 
@@ -150,28 +153,87 @@ public class GameWindow extends JPanel implements ActionListener
     
     public void createAnswerButtons()
     {
+        String label = "";
+        int categoryOneIndex = 0;
+        int categoryTwoIndex = 11;
+        int categoryThreeIndex = 21;
+        int categoryFourIndex = 31;
+        int categoryFiveIndex = 41;
+        int categorySixIndex = 0;
         for (int i = 0; i < answerButtons.length; i++)
         {
             //Temp till we have questions read from XML
             if (i < 6)
             {
-                answerButtons[i] = new AnswerButton(oneHundred,"What (type test to check)","test");
+                label = oneHundred;
             }
             else if (i >= 6 && i < 12)
             {
-                answerButtons[i] = new AnswerButton(twoHundred,"What (type test to check)","test");
+                label = twoHundred;
             }
             else if (i >= 12 && i < 18)
             {
-                answerButtons[i] = new AnswerButton(threeHundred,"What (type test to check)","test");
+                label = threeHundred;
             }
             else if (i >= 18 && i < 24)
             {
-                answerButtons[i] = new AnswerButton(fourHundred,"What (type test to check)","test");
+                label = fourHundred;
             }
             else
             {
-                answerButtons[i] = new AnswerButton(fiveHundred,"What (type test to check)","test");                
+                label = fiveHundred;
+            }
+            
+            switch(i)
+            {
+                case 0:
+                case 6:
+                case 12:
+                case 18:
+                case 24:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryOneIndex].questionId,DifficultyLevel);
+                    categoryOneIndex++;
+                    break;
+                case 1:
+                case 7:
+                case 13:
+                case 19:
+                case 25:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryTwoIndex].questionId,DifficultyLevel);
+                    categoryTwoIndex++;
+                    break;
+                case 2:
+                case 8:
+                case 14:
+                case 20:
+                case 26:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryThreeIndex].questionId,DifficultyLevel);
+                    categoryThreeIndex++;
+                    break;
+                case 3:
+                case 9:
+                case 15:
+                case 21:
+                case 27:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFourIndex].questionId,DifficultyLevel);
+                    categoryFourIndex++;
+                    break;
+                case 4:
+                case 10:
+                case 16:
+                case 22:
+                case 28:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFiveIndex].questionId,DifficultyLevel);
+                    categoryFiveIndex++;
+                    break;
+                case 5:
+                case 11:
+                case 17:
+                case 23:
+                case 29:
+                    answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categorySixIndex].questionId,DifficultyLevel);
+                    categorySixIndex++;
+                    break;
             }
             answerButtons[i].addActionListener(this);
         }
@@ -181,9 +243,8 @@ public class GameWindow extends JPanel implements ActionListener
     {
         for (int i = 0; i < categoryButtons.length; i++)
         {
-            //Temp till we have actual categories read from XML
-            Integer iStr = i+1;
-            categoryButtons[i] = new CategoryButton("Category "+iStr.toString());
+            String title = answer.getCategoryNameById(i+1);
+            categoryButtons[i] = new CategoryButton(title);
         }
     }
     

@@ -99,6 +99,7 @@ public class QuestionWindow extends JPanel implements ActionListener {
         timer.stop();
         answerCorrect = isAnswerCorrect();
         System.out.println("answerCorrect = "+answerCorrect);
+        updateScore(answerCorrect);
         parentFrame.hideWindow(answerCorrect);
     }
     
@@ -161,5 +162,41 @@ public class QuestionWindow extends JPanel implements ActionListener {
                 timeTextField.setText(minutes.toString()+":"+seconds.toString());
             }
         }        
+    }
+    
+    public void updateScore(boolean correct)
+    {
+        int score = 0;
+        //First get the score value for this question
+        System.out.println("QuestionWindow updateScore button value = "+parentFrame.parentButton.getButtonValue());
+        if (parentFrame.parentButton.getButtonValue().equals("$100"))
+        {
+            score = 100;
+        }
+        else if (parentFrame.parentButton.getButtonValue().equals("$200"))
+        {
+            score = 200;
+        }
+        else if (parentFrame.parentButton.getButtonValue().equals("$300"))
+        {
+            score = 300;
+        }
+        else if (parentFrame.parentButton.getButtonValue().equals("$400"))
+        {
+            score = 400;
+        }
+        else if (parentFrame.parentButton.getButtonValue().equals("$500"))
+        {
+            score = 500;
+        }
+        
+        //Increment/decrement the score based on whether the answer is correct
+        if (false == correct)
+        {
+            score *= -1;
+        }
+        
+        //Notify the game window of the new score
+        parentFrame.parentButton.parentFrame.gameWindow.addScore(score);
     }
 }

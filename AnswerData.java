@@ -19,13 +19,13 @@ public class AnswerData {
             String theAnswer2,
             String theAnswer3,
             int theCorrectAnswer) {
-        questionId = id;
-        category = theCategory;
-        question = theQuestion;
-        answer1 = theAnswer1;
-        answer2 = theAnswer2;
-        answer3 = theAnswer3;
-        correctAnswer = theCorrectAnswer;
+        setQuestionId(id);
+        setCategory(theCategory);
+        setQuestion(theQuestion);
+        setAnswer1(theAnswer1);
+        setAnswer2(theAnswer2);
+        setAnswer3(theAnswer3);
+        setCorrectAnswer(theCorrectAnswer);
     }
 
     int getQuestionId() {

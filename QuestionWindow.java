@@ -26,12 +26,19 @@ public class QuestionWindow extends JPanel implements ActionListener {
     ButtonGroup answerButtonGroup;
     JCheckBox answerButton1,answerButton2,answerButton3;
     boolean answerCorrect = false;
+    AnswerData answerData;
     
-    public QuestionWindow(QuestionFrame frame)
+    public QuestionWindow(QuestionFrame frame,AnswerData data)
     {
         super();
         setLayout(new BorderLayout());
         parentFrame = frame;
+        answerData = data;
+        System.out.println("QuestionWindow");
+        System.out.println("question id = "+answerData.getQuestionId());
+        System.out.println("question = "+answerData.getQuestion());
+        System.out.println("answer1 = "+answerData.getAnswer1());
+        System.out.println("answer2 = "+answerData.getAnswer2());
         setBackground(Color.BLUE);
         setVisible(true);
         timeLeft = 10;
@@ -50,8 +57,8 @@ public class QuestionWindow extends JPanel implements ActionListener {
         Font questionFont = new Font("SansSerif",Font.BOLD,16);
         questionTextField = new JTextArea(2,25);
         questionTextField.setLineWrap(true);
-        //questionTextField = new JTextField("University Joe Paterno played football for");
-        questionTextField.setText("University Joe Paterno played "+"\n"+"football for");
+        questionTextField.setWrapStyleWord(true);
+        questionTextField.setText(answerData.getQuestion());
         questionTextField.setAutoscrolls(true);
         questionTextField.setFont(questionFont);
         centerPanel.add(questionTextField,BorderLayout.NORTH);
@@ -61,16 +68,16 @@ public class QuestionWindow extends JPanel implements ActionListener {
         centerPanel.add(answerPanel,BorderLayout.CENTER);
         answerButtonGroup = new ButtonGroup();
         answerButton1 = new JCheckBox();
-        answerButton1.setText("Penn State");
-	Font answerFont = new Font("SansSerif", Font.BOLD, 20);
+        answerButton1.setText(answerData.getAnswer1());
+	Font answerFont = new Font("SansSerif", Font.BOLD, 18);
         answerButton1.setFont(answerFont);
         answerButtonGroup.add(answerButton1);
         answerButton2 = new JCheckBox();
-        answerButton2.setText("Brown");
+        answerButton2.setText(answerData.getAnswer2());
         answerButton2.setFont(answerFont);
         answerButtonGroup.add(answerButton2);
         answerButton3 = new JCheckBox();
-        answerButton3.setText("Michigan");
+        answerButton3.setText(answerData.getAnswer3());
         answerButton3.setFont(answerFont);
         answerButtonGroup.add(answerButton3);
         answerPanel.add(answerButton1);
@@ -90,9 +97,26 @@ public class QuestionWindow extends JPanel implements ActionListener {
     public void hideWindow()
     {
         timer.stop();
-        answerCorrect = answerButton2.isSelected();
+        answerCorrect = isAnswerCorrect();
         System.out.println("answerCorrect = "+answerCorrect);
         parentFrame.hideWindow(answerCorrect);
+    }
+    
+    public boolean isAnswerCorrect()
+    {
+        switch(answerData.getCorrectAnswer())
+        {
+            case 1:
+                answerCorrect = answerButton1.isSelected();
+                break;
+            case 2:
+                answerCorrect = answerButton2.isSelected();
+                break;
+            case 3:
+                answerCorrect = answerButton3.isSelected();
+                break;
+        }
+        return answerCorrect;
     }
     
     @Override

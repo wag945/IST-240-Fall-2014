@@ -13,10 +13,14 @@ public class QuestionFrame extends JFrame
 {
     QuestionWindow window;
     AnswerData answerData;
+    myJFrame parentFrame;
+    AnswerButton parentButton;
     
-    public QuestionFrame (AnswerData data)
+    public QuestionFrame (AnswerButton button,myJFrame frame,AnswerData data)
     {
         super("Question");
+        parentButton = button;
+        parentFrame = frame;
         answerData = data;
         //------------------------------------------------------
         // Create components

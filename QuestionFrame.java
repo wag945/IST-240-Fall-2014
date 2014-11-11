@@ -12,12 +12,15 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class QuestionFrame extends JFrame
 {
     QuestionWindow window;
-    public QuestionFrame ()
+    AnswerData answerData;
+    
+    public QuestionFrame (AnswerData data)
     {
         super("Question");
+        answerData = data;
         //------------------------------------------------------
         // Create components
-        window = new QuestionWindow(this);
+        window = new QuestionWindow(this,answerData);
         //------------------------------------------------------
         // Choose a Layout for JFrame and 
         // add Jpanel to JFrame according to layout    	
@@ -27,7 +30,7 @@ public class QuestionFrame extends JFrame
         
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(400,200,300,300);
+        setBounds(400,200,400,400);
         setVisible(false);
     }
     

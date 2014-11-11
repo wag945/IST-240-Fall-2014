@@ -27,6 +27,7 @@ class Answer {
         String answer3 = "";
         int correctAnswer = 0;
         x2.openReaderXMLFromSrc("K12Answers.xml");
+        //x2.openReaderXMLFromStream("/XMLs/K12Answers.xml");
         for (int i = 0; i < k12Answers.length; i++) {
             questionId = (Integer) x2.ReadObject();
             category = (String) x2.ReadObject();

@@ -61,10 +61,18 @@ public class XML_240
     //==========================================================================
     //==========================================================================
     //==========================================================================
-    public void openReaderXMLFromSrc(String filename)
+    public void openReaderXMLFromSrc(String filename) //can be removed if openReaderXMLFromStream is used 
     {
         try {
             de = new XMLDecoder(new BufferedInputStream(new FileInputStream(filename)));
+        }
+        catch(Exception xx) {xx.printStackTrace();}
+    }
+    
+    public void openReaderXMLFromStream(String filename)
+    {
+        try {
+            de = new XMLDecoder(new BufferedInputStream(getClass().getResourceAsStream(filename)));
         }
         catch(Exception xx) {xx.printStackTrace();}
     }

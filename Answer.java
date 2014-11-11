@@ -10,8 +10,8 @@ class Answer {
     AnswerData[] k12Answers;
     AnswerData[] undergradAnswers;
     AnswerData[] gradAnswers;
-    int NUM_ANSWERS = 50;
-    int NUM_CATEGORIES = 4;
+    int NUM_ANSWERS = 60;
+    int NUM_CATEGORIES = 6;
     int NUM_ANSWERS_PER_CATEGORY = 10;
 
     public Answer() {
@@ -26,7 +26,6 @@ class Answer {
         String answer2 = "";
         String answer3 = "";
         int correctAnswer = 0;
-        //x2.openReaderXMLFromSrc("K12Answers.xml");
         x2.openReaderXMLFromStream("/XMLs/K12Answers.xml");
         for (int i = 0; i < k12Answers.length; i++) {
             questionId = (Integer) x2.ReadObject();
@@ -135,6 +134,8 @@ class Answer {
             categoryId = 4;
         } else if (categoryByName.equals("Famous PSU Alum")) {
             categoryId = 5;
+        } else if (categoryByName.equals("TBD")) {
+            categoryId = 6;
         }
         return categoryId;
     }
@@ -156,6 +157,9 @@ class Answer {
                 break;
             case 5:
                 name = "Famous PSU Alum";
+                break;
+            case 6:
+                name = "TBD";
                 break;
         }
 

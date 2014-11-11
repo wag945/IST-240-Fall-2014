@@ -27,8 +27,8 @@
     <int>4</int>
     <string>Football</string>
     <string>Color of home football jersey</string> 
-    <string>What is the blue?</string>
-    <string>What is the green?</string>
+    <string>What is blue?</string>
+    <string>What is green?</string>
     <string>What is red?</string> 
     <int>1</int> 
     
@@ -323,80 +323,80 @@
     <int>41</int>
     <string>Famous PSU Alum</string>
     <string>He’s the writer and producer of Step Brothers and Anchorman: The Legend of Ron Burgundy, among other hilarious movies</string>
-    <string>who is Ty Burrell</string>
-    <string>who is Adam McKay</string>
-    <string>who is Mark Parker</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Adam McKay</string>
+    <string>Who is Mark Parker</string>
     <int>2</int>
 
     <int>42</int>
     <string>Famous PSU Alum</string>
-    <string>he has been the President and CEO of Nike. According to Forbes, his compensation is worth upwards of $15 million per year.</string>
-    <string>who is Ty Burrell</string>
-    <string>who is Jef Raskin</string>
-    <string>who is Mark Parker</string>
+    <string>He has been the President and CEO of Nike. According to Forbes, his compensation is worth upwards of $15 million per year.</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Jef Raskin</string>
+    <string>Who is Mark Parker</string>
     <int>3</int>
 
     <int>43</int>
     <string>Famous PSU Alum</string>
     <string>She graduated in 1991 with a degree in broadcast journalism.began her television career on HGTV. In August 2014, she was promoted to co-host of Good Morning America.</string>
-    <string>who is Lara Spencer</string>
-    <string>who is Margaret Carlson</string>
-    <string>who is Patricia Woertz</string>
+    <string>Who is Lara Spencer</string>
+    <string>Who is Margaret Carlson</string>
+    <string>Who is Patricia Woertz</string>
     <int>1</int>
 
     <int>44</int>
     <string>Famous PSU Alum</string>
     <string>She invented and marketed the Slinky with the help of her husband</string>
-    <string>who is Tammy Swift</string>
-    <string>who is Betty James</string>
-    <string>who is Suzie Azalea</string>
+    <string>Who is Tammy Swift</string>
+    <string>Who is Betty James</string>
+    <string>Who is Suzie Azalea</string>
     <int>2</int>
 
     <int>45</int>
     <string>Famous PSU Alum</string>
-    <string>writer and producer on Home Improvement and The Cosby Show. He was nominated for six Primetime Emmys.</string>
-    <string>who is Carmen Electra</string>
-    <string>who is Frank N. Stein</string>
-    <string>who is Carmen Finestra</string>
+    <string>Writer and producer on Home Improvement and The Cosby Show. He was nominated for six Primetime Emmys.</string>
+    <string>Who is Carmen Electra</string>
+    <string>Who is Frank N. Stein</string>
+    <string>Who is Carmen Finestra</string>
     <int>3</int>
 
     <int>46</int>
     <string>Famous PSU Alum</string>
-    <string>got his big break with the role of Phil Dunphy from Modern Family. The show now pulls in about 12 million viewers per episode.</string>
-    <string>who is Phil Donahue</string>
-    <string>who is Ty Burrell</string>
-    <string>who is Jerry Seinfeld</string>
+    <string>Got his big break with the role of Phil Dunphy from Modern Family. The show now pulls in about 12 million viewers per episode.</string>
+    <string>Who is Phil Donahue</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Jerry Seinfeld</string>
     <int>2</int>
 
     <int>47</int>
     <string>Famous PSU Alum</string>
-    <string> dubbed the “Father of the Macintosh.” He was one of the first employees for Apple and wanted a computer that was easier for people to use. He also gave the Macintosh its namesake, after his favorite kind of apple.</string>
-    <string>who is Phil Macintosh</string>
-    <string>who is Steve Jobs</string>
-    <string>who is Jef Raskin</string>
+    <string>Dubbed the “Father of the Macintosh.” He was one of the first employees for Apple and wanted a computer that was easier for people to use. He also gave the Macintosh its namesake, after his favorite kind of apple.</string>
+    <string>Who is Phil Macintosh</string>
+    <string>Who is Steve Jobs</string>
+    <string>Who is Jef Raskin</string>
     <int>3</int>
 
     <int>48</int>
     <string>Famous PSU Alum</string>
-    <string>the first African American to travel in space as a specialist aboard the Challenger on the mission STS-8.</string>
-    <string>who is Guion Bluford </string>
-    <string>who is Allan West</string>
-    <string>who is Johnny Owens</string>
+    <string>The first African American to travel in space as a specialist aboard the Challenger on the mission STS-8.</string>
+    <string>Who is Guion Bluford </string>
+    <string>Who is Allan West</string>
+    <string>Who is Johnny Owens</string>
     <int>1</int>
 
     <int>49</int>
     <string>Famous PSU Alum</string>
-    <string>a popular soap opera actor (he’s most acclaimed for his role on Days of Our Lives)</string>
-    <string>who is John Voight</string>
-    <string>who is John Stamos</string>
-    <string>who is John Aniston</string>
+    <string>A popular soap opera actor (he’s most acclaimed for his role on Days of Our Lives)</string>
+    <string>Who is John Voight</string>
+    <string>Who is John Stamos</string>
+    <string>Who is John Aniston</string>
     <int>3</int>
 
     <int>50</int>
     <string>Famous PSU Alum</string>
     <string>A photographer for National Geographic, shot the most widely recognized photos in the world today” called “The Afghan Girl” in 1985. The photo was displayed at the Palmer Art Museum on campus.</string>
-    <string>who is Steve McCurry</string>
-    <string>who is Herman Fisher</string>
-    <string>who is John Phillipe Sousa</string>
+    <string>Who is Steve McCurry</string>
+    <string>Who is Herman Fisher</string>
+    <string>Who is John Phillipe Sousa</string>
     <int>1</int>
 </java> 

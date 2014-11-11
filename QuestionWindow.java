@@ -91,11 +91,15 @@ public class QuestionWindow extends JPanel implements ActionListener {
 
     public void displayWindow()
     {
+        //Disable the parent game window
+        parentFrame.parentFrame.setEnabled(false);
         timer.start();
     }
     
     public void hideWindow()
     {
+        //Enable the parent game window
+        parentFrame.parentFrame.setEnabled(true);
         timer.stop();
         answerCorrect = isAnswerCorrect();
         System.out.println("answerCorrect = "+answerCorrect);
@@ -168,7 +172,6 @@ public class QuestionWindow extends JPanel implements ActionListener {
     {
         int score = 0;
         //First get the score value for this question
-        System.out.println("QuestionWindow updateScore button value = "+parentFrame.parentButton.getButtonValue());
         if (parentFrame.parentButton.getButtonValue().equals("$100"))
         {
             score = 100;

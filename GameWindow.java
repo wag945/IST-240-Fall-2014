@@ -99,7 +99,7 @@ public class GameWindow extends JPanel implements ActionListener
                 CurrentPlayerNum++;
             }
         }
-          else
+        else
         {
             for (Object obj: CurrentPlayers.toArray())
             {

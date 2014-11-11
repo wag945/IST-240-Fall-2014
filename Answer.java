@@ -10,7 +10,7 @@ class Answer {
     AnswerData[] k12Answers;
     AnswerData[] undergradAnswers;
     AnswerData[] gradAnswers;
-    int NUM_ANSWERS = 40;
+    int NUM_ANSWERS = 50;
     int NUM_CATEGORIES = 4;
     int NUM_ANSWERS_PER_CATEGORY = 10;
 
@@ -26,7 +26,7 @@ class Answer {
         String answer2 = "";
         String answer3 = "";
         int correctAnswer = 0;
-        x2.openReaderXML("K12Answers.xml");
+        x2.openReaderXMLFromSrc("K12Answers.xml");
         for (int i = 0; i < k12Answers.length; i++) {
             questionId = (Integer) x2.ReadObject();
             category = (String) x2.ReadObject();
@@ -37,7 +37,7 @@ class Answer {
             correctAnswer = (Integer) x2.ReadObject();
             k12Answers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
         }
-        printK12Answers();
+        //printK12Answers();
         x2.closeReaderXML();
     }
 
@@ -132,6 +132,8 @@ class Answer {
             categoryId = 3;
         } else if (categoryByName.equals("PSU Web")) {
             categoryId = 4;
+        } else if (categoryByName.equals("Famous PSU Alum")) {
+            categoryId = 5;
         }
         return categoryId;
     }
@@ -150,6 +152,9 @@ class Answer {
                 break;
             case 4:
                 name = "PSU Web";
+                break;
+            case 5:
+                name = "Famous PSU Alum";
                 break;
         }
 

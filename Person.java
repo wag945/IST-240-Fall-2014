@@ -15,6 +15,7 @@ public class Person
 {
     private String Name;
     private Integer Score;
+    private Integer TScore;
     private int Level;
     private int Player;
     private Date DateLastPlayed;
@@ -65,6 +66,27 @@ public class Person
      */
     public void setScore(int Score) {
         this.Score = Score;
+    }
+
+    /**
+     * @return the TScore
+     */
+    public int getTScore() {
+         if (TScore != null)
+        {
+            return TScore;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    /**
+     * @param TScore the TScore to set
+     */
+    public void setTScore(int TScore) {
+        this.TScore = TScore;
     }
 
     /**

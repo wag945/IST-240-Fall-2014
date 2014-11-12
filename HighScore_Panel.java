@@ -73,21 +73,24 @@ public class HighScore_Panel extends JPanel
         {
             for(int i=0; i<10 ; i++) //reverse order of array
             {
-                lName[i] = new JLabel();
-                lName[i].setName("lName_" + (i+1));                
-                lName[i].setText(ArrayOfPlayersAndScores[i][0]);
-                lName[i].setBounds(lX + 30, lY, 150, 27);
-                lName[i].setForeground(Color.white);
-                scoreListDisplay.add(lName[i]);        
+                if (!ArrayOfPlayersAndScores[i][1].trim().equals("0"))
+                {
+                    lName[i] = new JLabel();
+                    lName[i].setName("lName_" + (i+1));                
+                    lName[i].setText(ArrayOfPlayersAndScores[i][0]);
+                    lName[i].setBounds(lX + 30, lY, 150, 27);
+                    lName[i].setForeground(Color.white);
+                    scoreListDisplay.add(lName[i]);        
 
-                lScore[i] = new JLabel();
-                lScore[i].setName("lScore_" + (i+1));
-                lScore[i].setText(ArrayOfPlayersAndScores[i][1].trim());
-                lScore[i].setBounds(lX + 90, lY, 140, 27);
-                lScore[i].setForeground(Color.white);
-                lScore[i].setHorizontalAlignment(SwingConstants.RIGHT);
-                scoreListDisplay.add(lScore[i]);
-                lY += 30;   
+                    lScore[i] = new JLabel();
+                    lScore[i].setName("lScore_" + (i+1));
+                    lScore[i].setText(ArrayOfPlayersAndScores[i][1].trim());
+                    lScore[i].setBounds(lX + 90, lY, 140, 27);
+                    lScore[i].setForeground(Color.white);
+                    lScore[i].setHorizontalAlignment(SwingConstants.RIGHT);
+                    scoreListDisplay.add(lScore[i]);
+                    lY += 30;   
+                }
 
                 if (ArrayOfPlayersAndScores[i+1][0] == null)
                 {
@@ -107,8 +110,19 @@ public class HighScore_Panel extends JPanel
         
         int i=0;
         for (Object obj : ListOfAllPlayers.toArray()) // Extract score from each person
-        {            
+        {
             Person pCurrent = (Person)obj;
+            
+            if (pCurrent.getScore() < 0)
+            {
+                pCurrent.setScore(0);
+            }
+            
+            if (pCurrent.getTScore() < 0)
+            {
+                pCurrent.setTScore(0);
+            }
+            
             if (AllTime)
             {                
                 ArrayOfAllPlayersAndScores[i][0] = pCurrent.getName().toUpperCase();
@@ -122,11 +136,12 @@ public class HighScore_Panel extends JPanel
                     if (sdf.format(date).equals(sdf.format(pCurrent.getDateLastPlayed())))
                     {
                         ArrayOfAllPlayersAndScores[i][0] = pCurrent.getName().toUpperCase();
-                        ArrayOfAllPlayersAndScores[i][1] = String.format("%,10d", pCurrent.getScore()); //formats score in 10 digit string with commas
+                        ArrayOfAllPlayersAndScores[i][1] = String.format("%,10d", pCurrent.getTScore()); //formats score in 10 digit string with commas
                         i++;                
                     }
                 }
-            }            
+            }   
+            
         }  
         
         if (i>0)

@@ -26,6 +26,8 @@ public class GameWindow extends JPanel implements ActionListener
     JLabel lPlayerName;
     JLabel lScore;
     String CurrentPlayer;
+    JLabel lTemp1;
+    JLabel lTemp2;
     int CurrentPlayerNum;
     
     myJFrame ParentFrame;
@@ -49,7 +51,7 @@ public class GameWindow extends JPanel implements ActionListener
         threeHundred = "$300";
         fourHundred = "$400";
         fiveHundred = "$500";
-        numberAvailableAnswers = 30;
+        numberAvailableAnswers = 5;
         CurrentPlayerNum = 1;
         
         setLayout(new GridLayout(7,6));
@@ -82,7 +84,7 @@ public class GameWindow extends JPanel implements ActionListener
             if (pCurrent.getPlayer() == PlayerNumber)
             {            
                 lPlayerName.setText(pCurrent.getName());
-                lScore.setText(String.valueOf(pCurrent.getScore()));            
+                lScore.setText(String.valueOf(pCurrent.getTScore()));            
             }
         }
     }
@@ -97,15 +99,28 @@ public class GameWindow extends JPanel implements ActionListener
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            if (pCurrent.getScore() > MaxScore)
+            if (pCurrent.getTScore() > MaxScore)
             {
-                MaxScore = pCurrent.getScore();
+                MaxScore = pCurrent.getTScore();
                 Winner = pCurrent.getName();
             }
         }
         
-        lPlayerWon.setVisible(true);
+        if (Winner.equals(""))
+        {
+            Winner = "No one ";
+            lPlayerWon.setForeground(Color.red);
+            lPlayerWonName.setForeground(Color.red);
+        }
+        
         lPlayerWonName.setText(Winner);
+        
+        
+        lTemp1.setVisible(false);
+        lTemp2.setVisible(false);
+        
+        lPlayerWon.setVisible(true);        
+        lPlayerWonName.setVisible(true);
     }
     
     public void addScore(int Score)
@@ -122,19 +137,23 @@ public class GameWindow extends JPanel implements ActionListener
             {
                 CurrentPlayerNum++;
             }
-        }
-        else
+       }
+        //else
+        //{
+        for (Object obj: CurrentPlayers.toArray())
         {
-            for (Object obj: CurrentPlayers.toArray())
-            {
-                Person pCurrent = (Person)obj;
-                if (pCurrent.getPlayer() == CurrentPlayerNum)
-                {            
-                    int oldScore = pCurrent.getScore();
+            Person pCurrent = (Person)obj;
+            if (pCurrent.getPlayer() == CurrentPlayerNum)
+            {            
+                int oldScore = pCurrent.getTScore();
+                pCurrent.setTScore(Score+oldScore);
+                if ((Score+oldScore) > pCurrent.getScore())
+                {
                     pCurrent.setScore(Score+oldScore);
                 }
             }
         }
+        //}
         setPlayerNameOnLabel(CurrentPlayerNum);
         
         CheckIfGameIsEnding();
@@ -169,7 +188,6 @@ public class GameWindow extends JPanel implements ActionListener
         if (0 == numberAvailableAnswers)
         {
             //Complete the board and move to double jeopardy
-                    //maybe not lol(Z)
         }
     }
     
@@ -182,9 +200,13 @@ public class GameWindow extends JPanel implements ActionListener
             for (Object obj2: ParentFrame.setupWindow.ListOfAllPlayers.toArray())
             {
                 Person pAll = (Person)obj2;
-                if (pCurrent.getPlayer() == pAll.getPlayer())
+                if (pCurrent.getName().equals(pAll.getName()))
                 {
-                    pAll.setScore(pCurrent.getScore());
+                    if (pCurrent.getTScore() > pAll.getScore())
+                    {
+                        pAll.setScore(pCurrent.getTScore());
+                    }
+                    pAll.setTScore(pCurrent.getTScore());
                     pAll.setDateLastPlayed(date);
                     break;
                 }
@@ -198,11 +220,11 @@ public class GameWindow extends JPanel implements ActionListener
 
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
 
-        JLabel lTemp = new JLabel("Player Name: ");
-        lTemp.setFont(font);
-        lTemp.setForeground(Color.white);
-        lTemp.setHorizontalAlignment(SwingConstants.RIGHT);
-        add(lTemp);
+        lTemp1 = new JLabel("Player Name: ");
+        lTemp1.setFont(font);
+        lTemp1.setForeground(Color.white);
+        lTemp1.setHorizontalAlignment(SwingConstants.RIGHT);
+        add(lTemp1);
         
         lPlayerName = new JLabel();
         lPlayerName.setForeground(Color.white);
@@ -211,6 +233,7 @@ public class GameWindow extends JPanel implements ActionListener
                
         lPlayerWonName = new JLabel();
         lPlayerWonName.setForeground(Color.green);
+        lPlayerWonName.setVisible(false);
         lPlayerWonName.setHorizontalAlignment(SwingConstants.RIGHT);
         lPlayerWonName.setFont(font);
         add(lPlayerWonName);
@@ -221,11 +244,11 @@ public class GameWindow extends JPanel implements ActionListener
         lPlayerWon.setFont(font);
         add(lPlayerWon);
                 
-        lTemp = new JLabel("Score: ");
-        lTemp.setForeground(Color.white);
-        lTemp.setHorizontalAlignment(SwingConstants.RIGHT);
-        lTemp.setFont(font);
-        add(lTemp);
+        lTemp2 = new JLabel("Score: ");
+        lTemp2.setForeground(Color.white);
+        lTemp2.setHorizontalAlignment(SwingConstants.RIGHT);
+        lTemp2.setFont(font);
+        add(lTemp2);
         
         lScore = new JLabel();
         lScore.setForeground(Color.white);

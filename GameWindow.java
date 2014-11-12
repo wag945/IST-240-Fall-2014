@@ -51,7 +51,7 @@ public class GameWindow extends JPanel implements ActionListener
         threeHundred = "$300";
         fourHundred = "$400";
         fiveHundred = "$500";
-        numberAvailableAnswers = 5;
+        numberAvailableAnswers = 30;
         CurrentPlayerNum = 1;
         
         setLayout(new GridLayout(7,6));

@@ -25,17 +25,17 @@ public class GameHeader extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lP1 = new javax.swing.JLabel();
+        lP3 = new javax.swing.JLabel();
+        lPScore2 = new javax.swing.JLabel();
+        lP2 = new javax.swing.JLabel();
+        lPScore1 = new javax.swing.JLabel();
+        lPScore3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        tSound = new javax.swing.JToggleButton();
+        lDifficultyLevel = new javax.swing.JLabel();
+        lTheme = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -45,29 +45,32 @@ public class GameHeader extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(840, 85));
         setPreferredSize(new java.awt.Dimension(840, 85));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Player 1:");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP1.setForeground(new java.awt.Color(255, 255, 255));
+        lP1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lP1.setText("Player 1:");
+        lP1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Player 3:");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP3.setForeground(new java.awt.Color(255, 255, 255));
+        lP3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lP3.setText("Player 3:");
+        lP3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("0");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lPScore2.setForeground(new java.awt.Color(255, 255, 255));
+        lPScore2.setText("0");
+        lPScore2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Player 2:");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP2.setForeground(new java.awt.Color(255, 255, 255));
+        lP2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lP2.setText("Player 2:");
+        lP2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("0");
-        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lPScore1.setForeground(new java.awt.Color(255, 255, 255));
+        lPScore1.setText("0");
+        lPScore1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("0");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lPScore3.setForeground(new java.awt.Color(255, 255, 255));
+        lPScore3.setText("0");
+        lPScore3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Sound:");
@@ -75,16 +78,16 @@ public class GameHeader extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Difficulty Level:");
 
-        jToggleButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 5)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("OFF");
+        tSound.setBackground(new java.awt.Color(102, 102, 102));
+        tSound.setFont(new java.awt.Font("Tahoma", 0, 5)); // NOI18N
+        tSound.setForeground(new java.awt.Color(255, 255, 255));
+        tSound.setText("OFF");
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("K12");
+        lDifficultyLevel.setForeground(new java.awt.Color(255, 255, 255));
+        lDifficultyLevel.setText("K12");
 
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Gray");
+        lTheme.setForeground(new java.awt.Color(255, 255, 255));
+        lTheme.setText("Gray");
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Theme:");
@@ -109,20 +112,16 @@ public class GameHeader extends javax.swing.JPanel {
                         .addComponent(jLabel12))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lP1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lP2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(lP3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lPScore1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(lPScore2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lPScore3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -133,13 +132,13 @@ public class GameHeader extends javax.swing.JPanel {
                                 .addComponent(jLabel11)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)))
+                            .addComponent(lDifficultyLevel)
+                            .addComponent(lTheme)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(363, 363, 363)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton1)))
+                        .addComponent(tSound)))
                 .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
@@ -148,36 +147,39 @@ public class GameHeader extends javax.swing.JPanel {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel5)
+                    .addComponent(lP1)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(lDifficultyLevel)
+                    .addComponent(lPScore1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
+                    .addComponent(lP2)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(jButton1))
+                    .addComponent(lTheme)
+                    .addComponent(jButton1)
+                    .addComponent(lPScore2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel7)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lP3)
+                        .addComponent(lPScore3))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("lP1");
-        jLabel2.getAccessibleContext().setAccessibleName("lP3");
-        jLabel3.getAccessibleContext().setAccessibleName("lPScore2");
-        jLabel4.getAccessibleContext().setAccessibleName("lP2");
-        jLabel5.getAccessibleContext().setAccessibleName("lPScore1");
-        jLabel6.getAccessibleContext().setAccessibleName("lPScore3");
+        lP1.getAccessibleContext().setAccessibleName("lP1");
+        lP3.getAccessibleContext().setAccessibleName("lP3");
+        lPScore2.getAccessibleContext().setAccessibleName("lPScore2");
+        lP2.getAccessibleContext().setAccessibleName("lP2");
+        lPScore1.getAccessibleContext().setAccessibleName("lPScore1");
+        lPScore3.getAccessibleContext().setAccessibleName("lPScore3");
         jLabel7.getAccessibleContext().setAccessibleName("lSound");
         jLabel8.getAccessibleContext().setAccessibleName("lDL");
-        jToggleButton1.getAccessibleContext().setAccessibleName("tON");
-        jLabel9.getAccessibleContext().setAccessibleName("lDifficultyLevel");
+        tSound.getAccessibleContext().setAccessibleName("tSound");
+        lDifficultyLevel.getAccessibleContext().setAccessibleName("lDifficultyLevel");
+        lTheme.getAccessibleContext().setAccessibleName("lTheme");
         jButton1.getAccessibleContext().setAccessibleName("bEndGame");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -193,18 +195,18 @@ public class GameHeader extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jToggleButton1;
+    public javax.swing.JLabel lDifficultyLevel;
+    public javax.swing.JLabel lP1;
+    public javax.swing.JLabel lP2;
+    public javax.swing.JLabel lP3;
+    public javax.swing.JLabel lPScore1;
+    public javax.swing.JLabel lPScore2;
+    public javax.swing.JLabel lPScore3;
+    public javax.swing.JLabel lTheme;
+    public javax.swing.JToggleButton tSound;
     // End of variables declaration//GEN-END:variables
 }

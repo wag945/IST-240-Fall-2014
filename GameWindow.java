@@ -81,13 +81,69 @@ public class GameWindow extends JPanel implements ActionListener
     
     public void setPlayerNameOnLabel(int PlayerNumber)
     {
+        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 11);
+        Font fontB = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+                
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            if (pCurrent.getPlayer() == PlayerNumber)
-            {            
-                lPlayerName.setText(pCurrent.getName());
-                lScore.setText(String.valueOf(pCurrent.getTScore()));            
+            String cScore = String.valueOf(pCurrent.getTScore());
+            String cName = pCurrent.getName();
+            int cPlayerNum = pCurrent.getPlayer();
+            
+            switch (cPlayerNum)
+            {
+                case 1:
+                    gameHeader.lP1.setText(cName);
+                    gameHeader.lP1.setFont(font);
+                    gameHeader.lP1.setForeground(Color.gray);
+                    gameHeader.lPScore1.setText(cScore);
+                    gameHeader.lPScore1.setFont(font);
+                    gameHeader.lPScore1.setForeground(Color.gray);
+                    break;
+                case 2:
+                    gameHeader.lP2.setText(cName);
+                    gameHeader.lP2.setFont(font);
+                    gameHeader.lP2.setForeground(Color.gray);
+                    gameHeader.lPScore2.setText(cScore);
+                    gameHeader.lPScore2.setFont(font);
+                    gameHeader.lPScore2.setForeground(Color.gray);
+                    break;
+                case 3:
+                    gameHeader.lP3.setText(cName);
+                    gameHeader.lP3.setFont(font);
+                    gameHeader.lP3.setForeground(Color.gray);
+                    gameHeader.lPScore3.setText(cScore);
+                    gameHeader.lPScore3.setFont(font);
+                    gameHeader.lPScore3.setForeground(Color.gray);
+                    break;
+            }
+            
+            if (cPlayerNum == PlayerNumber)
+            {
+                lPlayerName.setText(cName);
+                lScore.setText(cScore);
+                switch (cPlayerNum)
+                {
+                    case 1:
+                        gameHeader.lP1.setFont(fontB);
+                        gameHeader.lP1.setForeground(Color.white);
+                        gameHeader.lPScore1.setFont(fontB);                        
+                        gameHeader.lPScore1.setForeground(Color.white);
+                        break;
+                    case 2:
+                        gameHeader.lP2.setFont(fontB);
+                        gameHeader.lP2.setForeground(Color.white);
+                        gameHeader.lPScore2.setFont(fontB);
+                        gameHeader.lPScore2.setForeground(Color.white);
+                        break;
+                    case 3:
+                        gameHeader.lP3.setFont(fontB);
+                        gameHeader.lP3.setForeground(Color.white);
+                        gameHeader.lPScore3.setFont(fontB);
+                        gameHeader.lPScore3.setForeground(Color.white);
+                        break;
+                }
             }
         }
     }
@@ -130,19 +186,6 @@ public class GameWindow extends JPanel implements ActionListener
     {    
         System.out.println("GameWindow addScore score = "+Score);
         
-        if (Score < 0)
-        {
-            if (CurrentPlayerNum == CurrentPlayers.getSize())
-            {
-                CurrentPlayerNum=1;
-            }
-            else
-            {
-                CurrentPlayerNum++;
-            }
-       }
-        //else
-        //{
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
@@ -156,10 +199,22 @@ public class GameWindow extends JPanel implements ActionListener
                 }
             }
         }
-        //}
+
         setPlayerNameOnLabel(CurrentPlayerNum);
         
         CheckIfGameIsEnding();
+        
+        if (Score < 0)
+        {
+            if (CurrentPlayerNum == CurrentPlayers.getSize())
+            {
+                CurrentPlayerNum=1;
+            }
+            else
+            {
+                CurrentPlayerNum++;
+            }
+       }
     }
     
     public void CheckIfGameIsEnding()

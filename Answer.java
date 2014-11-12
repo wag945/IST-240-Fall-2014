@@ -19,26 +19,7 @@ class Answer {
         undergradAnswers = new AnswerData[NUM_ANSWERS];
         gradAnswers = new AnswerData[NUM_ANSWERS];
         x2 = new XML_240(); // creates the 240 class that reads and writes XML
-        int questionId = 0;
-        String question = "";
-        String category = "";
-        String answer1 = "";
-        String answer2 = "";
-        String answer3 = "";
-        int correctAnswer = 0;
-        x2.openReaderXMLFromStream("/XMLs/K12Answers.xml");
-        for (int i = 0; i < k12Answers.length; i++) {
-            questionId = (Integer) x2.ReadObject();
-            category = (String) x2.ReadObject();
-            question = (String) x2.ReadObject();
-            answer1 = (String) x2.ReadObject();
-            answer2 = (String) x2.ReadObject();
-            answer3 = (String) x2.ReadObject();
-            correctAnswer = (Integer) x2.ReadObject();
-            k12Answers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
-        }
-        //printK12Answers();
-        x2.closeReaderXML();
+        readXmlFiles();
     }
 
     void printK12Answers() {
@@ -185,5 +166,57 @@ class Answer {
         System.out.println("answer3 = " + data.getAnswer3());
         System.out.println("correctAnswer = " + data.getCorrectAnswer());
         System.out.println();
+    }
+    
+    public void readXmlFiles()
+    {
+        int questionId = 0;
+        String question = "";
+        String category = "";
+        String answer1 = "";
+        String answer2 = "";
+        String answer3 = "";
+        int correctAnswer = 0;
+        x2.openReaderXMLFromStream("/XMLs/K12Answers.xml");
+        for (int i = 0; i < k12Answers.length; i++) {
+            questionId = (Integer) x2.ReadObject();
+            category = (String) x2.ReadObject();
+            question = (String) x2.ReadObject();
+            answer1 = (String) x2.ReadObject();
+            answer2 = (String) x2.ReadObject();
+            answer3 = (String) x2.ReadObject();
+            correctAnswer = (Integer) x2.ReadObject();
+            k12Answers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
+        }
+        //printK12Answers();
+        x2.closeReaderXML();
+
+        x2.openReaderXMLFromStream("/XMLs/UndergradAnswers.xml");
+        for (int i = 0; i < undergradAnswers.length; i++) {
+            questionId = (Integer) x2.ReadObject();
+            category = (String) x2.ReadObject();
+            question = (String) x2.ReadObject();
+            answer1 = (String) x2.ReadObject();
+            answer2 = (String) x2.ReadObject();
+            answer3 = (String) x2.ReadObject();
+            correctAnswer = (Integer) x2.ReadObject();
+            undergradAnswers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
+        }
+        //printUndergradAnswers();
+        x2.closeReaderXML();
+        
+        x2.openReaderXMLFromStream("/XMLs/GradAnswers.xml");
+        for (int i = 0; i < gradAnswers.length; i++) {
+            questionId = (Integer) x2.ReadObject();
+            category = (String) x2.ReadObject();
+            question = (String) x2.ReadObject();
+            answer1 = (String) x2.ReadObject();
+            answer2 = (String) x2.ReadObject();
+            answer3 = (String) x2.ReadObject();
+            correctAnswer = (Integer) x2.ReadObject();
+            gradAnswers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
+        }
+        //printGradAnswers();
+        x2.closeReaderXML();
     }
 }

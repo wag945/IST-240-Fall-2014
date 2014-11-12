@@ -25,7 +25,7 @@ public class GameWindow extends JPanel implements ActionListener
     JLabel lPlayerWonName;
     JLabel lPlayerName;
     JLabel lScore;
-    String CurrentPlayer;
+    //String CurrentPlayer;
     JLabel lTemp1;
     JLabel lTemp2;
     int CurrentPlayerNum;
@@ -37,10 +37,13 @@ public class GameWindow extends JPanel implements ActionListener
     int DifficultyLevel = 0;    
     PlayersList CurrentPlayers;    
     
-    public GameWindow(myJFrame mjf, GameTimerWindow gtw)
+    GameHeader gameHeader;
+    
+    public GameWindow(myJFrame mjf, GameTimerWindow gtw, GameHeader gh)
     {
         super();
         ParentFrame = mjf;
+        gameHeader = gh;
         CurrentPlayers = ParentFrame.setupWindow.SelectedPlayers;
         DifficultyLevel = ParentFrame.setupWindow.DifficultyLevel;
         gtw.resetTimer();
@@ -217,7 +220,6 @@ public class GameWindow extends JPanel implements ActionListener
     
     public final void createLabels()
     {
-
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
 
         lTemp1 = new JLabel("Player Name: ");
@@ -400,6 +402,21 @@ public class GameWindow extends JPanel implements ActionListener
         {
             Person pCurrent = (Person)obj;           
             pCurrent.setScore(0);
+            pCurrent.setTScore(0);
         }
     }
+    
+//    @Override
+//    public void paintComponent(Graphics g) 
+//    {
+//        super.paintComponent(g);
+//        
+//        
+//            Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
+//            g.setFont(font);
+//            g.setColor(Color.yellow);
+//            g.drawString("Test", 0,0);
+//        
+//        
+//    }
 }

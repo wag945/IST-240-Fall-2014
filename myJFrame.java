@@ -14,6 +14,7 @@ import javax.swing.*;
 public class myJFrame extends JFrame implements WindowListener
 {
     GameWindow gameWindow;
+    GameHeader gameHeader;
     SetupWindow setupWindow;
     IntroductionWindow introductionWindow;
     InstructionsWindow instructionsWindow;
@@ -131,10 +132,14 @@ public class myJFrame extends JFrame implements WindowListener
     {
         if (false == gameWindow.isVisible())
         {
-            getContentPane().add(gameWindow,BorderLayout.CENTER);
+            introductionWindowOff();
+            //getContentPane().add(gameHeader,BorderLayout.NORTH);
+            gameHeaderOn();
+            getContentPane().add(gameWindow,BorderLayout.CENTER);            
             gameWindow.setVisible(true);
             timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);
             timerFrame.displayWindow();
+            //repaint();
             //playerTurnFrame.setBounds(getBounds().x+840+4, getBounds().y+100, 260, 100);
             //playerTurnFrame.displayWindow();
             
@@ -152,11 +157,13 @@ public class myJFrame extends JFrame implements WindowListener
                 timerFrame.hideWindow();
                 //playerTurnFrame.hideWindow();
 //            }
-
+            gameHeaderOff();
+            introductionWindowOn();
             gameWindow.removeAll();
             gameWindow.repaint();
             getContentPane().remove(gameWindow);
             gameWindow = null;
+            
         }
     }
     
@@ -195,6 +202,44 @@ public class myJFrame extends JFrame implements WindowListener
             instructionsWindow.setVisible(false);
         }
     }
+    
+    public void introductionWindowOff()
+    {
+        if (true == introductionWindow.isVisible())
+        {
+            getContentPane().remove(introductionWindow);
+            introductionWindow.setVisible(false);
+        }
+    }
+    
+    public void introductionWindowOn()
+    {
+        if (false == introductionWindow.isVisible())
+        {
+            getContentPane().add(introductionWindow,BorderLayout.NORTH);
+            introductionWindow.setVisible(true);
+        }
+    }
+    
+    public void gameHeaderOff()
+    {
+        if (true == gameHeader.isVisible())
+        {
+            getContentPane().remove(gameHeader);
+            gameHeader.setVisible(false);
+        }
+    }
+    
+    public void gameHeaderOn()
+    {
+        if (false == gameHeader.isVisible())
+        {
+            getContentPane().add(gameHeader,BorderLayout.NORTH);
+            gameHeader.setVisible(true);
+        }
+    }
+    
+    
     
     public void aboutWindowOn()
     {
@@ -270,7 +315,10 @@ public class myJFrame extends JFrame implements WindowListener
             getContentPane().remove(gameWindow);
             gameWindow = null;
         }
-        gameWindow = new GameWindow(this, timerFrame.window);
+        gameHeader = new GameHeader(this);
+        gameHeader.setVisible(false);
+        gameWindow = new GameWindow(this, timerFrame.window, gameHeader);
+        
         //getContentPane().add(gameWindow,BorderLayout.CENTER);
     }
 

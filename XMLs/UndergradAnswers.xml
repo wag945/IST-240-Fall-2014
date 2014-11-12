@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_65" class="java.beans.XMLDecoder"> 
+    <int>1</int>
+    <string>Football</string>
+    <string>University Joe Paterno played football for</string> 
+    <string>What is Penn State?</string>
+    <string>What is Brown?</string>
+    <string>What is Michigan?</string> 
+    <int>2</int> 
+    
+    <int>2</int>
+    <string>Football</string>
+    <string>Conference Penn State football plays in</string> 
+    <string>What is the ACC?</string>
+    <string>What is the SEC?</string>
+    <string>What is Big Ten?</string> 
+    <int>3</int> 
+
+    <int>3</int>
+    <string>Football</string>
+    <string>Name of annual spring football scrimmage</string> 
+    <string>What is the Blue and White game?</string>
+    <string>What is the spring scrimmage?</string>
+    <string>What is Nittany Lion Bowl?</string> 
+    <int>1</int> 
+
+    <int>4</int>
+    <string>Football</string>
+    <string>Color of home football jersey</string> 
+    <string>What is blue?</string>
+    <string>What is green?</string>
+    <string>What is red?</string> 
+    <int>1</int> 
+    
+    <int>5</int>
+    <string>Football</string>
+    <string>Name of Penn State football stadium</string> 
+    <string>What is recreation hall?</string>
+    <string>What is Beaver Stadium?</string>
+    <string>What is Nittany Stadium?</string> 
+    <int>2</int> 
+
+    <int>6</int>
+    <string>Football</string>
+    <string>Name of football team mascot</string> 
+    <string>What is Joe Penn State?</string>
+    <string>What is Sparty?</string>
+    <string>What is Nittany Lion?</string> 
+    <int>3</int> 
+
+    <int>7</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>8</int>
+    <string>Football</string>
+    <string>Finish the Penn State football cheer We are.....</string> 
+    <string>What is excited?</string>
+    <string>What is on fire?</string>
+    <string>What is Penn State?</string> 
+    <int>3</int> 
+
+    <int>9</int>
+    <string>Football</string>
+    <string>What is the Penn State band named?</string> 
+    <string>What is Penn State Band?</string>
+    <string>What is Blue Band?</string>
+    <string>What is The Band?</string> 
+    <int>2</int> 
+
+    <int>10</int>
+    <string>Football</string>
+    <string>Who is the only Penn State Heisman winner?</string> 
+    <string>Who is John Cappelletti?</string>
+    <string>Who is Kijana Carter?</string>
+    <string>Who is Tony Sacca?</string> 
+    <int>1</int> 
+
+    <int>11</int>
+    <string>History</string>
+    <string>Year Penn State University was chartered</string> 
+    <string>What is 1776?</string>
+    <string>What is 1982?</string>
+    <string>What is 1855?</string> 
+    <int>3</int> 
+    
+    <int>12</int>
+    <string>History</string>
+    <string>Pennsylvania county of main campus</string> 
+    <string>What is Philadelphia County?</string>
+    <string>What is Centre County?</string>
+    <string>What is Nittany County?</string> 
+    <int>2</int> 
+
+    <int>13</int>
+    <string>History</string>
+    <string>Penn State's founding president</string> 
+    <string>Who is James Bond?</string>
+    <string>Who is Nathan Nittany?</string>
+    <string>Who is Evan Pugh?</string> 
+    <int>3</int> 
+
+    <int>14</int>
+    <string>History</string>
+    <string>Year Penn State first offered advanced degrees</string> 
+    <string>What is 1855?</string>
+    <string>What is 1996?</string>
+    <string>What is 1924?</string> 
+    <int>3</int> 
+    
+    <int>15</int>
+    <string>History</string>
+    <string>Year Penn State graduated its first class</string> 
+    <string>What is 1861?</string>
+    <string>What is 1859?</string>
+    <string>What is 1858?</string> 
+    <int>1</int> 
+
+    <int>16</int>
+    <string>History</string>
+    <string>Name of university when it was founded</string> 
+    <string>What is Penn State?</string>
+    <string>What is Central College?</string>
+    <string>What is Farmers High School of Pennsylvania?</string> 
+    <int>3</int> 
+
+    <int>17</int>
+    <string>History</string>
+    <string>Year university name changed to Penn State</string> 
+    <string>What is 1855?</string>
+    <string>What is 1988?</string>
+    <string>What is 1953?</string> 
+    <int>3</int> 
+
+    <int>18</int>
+    <string>History</string>
+    <string>Largest university in Pennsylvania</string> 
+    <string>What is Penn State?</string>
+    <string>What is Pitt?</string>
+    <string>What is Slippery Rock?</string> 
+    <int>1</int> 
+
+    <int>19</int>
+    <string>History</string>
+    <string>University motto</string> 
+    <string>What is making life better?</string>
+    <string>What is everything is going to be alright?</string>
+    <string>What is we are...?</string> 
+    <int>1</int> 
+
+    <int>20</int>
+    <string>History</string>
+    <string>Year Dickinson school of law merged with Penn State</string> 
+    <string>What is 1855?</string>
+    <string>What is 2000?</string>
+    <string>What is 1776?</string> 
+    <int>2</int>
+    
+    <int>21</int>
+    <string>JAVA</string>
+    <string>A member function of a class that is used to create objects of that class. It has the same name as the class itself, has no return type, and is invoked using the new operator.</string>
+    <string>What is Class?</string>
+    <string>What is Constructor?</string>
+    <string>What is Method?</string>
+    <int>2</int>
+
+    <int>22</int>
+    <string>JAVA</string>
+    <string>An ordinary member function of a class. It has its own name, a return type (which may be void), and is invoked using the dot operator.</string>
+    <string>What is Class?</string>
+    <string>What is Constructor?</string>
+    <string>What is Method?</string>
+    <int>3</int>
+
+    <int>23</int>
+    <string>JAVA</string>
+    <string>This class is visible in other packages.</string>
+    <string>What is public class?</string>
+    <string>What is private class?</string>
+    <string>What is protected class?</string>
+    <int>1</int>
+
+    <int>24</int>
+    <string>JAVA</string>
+    <string>May be used only by an instance of the same class that declares the method.</string>
+    <string>What is public method?</string>
+    <string>What is private method?</string>
+    <string>What is protected method?</string>
+    <int>2</int>
+
+    <int>25</int>
+    <string>JAVA</string>
+    <string>This variable is visible everywhere.</string>
+    <string>What is public variable?</string>
+    <string>What is private variable?</string>
+    <string>What is protected variable?</string>
+    <int>1</int>
+
+    <int>26</int>
+    <string>JAVA</string>
+    <string>These variables may be used only by an instance of the same class that declares the variable.</string>
+    <string>What is public modifier?</string>
+    <string>What is private modifier?</string>
+    <string>What is protected modifier?</string>
+    <int>2</int>
+
+    <int>27</int>
+    <string>JAVA</string>
+    <string>When a class defines a method using the same name, return type, and arguments as a method in its superclass.</string>
+    <string>What is overriding?</string>
+    <string>What is ruling?</string>
+    <string>What is classifing?</string>
+    <int>1</int>
+
+    <int>28</int>
+    <string>JAVA</string>
+    <string>We mention the type of the variable and it's name and initialize it.</string>
+    <string>What is declaring a variable?</string>
+    <string>What is defining a variable?</string>
+    <string>What is nulling a variable?</string>
+    <int>2</int>
+
+    <int>29</int>
+    <string>JAVA</string>
+    <string>We mention the type of the variable and it's name and we do not initialize it.</string>
+    <string>What is declaring a variable?</string>
+    <string>What is defining a variable?</string>
+    <string>What is nulling a variable?</string>
+    <int>1</int>
+
+    <int>30</int>
+    <string>JAVA</string>
+    <string>At runtime because of either wrong input data or because of wrong business logic etc. These are not checked by the compiler at compile time.</string>
+    <string>When are endtime exceptions thrown?</string>
+    <string>When are compile time excemption thrown?</string>
+    <string>When are runtime exceptions thrown?</string>
+    <int>3</int>
+ 
+    <int>31</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://www.bursar.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for a course</string>
+    <int>1</int>
+
+    <int>32</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://www.registrar.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for Courses</string>
+    <int>3</int>
+
+    <int>33</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://studentaid.psu.edu/</string>
+    <string>How do I pay my PSU bill online?</string>
+    <string>How do I Apply for Financial Aid?</string>
+    <string>How to i register for courses</string>
+    <int>2</int>
+
+    <int>34</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://schedule.psu.edu/</string>
+    <string>How do change my PSU account password?</string>
+    <string>How do I find a course?</string>
+    <string>How to i register for a courses</string>
+    <int>1</int>
+
+    <int>35</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://equity.psu.edu/reporthate/</string>
+    <string>How do I report acts of hate Penn State?</string>
+    <string>How do I report acts of intolerance at Penn State?</string>
+    <string>All the above</string>
+    <int>3</int>
+
+    <int>36</int>
+    <string>PSU Web</string>
+    <string>A Course Management System</string>
+    <string>What is Angel?</string>
+    <string>What is Heaven?</string>
+    <string>What is PSU?</string>
+    <int>1</int>
+
+    <int>37</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/students/student-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>3</int>
+
+    <int>38</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/staff/staff-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>2</int>
+
+    <int>39</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/visitors/visitor-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU staff guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>1</int>
+
+    <int>40</int>
+    <string>PSU Web</string>
+    <string>By browsing to http://its.psu.edu/faculty/faculty-guide/</string>
+    <string>Where can I find PSU visitor guide?</string>
+    <string>Where can I find PSU faculty guide?</string>
+    <string>Where can I find PSU student guide?</string>
+    <int>1</int>
+
+    <int>41</int>
+    <string>Famous PSU Alum</string>
+    <string>He’s the writer and producer of Step Brothers and Anchorman: The Legend of Ron Burgundy, among other hilarious movies</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Adam McKay</string>
+    <string>Who is Mark Parker</string>
+    <int>2</int>
+
+    <int>42</int>
+    <string>Famous PSU Alum</string>
+    <string>He has been the President and CEO of Nike. According to Forbes, his compensation is worth upwards of $15 million per year.</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Jef Raskin</string>
+    <string>Who is Mark Parker</string>
+    <int>3</int>
+
+    <int>43</int>
+    <string>Famous PSU Alum</string>
+    <string>She graduated in 1991 with a degree in broadcast journalism.began her television career on HGTV. In August 2014, she was promoted to co-host of Good Morning America.</string>
+    <string>Who is Lara Spencer</string>
+    <string>Who is Margaret Carlson</string>
+    <string>Who is Patricia Woertz</string>
+    <int>1</int>
+
+    <int>44</int>
+    <string>Famous PSU Alum</string>
+    <string>She invented and marketed the Slinky with the help of her husband</string>
+    <string>Who is Tammy Swift</string>
+    <string>Who is Betty James</string>
+    <string>Who is Suzie Azalea</string>
+    <int>2</int>
+
+    <int>45</int>
+    <string>Famous PSU Alum</string>
+    <string>Writer and producer on Home Improvement and The Cosby Show. He was nominated for six Primetime Emmys.</string>
+    <string>Who is Carmen Electra</string>
+    <string>Who is Frank N. Stein</string>
+    <string>Who is Carmen Finestra</string>
+    <int>3</int>
+
+    <int>46</int>
+    <string>Famous PSU Alum</string>
+    <string>Got his big break with the role of Phil Dunphy from Modern Family. The show now pulls in about 12 million viewers per episode.</string>
+    <string>Who is Phil Donahue</string>
+    <string>Who is Ty Burrell</string>
+    <string>Who is Jerry Seinfeld</string>
+    <int>2</int>
+
+    <int>47</int>
+    <string>Famous PSU Alum</string>
+    <string>Dubbed the “Father of the Macintosh.” He was one of the first employees for Apple and wanted a computer that was easier for people to use. He also gave the Macintosh its namesake, after his favorite kind of apple.</string>
+    <string>Who is Phil Macintosh</string>
+    <string>Who is Steve Jobs</string>
+    <string>Who is Jef Raskin</string>
+    <int>3</int>
+
+    <int>48</int>
+    <string>Famous PSU Alum</string>
+    <string>The first African American to travel in space as a specialist aboard the Challenger on the mission STS-8.</string>
+    <string>Who is Guion Bluford </string>
+    <string>Who is Allan West</string>
+    <string>Who is Johnny Owens</string>
+    <int>1</int>
+
+    <int>49</int>
+    <string>Famous PSU Alum</string>
+    <string>A popular soap opera actor (he’s most acclaimed for his role on Days of Our Lives)</string>
+    <string>Who is John Voight</string>
+    <string>Who is John Stamos</string>
+    <string>Who is John Aniston</string>
+    <int>3</int>
+
+    <int>50</int>
+    <string>Famous PSU Alum</string>
+    <string>A photographer for National Geographic, shot the most widely recognized photos in the world today” called “The Afghan Girl” in 1985. The photo was displayed at the Palmer Art Museum on campus.</string>
+    <string>Who is Steve McCurry</string>
+    <string>Who is Herman Fisher</string>
+    <string>Who is John Phillipe Sousa</string>
+    <int>1</int>
+
+    <int>51</int>
+    <string>Football</string>
+    <string>University Joe Paterno played football for</string> 
+    <string>What is Penn State?</string>
+    <string>What is Brown?</string>
+    <string>What is Michigan?</string> 
+    <int>2</int> 
+    
+    <int>52</int>
+    <string>Football</string>
+    <string>Conference Penn State football plays in</string> 
+    <string>What is the ACC?</string>
+    <string>What is the SEC?</string>
+    <string>What is Big Ten?</string> 
+    <int>3</int> 
+
+    <int>53</int>
+    <string>Football</string>
+    <string>Name of annual spring football scrimmage</string> 
+    <string>What is the Blue and White game?</string>
+    <string>What is the spring scrimmage?</string>
+    <string>What is Nittany Lion Bowl?</string> 
+    <int>1</int> 
+
+    <int>54</int>
+    <string>Football</string>
+    <string>Color of home football jersey</string> 
+    <string>What is blue?</string>
+    <string>What is green?</string>
+    <string>What is red?</string> 
+    <int>1</int> 
+    
+    <int>55</int>
+    <string>Football</string>
+    <string>Name of Penn State football stadium</string> 
+    <string>What is recreation hall?</string>
+    <string>What is Beaver Stadium?</string>
+    <string>What is Nittany Stadium?</string> 
+    <int>2</int> 
+
+    <int>56</int>
+    <string>Football</string>
+    <string>Name of football team mascot</string> 
+    <string>What is Joe Penn State?</string>
+    <string>What is Sparty?</string>
+    <string>What is Nittany Lion?</string> 
+    <int>3</int> 
+
+    <int>57</int>
+    <string>Football</string>
+    <string>Current football coach of Penn State</string> 
+    <string>Who is James Franklin?</string>
+    <string>Who is John Madden?</string>
+    <string>Who is Bobby Bowden?</string> 
+    <int>1</int> 
+
+    <int>58</int>
+    <string>Football</string>
+    <string>Finish the Penn State football cheer We are.....</string> 
+    <string>What is excited?</string>
+    <string>What is on fire?</string>
+    <string>What is Penn State?</string> 
+    <int>3</int> 
+
+    <int>59</int>
+    <string>Football</string>
+    <string>What is the Penn State band named?</string> 
+    <string>What is Penn State Band?</string>
+    <string>What is Blue Band?</string>
+    <string>What is The Band?</string> 
+    <int>2</int> 
+
+    <int>60</int>
+    <string>Football</string>
+    <string>Who is the only Penn State Heisman winner?</string> 
+    <string>Who is John Cappelletti?</string>
+    <string>Who is Kijana Carter?</string>
+    <string>Who is Tony Sacca?</string> 
+    <int>1</int> 
+</java> 

@@ -397,10 +397,11 @@ public class GameWindow extends JPanel implements ActionListener
                 case 17:
                 case 23:
                 case 29:
+                    System.out.println("GameWindow categorySixIndex = "+categorySixIndex+" before increment");
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categorySixIndex].questionId,DifficultyLevel);
                     categorySixIndex++;
                     System.out.println("GameWindow categorySixIndex = "+categorySixIndex);
-                      if (categorySixIndex >= answer.getLastQuestionIdByCategoryId(6))
+                    if (categorySixIndex >= answer.getLastQuestionIdByCategoryId(6))
                     {
                         categorySixIndex = answer.getFirstQuestionIdByCategoryId(6);
                     }

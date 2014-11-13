@@ -45,10 +45,10 @@ class AnswerButton extends JButton {
                 difficultyStr = "Grad";
                 break;
         }
-        System.out.println("Answer difficultyStr = "+difficultyStr);
+        //System.out.println("Answer difficultyStr = "+difficultyStr);
         answerData = answer.getAnswerDataByQuestionId(difficultyStr, answerDataId);
-        System.out.println("AnswerButton ");
-        answer.printAnswerData(answerData);
+        //System.out.println("AnswerButton ");
+        //answer.printAnswerData(answerData);
     } 
     
     public void onButtonPressed()

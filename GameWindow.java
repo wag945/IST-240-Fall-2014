@@ -227,6 +227,8 @@ public class GameWindow extends JPanel implements ActionListener
             //Update full player list
             UpdateAllPlayerList();
             
+            ParentFrame.timerFrame.hideWindow();
+            
             ParentFrame.setupWindow.SaveDataInXML();
         }
     }

@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
-import java.util.Arrays;
 import java.util.Date;
 
 public class GameWindow extends JPanel implements ActionListener
@@ -31,6 +30,61 @@ public class GameWindow extends JPanel implements ActionListener
     PlayersList CurrentPlayers;    
     
     GameHeader gameHeader;
+    
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        System.out.println("myJPanelstd actionPerformed ");
+        String sClass = e.getSource().getClass().toString();
+        if (sClass.equals("class AnimateNumbersTimer"))
+        {
+            int newScore;
+            int cScore;
+            AnimateNumbersTimer tAnimateScore = (AnimateNumbersTimer)e.getSource();
+            
+            newScore = tAnimateScore.getNewScore();
+            cScore = tAnimateScore.getCurrentScore();
+//            if (newScore>=0)
+//            {   
+                if (cScore == tAnimateScore.getNewScore())
+                {            
+                    tAnimateScore.stop();
+                }
+                else
+                {        
+                    if (tAnimateScore.isAnimatePlusOrMinus())
+                    {
+                        cScore++;                    
+                    }
+                    else
+                    {
+                        cScore--;
+                    }
+                    tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
+                    tAnimateScore.setCurrentScore(cScore);
+                }
+//            }
+//            else
+//            {    
+//                tAnimateScore.stop();
+//            }
+        }
+        else if (sClass.equals("class AnswerButton"))
+        {
+            numberAvailableAnswers -= 1;
+            for (int i = 0; i < answerButtons.length; i++)
+            {
+                if (e.getSource() == answerButtons[i])
+                {
+                    answerButtons[i].onButtonPressed();
+                }
+            }
+            if (0 == numberAvailableAnswers)
+            {
+                //Complete the board and move to double jeopardy
+            }
+        }
+    }
     
     public GameWindow(myJFrame mjf, GameTimerWindow gtw, GameHeader gh)
     {
@@ -67,13 +121,13 @@ public class GameWindow extends JPanel implements ActionListener
         
         setHeaderLabels();
         
-        setPlayerNameOnLabel(CurrentPlayerNum);
+        setPlayerNameOnLabel(CurrentPlayerNum, false);
         
     }
     
 
     
-    public void setPlayerNameOnLabel(int PlayerNumber)
+    public void setPlayerNameOnLabel(int PlayerNumber, boolean AnimateScoreOnAdd)
     {
         Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 11);
         Font fontB = new Font(Font.SANS_SERIF, Font.BOLD, 12);
@@ -81,7 +135,8 @@ public class GameWindow extends JPanel implements ActionListener
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            String cScore = String.valueOf(pCurrent.getTScore());
+            //String cScore = String.valueOf(pCurrent.getTScore());
+            int cScore = pCurrent.getTScore();
             String cName = pCurrent.getName();
             int cPlayerNum = pCurrent.getPlayer();
             
@@ -91,7 +146,8 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP1.setText(cName);
                     gameHeader.lP1.setFont(font);
                     gameHeader.lP1.setForeground(Color.gray);
-                    gameHeader.lPScore1.setText(cScore);
+                    //gameHeader.lPScore1.setText(cScore); //animate
+                    AnimateScore(gameHeader.lPScore1, Integer.parseInt(gameHeader.lPScore1.getText()), cScore, AnimateScoreOnAdd);
                     gameHeader.lPScore1.setFont(font);
                     gameHeader.lPScore1.setForeground(Color.gray);
                     break;
@@ -99,7 +155,7 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP2.setText(cName);
                     gameHeader.lP2.setFont(font);
                     gameHeader.lP2.setForeground(Color.gray);
-                    gameHeader.lPScore2.setText(cScore);
+                    //gameHeader.lPScore2.setText(cScore); //animate
                     gameHeader.lPScore2.setFont(font);
                     gameHeader.lPScore2.setForeground(Color.gray);
                     break;
@@ -107,7 +163,7 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP3.setText(cName);
                     gameHeader.lP3.setFont(font);
                     gameHeader.lP3.setForeground(Color.gray);
-                    gameHeader.lPScore3.setText(cScore);
+                    //gameHeader.lPScore3.setText(cScore); //animate
                     gameHeader.lPScore3.setFont(font);
                     gameHeader.lPScore3.setForeground(Color.gray);
                     break;
@@ -166,6 +222,9 @@ public class GameWindow extends JPanel implements ActionListener
     
     public void addScore(int Score)
     {    
+        boolean AnimateScoreOnAdd = false;
+        if (Score > 0 ) AnimateScoreOnAdd = true;
+        
         System.out.println("GameWindow addScore score = "+Score);
         
         for (Object obj: CurrentPlayers.toArray())
@@ -174,15 +233,7 @@ public class GameWindow extends JPanel implements ActionListener
             if (pCurrent.getPlayer() == CurrentPlayerNum)
             {            
                 int oldScore = pCurrent.getTScore();
-                pCurrent.setTScore(Score+oldScore);
-//                if (Score>0)
-//                {
-//                    if (pCurrent.getTScore() > pCurrent.getScore())
-//                    {
-//                        pCurrent.setScore(Score+oldScore);
-//                    }
-//                }
-                
+                pCurrent.setTScore(Score+oldScore);             
                 
             }
         }
@@ -203,7 +254,7 @@ public class GameWindow extends JPanel implements ActionListener
             }
         }
         
-        setPlayerNameOnLabel(CurrentPlayerNum);
+        setPlayerNameOnLabel(CurrentPlayerNum, AnimateScoreOnAdd);
     }
     
     public void CheckIfGameIsEnding()
@@ -219,24 +270,6 @@ public class GameWindow extends JPanel implements ActionListener
             ParentFrame.timerFrame.hideWindow();
             
             ParentFrame.setupWindow.SaveDataInXML();
-        }
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) 
-    {
-        System.out.println("myJPanelstd actionPerformed ");
-        numberAvailableAnswers -= 1;
-        for (int i = 0; i < answerButtons.length; i++)
-        {
-            if (e.getSource() == answerButtons[i])
-            {
-                answerButtons[i].onButtonPressed();
-            }
-        }
-        if (0 == numberAvailableAnswers)
-        {
-            //Complete the board and move to double jeopardy
         }
     }
     
@@ -455,5 +488,12 @@ public class GameWindow extends JPanel implements ActionListener
                 gameHeader.lPScore3.setVisible(true);
                 break;
         }
+    }
+
+    private void AnimateScore(JLabel lPScore, int currentScore,int newScore, boolean AnimateScoreOnAdd) 
+    {
+        AnimateNumbersTimer tAnimate = new AnimateNumbersTimer(10,this,lPScore,currentScore,newScore,AnimateScoreOnAdd);
+        tAnimate.addActionListener(this);        
+        tAnimate.start();
     }
 }

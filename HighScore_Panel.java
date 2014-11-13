@@ -103,22 +103,48 @@ public class HighScore_Panel extends JPanel
 
     private String[][] GetScores(PlayersList ListOfAllPlayers, boolean AllTime)  
     {
-        int PlayerCount = ListOfAllPlayers.toArray().length;
-        String[][] ArrayOfAllPlayersAndScores = new String [PlayerCount][2];
+        String[][] ArrayOfAllPlayersAndScores;
+        int PlayerCount;
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
+        if (AllTime)
+        {
+            PlayerCount = ListOfAllPlayers.toArray().length;
+        }
+        else
+        {
+            int i=0;
+            for (Object obj : ListOfAllPlayers.toArray()) // Extract score from each person
+            {
+                Person pCurrent = (Person)obj;
+                if (pCurrent.getDateLastPlayed() != null)
+                {
+                    if (sdf.format(date).equals(sdf.format(pCurrent.getDateLastPlayed())))
+                    {
+                        i++;
+                    }
+                }                
+            }
+            PlayerCount = i;
+            if  (PlayerCount==0)
+                return null;
+        }
+        ArrayOfAllPlayersAndScores = new String [PlayerCount][2];       
+         
+        
         
         int i=0;
         for (Object obj : ListOfAllPlayers.toArray()) // Extract score from each person
         {
             Person pCurrent = (Person)obj;
             
-            if (pCurrent.getScore() < 0)
+            if (pCurrent.getScore() <= 0)
             {
                 pCurrent.setScore(0);
             }
             
-            if (pCurrent.getTScore() < 0)
+            if (pCurrent.getTScore() <= 0)
             {
                 pCurrent.setTScore(0);
             }

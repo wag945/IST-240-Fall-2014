@@ -21,13 +21,6 @@ public class GameWindow extends JPanel implements ActionListener
     String oneHundred,twoHundred,threeHundred,fourHundred,fiveHundred;
     int numberAvailableAnswers;
     
-    JLabel lPlayerWon;
-    JLabel lPlayerWonName;
-    JLabel lPlayerName;
-    JLabel lScore;
-    //String CurrentPlayer;
-    JLabel lTemp1;
-    JLabel lTemp2;
     int CurrentPlayerNum;
     
     myJFrame ParentFrame;
@@ -46,6 +39,7 @@ public class GameWindow extends JPanel implements ActionListener
         gameHeader = gh;
         CurrentPlayers = ParentFrame.setupWindow.SelectedPlayers;
         DifficultyLevel = ParentFrame.setupWindow.DifficultyLevel;
+        
         gtw.resetTimer();
         
         setBackground(Color.DARK_GRAY);
@@ -57,10 +51,8 @@ public class GameWindow extends JPanel implements ActionListener
         numberAvailableAnswers = 30;
         CurrentPlayerNum = 1;
         
-        setLayout(new GridLayout(7,6));
-        
-        createLabels();
-        
+        setLayout(new GridLayout(6,6));
+                
         answer = new Answer();
         
         createCategoryButtons();
@@ -72,6 +64,8 @@ public class GameWindow extends JPanel implements ActionListener
         setVisible(false);
         
         resetScores();
+        
+        setHeaderLabels();
         
         setPlayerNameOnLabel(CurrentPlayerNum);
         
@@ -121,8 +115,6 @@ public class GameWindow extends JPanel implements ActionListener
             
             if (cPlayerNum == PlayerNumber)
             {
-                lPlayerName.setText(cName);
-                lScore.setText(cScore);
                 switch (cPlayerNum)
                 {
                     case 1:
@@ -149,10 +141,7 @@ public class GameWindow extends JPanel implements ActionListener
     }
     
     public void UpdateLables()
-    {          
-        lPlayerName.setText("");
-        lScore.setText("");
-        
+    {                  
         int MaxScore=0;
         String Winner = "";
         for (Object obj: CurrentPlayers.toArray())
@@ -168,18 +157,11 @@ public class GameWindow extends JPanel implements ActionListener
         if (Winner.equals(""))
         {
             Winner = "No one ";
-            lPlayerWon.setForeground(Color.red);
-            lPlayerWonName.setForeground(Color.red);
+            gameHeader.lWinner.setForeground(Color.red);
         }
         
-        lPlayerWonName.setText(Winner);
-        
-        
-        lTemp1.setVisible(false);
-        lTemp2.setVisible(false);
-        
-        lPlayerWon.setVisible(true);        
-        lPlayerWonName.setVisible(true);
+        gameHeader.lWinner.setText(Winner + " Won!");
+        gameHeader.lWinner.setForeground(Color.green);
     }
     
     public void addScore(int Score)
@@ -200,7 +182,7 @@ public class GameWindow extends JPanel implements ActionListener
             }
         }
 
-        setPlayerNameOnLabel(CurrentPlayerNum);
+        //setPlayerNameOnLabel(CurrentPlayerNum);
         
         CheckIfGameIsEnding();
         
@@ -214,7 +196,9 @@ public class GameWindow extends JPanel implements ActionListener
             {
                 CurrentPlayerNum++;
             }
-       }
+        }
+        
+        setPlayerNameOnLabel(CurrentPlayerNum);
     }
     
     public void CheckIfGameIsEnding()
@@ -272,49 +256,6 @@ public class GameWindow extends JPanel implements ActionListener
                 }
             }
         }
-    }
-    
-    
-    public final void createLabels()
-    {
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
-
-        lTemp1 = new JLabel("Player Name: ");
-        lTemp1.setFont(font);
-        lTemp1.setForeground(Color.white);
-        lTemp1.setHorizontalAlignment(SwingConstants.RIGHT);
-        add(lTemp1);
-        
-        lPlayerName = new JLabel();
-        lPlayerName.setForeground(Color.white);
-        lPlayerName.setFont(font);
-        add(lPlayerName);
-               
-        lPlayerWonName = new JLabel();
-        lPlayerWonName.setForeground(Color.green);
-        lPlayerWonName.setVisible(false);
-        lPlayerWonName.setHorizontalAlignment(SwingConstants.RIGHT);
-        lPlayerWonName.setFont(font);
-        add(lPlayerWonName);
-        
-        lPlayerWon = new JLabel(" Won!");        
-        lPlayerWon.setForeground(Color.green);
-        lPlayerWon.setVisible(false);
-        lPlayerWon.setFont(font);
-        add(lPlayerWon);
-                
-        lTemp2 = new JLabel("Score: ");
-        lTemp2.setForeground(Color.white);
-        lTemp2.setHorizontalAlignment(SwingConstants.RIGHT);
-        lTemp2.setFont(font);
-        add(lTemp2);
-        
-        lScore = new JLabel();
-        lScore.setForeground(Color.white);
-        lScore.setFont(font);
-        add(lScore);
-
-            
     }
     
     public void createAnswerButtons()
@@ -462,18 +403,52 @@ public class GameWindow extends JPanel implements ActionListener
             pCurrent.setTScore(0);
         }
     }
-    
-//    @Override
-//    public void paintComponent(Graphics g) 
-//    {
-//        super.paintComponent(g);
-//        
-//        
-//            Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
-//            g.setFont(font);
-//            g.setColor(Color.yellow);
-//            g.drawString("Test", 0,0);
-//        
-//        
-//    }
+
+    private void setHeaderLabels() 
+    {
+        gameHeader.lWinner.setForeground(new Color(51,51,51));
+        
+        switch (DifficultyLevel)
+        {
+            case 1:
+                gameHeader.lDifficultyLevel.setText("K12");
+                break;
+            case 2:
+                gameHeader.lDifficultyLevel.setText("Under Grad");
+                break;
+            case 3:
+                gameHeader.lDifficultyLevel.setText("Grad");
+                break;
+        }
+        
+        
+        int TNumOfPlayers = CurrentPlayers.getSize();
+        switch (TNumOfPlayers)
+        {
+            case 1:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(false);
+                gameHeader.lPScore2.setVisible(false);
+                gameHeader.lP3.setVisible(false);
+                gameHeader.lPScore3.setVisible(false);
+                break;
+            case 2:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(true);
+                gameHeader.lPScore2.setVisible(true);
+                gameHeader.lP3.setVisible(false);
+                gameHeader.lPScore3.setVisible(false);
+                break;
+            case 3:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(true);
+                gameHeader.lPScore2.setVisible(true);
+                gameHeader.lP3.setVisible(true);
+                gameHeader.lPScore3.setVisible(true);
+                break;
+        }
+    }
 }

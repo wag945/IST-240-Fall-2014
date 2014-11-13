@@ -39,11 +39,14 @@ public class GameHeader extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lWinner = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(102, 102, 102));
+        setBackground(new java.awt.Color(51, 51, 51));
         setForeground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(840, 85));
-        setPreferredSize(new java.awt.Dimension(840, 85));
+        setFocusable(false);
+        setMaximumSize(new java.awt.Dimension(800, 72));
+        setMinimumSize(new java.awt.Dimension(800, 72));
+        setPreferredSize(new java.awt.Dimension(800, 72));
 
         lP1.setForeground(new java.awt.Color(255, 255, 255));
         lP1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -73,45 +76,62 @@ public class GameHeader extends javax.swing.JPanel {
         lPScore3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Sound:");
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Difficulty Level:");
 
-        tSound.setBackground(new java.awt.Color(102, 102, 102));
+        tSound.setBackground(new java.awt.Color(51, 51, 51));
         tSound.setFont(new java.awt.Font("Tahoma", 0, 5)); // NOI18N
         tSound.setForeground(new java.awt.Color(255, 255, 255));
         tSound.setText("OFF");
+        tSound.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tSound.setFocusPainted(false);
+        tSound.setMaximumSize(new java.awt.Dimension(20, 20));
+        tSound.setMinimumSize(new java.awt.Dimension(20, 20));
+        tSound.setPreferredSize(new java.awt.Dimension(42, 20));
 
         lDifficultyLevel.setForeground(new java.awt.Color(255, 255, 255));
-        lDifficultyLevel.setText("K12");
+        lDifficultyLevel.setText("Under Grad");
 
         lTheme.setForeground(new java.awt.Color(255, 255, 255));
         lTheme.setText("Gray");
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Theme:");
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("End Game");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        lWinner.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lWinner.setForeground(new java.awt.Color(0, 153, 0));
+        lWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lWinner.setText("X Won!");
+        lWinner.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lWinner.setMaximumSize(new java.awt.Dimension(250, 29));
+        lWinner.setMinimumSize(new java.awt.Dimension(250, 29));
+        lWinner.setPreferredSize(new java.awt.Dimension(250, 29));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lP1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lP2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
@@ -121,52 +141,62 @@ public class GameHeader extends javax.swing.JPanel {
                             .addComponent(lPScore1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                             .addComponent(lPScore2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lPScore3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(48, 48, 48)
+                .addComponent(lWinner, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel8)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(282, 282, 282)
-                                .addComponent(jLabel11)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lDifficultyLevel)
-                            .addComponent(lTheme)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tSound)))
-                .addGap(32, 32, 32))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lTheme)
+                    .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lDifficultyLevel))
+                .addGap(36, 36, 36)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lP1)
-                    .addComponent(jLabel8)
-                    .addComponent(lDifficultyLevel)
-                    .addComponent(lPScore1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lP2)
-                    .addComponent(jLabel11)
-                    .addComponent(lTheme)
-                    .addComponent(jButton1)
-                    .addComponent(lPScore2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lP3)
-                        .addComponent(lPScore3))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lP1)
+                            .addComponent(lPScore1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lP2)
+                                    .addComponent(lPScore2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lP3)
+                                    .addComponent(lPScore3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(lWinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(lDifficultyLevel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(lTheme))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         lP1.getAccessibleContext().setAccessibleName("lP1");
@@ -181,6 +211,7 @@ public class GameHeader extends javax.swing.JPanel {
         lDifficultyLevel.getAccessibleContext().setAccessibleName("lDifficultyLevel");
         lTheme.getAccessibleContext().setAccessibleName("lTheme");
         jButton1.getAccessibleContext().setAccessibleName("bEndGame");
+        lWinner.getAccessibleContext().setAccessibleName("lWinner");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -207,6 +238,7 @@ public class GameHeader extends javax.swing.JPanel {
     public javax.swing.JLabel lPScore2;
     public javax.swing.JLabel lPScore3;
     public javax.swing.JLabel lTheme;
+    public javax.swing.JLabel lWinner;
     public javax.swing.JToggleButton tSound;
     // End of variables declaration//GEN-END:variables
 }

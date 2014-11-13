@@ -52,11 +52,17 @@ public class GameHeader extends javax.swing.JPanel {
         lP1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lP1.setText("Player 1:");
         lP1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP1.setMaximumSize(new java.awt.Dimension(68, 14));
+        lP1.setMinimumSize(new java.awt.Dimension(68, 14));
+        lP1.setPreferredSize(new java.awt.Dimension(68, 14));
 
         lP3.setForeground(new java.awt.Color(255, 255, 255));
         lP3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lP3.setText("Player 3:");
         lP3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP3.setMaximumSize(new java.awt.Dimension(68, 14));
+        lP3.setMinimumSize(new java.awt.Dimension(68, 14));
+        lP3.setPreferredSize(new java.awt.Dimension(68, 14));
 
         lPScore2.setForeground(new java.awt.Color(255, 255, 255));
         lPScore2.setText("0");
@@ -66,6 +72,9 @@ public class GameHeader extends javax.swing.JPanel {
         lP2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lP2.setText("Player 2:");
         lP2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lP2.setMaximumSize(new java.awt.Dimension(68, 14));
+        lP2.setMinimumSize(new java.awt.Dimension(68, 14));
+        lP2.setPreferredSize(new java.awt.Dimension(68, 14));
 
         lPScore1.setForeground(new java.awt.Color(255, 255, 255));
         lPScore1.setText("0");
@@ -134,7 +143,7 @@ public class GameHeader extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lP1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lP2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(lP2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lP3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -168,17 +177,17 @@ public class GameHeader extends javax.swing.JPanel {
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lP1)
+                            .addComponent(lP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lPScore1))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lP2)
+                                    .addComponent(lP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lPScore2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lP3)
+                                    .addComponent(lP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lPScore3)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)

@@ -175,10 +175,15 @@ public class GameWindow extends JPanel implements ActionListener
             {            
                 int oldScore = pCurrent.getTScore();
                 pCurrent.setTScore(Score+oldScore);
-                if ((Score+oldScore) > pCurrent.getScore())
-                {
-                    pCurrent.setScore(Score+oldScore);
-                }
+//                if (Score>0)
+//                {
+//                    if (pCurrent.getTScore() > pCurrent.getScore())
+//                    {
+//                        pCurrent.setScore(Score+oldScore);
+//                    }
+//                }
+                
+                
             }
         }
 
@@ -237,7 +242,7 @@ public class GameWindow extends JPanel implements ActionListener
     
     public void UpdateAllPlayerList()
     {
-        Date date = new Date();
+        //Date date = new Date();
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
@@ -251,7 +256,7 @@ public class GameWindow extends JPanel implements ActionListener
                         pAll.setScore(pCurrent.getTScore());
                     }
                     pAll.setTScore(pCurrent.getTScore());
-                    pAll.setDateLastPlayed(date);
+                    pAll.setDateLastPlayed(new Date());
                     break;
                 }
             }

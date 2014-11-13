@@ -27,6 +27,7 @@ public class QuestionWindow extends JPanel implements ActionListener {
     JCheckBox answerButton1,answerButton2,answerButton3;
     boolean answerCorrect = false;
     AnswerData answerData;
+    AudioPlayer player;
     
     public QuestionWindow(QuestionFrame frame,AnswerData data)
     {
@@ -87,6 +88,7 @@ public class QuestionWindow extends JPanel implements ActionListener {
         doneButton.setText("Done");
         doneButton.addActionListener(this);
         add(doneButton,BorderLayout.SOUTH);
+        player = new AudioPlayer();
     }
 
     public void displayWindow()
@@ -149,7 +151,6 @@ public class QuestionWindow extends JPanel implements ActionListener {
             else
             {
                 timeTextField.setText("TIME'S UP!");
-                AudioPlayer player = new AudioPlayer();
                 player.play("timesup.wav");
                 hideWindow();
             }

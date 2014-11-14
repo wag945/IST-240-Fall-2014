@@ -4,33 +4,166 @@
  *
  * @Group 08
  */
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.*;
-import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
 
-public class AboutWindow extends JPanel implements ActionListener {
+public class AboutWindow extends JPanel implements ActionListener
+{
 
-    JTextField text;
-    JButton instructionButton;
-    public AboutWindow()
+//    myJFrame ParentJFrame;
+    JPanel aboutPanel;
+    JPanel instructionsPanel;
+    JButton aboutAuthors, instructionButton;
+    
+    public AboutWindow(myJFrame mjf)
     {
         super();
+        setLayout(null);
         setBackground(Color.DARK_GRAY);
-        text = new JTextField();
-        text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
-        add(text);
+//        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);
+
+//        text = new JTextField();
+//        text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
+//        add(text);
         
-        ImageIcon instructionsImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
-        instructionButton = new JButton(instructionsImage);
-        instructionButton.setIcon(instructionsImage);
+        aboutAuthors = new JButton("About the Authors");
+        aboutAuthors.addActionListener(this);
+        aboutAuthors.setBounds(165, 0, 226, 27);
+        add(aboutAuthors);
+
+        instructionButton = new JButton("Instructions");
+        instructionButton.addActionListener(this);
+        instructionButton.setBounds(395, 0, 226, 27);
         add(instructionButton);
         
-        setVisible(false);
+//        aboutJPanel = new JPanel();
+//        aboutJPanel.add(new JTextArea(aboutText));
         
+//        instructionsJPanel = new JPanel();
+//        instructionsJPanel.add(new JTextArea(instructionsText));
+        
+        
+//        ImageIcon instructionsImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
+//        instructionButton = new JButton(instructionsImage);
+//        instructionButton.setIcon(instructionsImage);
+//        add(instructionButton);
+        
+//        ParentJFrame = mjf;        
+        setVisible(true);
+        
+ 
     }
 
+    static String aboutText = ""
+        + "Developed by: \n"
+        + " \n"
+        + "Zunair Fayaz, William Ganley, Ron Avila";
+
+    static String instructionsText = ""
+            + "Welcome to PSU Jeopardy! \n"
+
+            + "Instructions: \n"
+            + "\n "
+            + "Each game begins with user(s) selecting the number of \n"
+            + "players, by pressing the Setup button at the top. \n"
+            + "\n"
+            + "Next the player(s) choose the level of difficulty. \n"
+            + "The options are K12 level, Under Grad level, and finally \n"
+            + "Grad level. \n"
+            + "\n"
+            + "After all the options have been chosen select new game \n"
+            + "\n"
+            + "Each player will take turns coming up with the \n" 
+            + "question to each answer presented under each topic\n"
+            + "at the top of the screen. \n"
+            + "\n"
+            + "The high lighted player will indicate who's turn it is \n"
+            + "with player 1 going first, next player 2, then 3 and so on \n"
+            + "\n"
+            + "Player 1 starts the game by picking a category and the\n"
+            + " square dollar amount under each category and clicking it. \n"
+            + "a pop-up screen will appear and the player will have \n"
+            + "10 seconds to click/check the correct answer. \n"
+            + "If the player1 gets it wrong then it becomes player 2's turn \n"
+            + " and so on, until all the squares on the board has \n"
+            + "been picked. \n"
+            + "\n"
+            + "High Scores are recorded and the player with the most cash"
+            + "accumulated at the end of the game wins.\n"
+            + "\n"
+            + "Players' records are kept for the most cash awarded. \n"
+            + "\n"
+            + "Please press Setup to begin!\n";
+
+            
+
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {    
+        
+        Object obj = e.getSource();
+        if(obj == aboutAuthors)
+        {
+           loadAbout();  
+        }
+        
+        if(obj == instructionButton)
+        {
+           loadInsructions(); 
+        }       
     }
+    
+    private void loadAbout()
+    {
+        if (aboutPanel != null) remove(aboutPanel);
+        if (instructionsPanel != null) remove(instructionsPanel);
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 25);
+        aboutPanel = new JPanel();
+        JTextArea jta1 = new JTextArea(aboutText);
+        jta1.setFont(font);
+        jta1.setBackground(Color.gray);
+        jta1.setForeground(Color.white);
+        aboutPanel.setBounds(148, 50, 500, 500);
+        aboutPanel.setBackground(Color.gray);
+        aboutPanel.setForeground(Color.white);
+        aboutPanel.add(jta1);
+        aboutPanel.setVisible(true);
+        this.add(aboutPanel);
+        validate();
+        this.repaint();
+        
+    }
+        
+    private void loadInsructions()
+    {
+        if (aboutPanel != null) remove(aboutPanel);
+        if (instructionsPanel != null) remove(instructionsPanel);
+        //Font font = new Font(Font.SANS_SERIF, Font.BOLD, 16); 
+        Font font = new Font("Times", Font.BOLD, 14); 
+        instructionsPanel = new JPanel();
+//        JTextArea jta2 = new JTextArea(instructionsText, 23, 30);
+        JTextArea jta2 = new JTextArea(instructionsText, 20, 35);
+        jta2.setFont(font);
+        jta2.setLineWrap(true);
+        jta2.setBackground(Color.gray);
+        jta2.setForeground(Color.white);
+        jta2.setEditable(false);
+        instructionsPanel.setBounds(148, 50, 500, 500);
+        instructionsPanel.setBackground(Color.gray);
+        instructionsPanel.setForeground(Color.white);
+        instructionsPanel.add(new JScrollPane(jta2));
+        instructionsPanel.setVisible(true);
+        this.add(instructionsPanel);
+        validate();
+        this.repaint();
+    }
+
 }

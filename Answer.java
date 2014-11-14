@@ -100,6 +100,11 @@ class Answer {
             //Could this be more complicated?!?
             number = (((category - 1) * NUM_ANSWERS_PER_CATEGORY) + number);
         }
+        //Cap the random number between 0..59
+        if (number > 59)
+        {
+            number = 59;
+        }
         return number;
     }
 
@@ -154,7 +159,9 @@ class Answer {
     }
 
     int getLastQuestionIdByCategoryId(int categoryId) {
-        return NUM_ANSWERS_PER_CATEGORY * categoryId;
+        int lastQuestionId = NUM_ANSWERS_PER_CATEGORY * categoryId;
+        lastQuestionId--;
+        return lastQuestionId;
     }
 
     void printAnswerData(AnswerData data) {

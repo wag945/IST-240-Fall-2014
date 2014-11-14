@@ -34,7 +34,7 @@ public class myJFrame extends JFrame implements WindowListener
         setupWindow = new SetupWindow(this);
         introductionWindow = new IntroductionWindow(this);
         instructionsWindow = new InstructionsWindow();
-        aboutWindow = new AboutWindow();
+        aboutWindow = new AboutWindow(this);
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame();

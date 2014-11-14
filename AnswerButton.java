@@ -18,14 +18,17 @@ class AnswerButton extends JButton {
     AnswerData answerData;
     int difficulty;
     String difficultyStr;
+    String buttonValue;
 
     AnswerButton(String label,myJFrame frame, Answer inputAnswer, int id, int Difficulty) 
     {
         super();
+        parentFrame = frame;
         setOpaque(true);
         setBackground(Color.DARK_GRAY);
         setFont(new Font("Dialog", 1, 20));
         this.setForeground(new Color(0, 205, 0, 255));
+        buttonValue = label;
         setText(label);
         answer = inputAnswer;
         answerDataId = id;
@@ -42,10 +45,10 @@ class AnswerButton extends JButton {
                 difficultyStr = "Grad";
                 break;
         }
-        System.out.println("Answer difficultyStr = "+difficultyStr);
+        //System.out.println("Answer difficultyStr = "+difficultyStr);
         answerData = answer.getAnswerDataByQuestionId(difficultyStr, answerDataId);
-        System.out.println("AnswerButton ");
-        answer.printAnswerData(answerData);
+        //System.out.println("AnswerButton ");
+        //answer.printAnswerData(answerData);
     } 
     
     public void onButtonPressed()
@@ -58,17 +61,12 @@ class AnswerButton extends JButton {
     
     public void displayQuestion()
     {
-        questionFrame = new QuestionFrame(answerData);
+        questionFrame = new QuestionFrame(this,parentFrame,answerData);
         questionFrame.displayWindow();
     }
-    
-    public boolean isAnswerCorrect(String input)
+        
+    public String getButtonValue()
     {
-        boolean returnValue = false;
-        if (answer.equals(input))
-        {
-            returnValue = true;
-        }
-        return returnValue;
+        return buttonValue;
     }
 }

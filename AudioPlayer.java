@@ -12,10 +12,10 @@ import javax.sound.sampled.*;
 // Hence, we use a Swing application.
 public class AudioPlayer {
    
+   Clip clip;
    // Constructor
    public AudioPlayer() 
    {
-   
    }
    
    void play(String fileName)
@@ -27,7 +27,7 @@ public class AudioPlayer {
 
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
             // Get a sound clip resource.
-            Clip clip = AudioSystem.getClip();
+            clip = AudioSystem.getClip();
             // Open audio clip and load samples from the audio input stream.
             clip.open(audioIn);
             clip.start();

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
-import java.util.Arrays;
+import java.util.Date;
 
 public class GameWindow extends JPanel implements ActionListener
 {
@@ -20,9 +20,6 @@ public class GameWindow extends JPanel implements ActionListener
     String oneHundred,twoHundred,threeHundred,fourHundred,fiveHundred;
     int numberAvailableAnswers;
     
-    JLabel lPlayerName;
-    JLabel lScore;
-    String CurrentPlayer;
     int CurrentPlayerNum;
     
     myJFrame ParentFrame;
@@ -32,12 +29,71 @@ public class GameWindow extends JPanel implements ActionListener
     int DifficultyLevel = 0;    
     PlayersList CurrentPlayers;    
     
-    public GameWindow(myJFrame mjf, GameTimerWindow gtw)
+    GameHeader gameHeader;
+    
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        System.out.println("myJPanelstd actionPerformed ");
+        String sClass = e.getSource().getClass().toString();
+        if (sClass.equals("class AnimateNumbersTimer"))
+        {
+            int newScore;
+            int cScore;
+            AnimateNumbersTimer tAnimateScore = (AnimateNumbersTimer)e.getSource();
+            
+            newScore = tAnimateScore.getNewScore();
+            cScore = tAnimateScore.getCurrentScore();
+//            if (newScore>=0)
+//            {   
+                if (cScore == tAnimateScore.getNewScore())
+                {            
+                    tAnimateScore.stop();
+                }
+                else
+                {        
+                    if (tAnimateScore.isAnimatePlusOrMinus())
+                    {
+                        cScore++;                    
+                    }
+                    else
+                    {
+                        cScore--;
+                    }
+                    tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
+                    tAnimateScore.setCurrentScore(cScore);
+                }
+//            }
+//            else
+//            {    
+//                tAnimateScore.stop();
+//            }
+        }
+        else if (sClass.equals("class AnswerButton"))
+        {
+            numberAvailableAnswers -= 1;
+            for (int i = 0; i < answerButtons.length; i++)
+            {
+                if (e.getSource() == answerButtons[i])
+                {
+                    answerButtons[i].onButtonPressed();
+                }
+            }
+            if (0 == numberAvailableAnswers)
+            {
+                //Complete the board and move to double jeopardy
+            }
+        }
+    }
+    
+    public GameWindow(myJFrame mjf, GameTimerWindow gtw, GameHeader gh)
     {
         super();
         ParentFrame = mjf;
+        gameHeader = gh;
         CurrentPlayers = ParentFrame.setupWindow.SelectedPlayers;
         DifficultyLevel = ParentFrame.setupWindow.DifficultyLevel;
+        
         gtw.resetTimer();
         
         setBackground(Color.DARK_GRAY);
@@ -49,10 +105,8 @@ public class GameWindow extends JPanel implements ActionListener
         numberAvailableAnswers = 30;
         CurrentPlayerNum = 1;
         
-        setLayout(new GridLayout(7,6));
-        
-        createLabels();
-        
+        setLayout(new GridLayout(6,6));
+                
         answer = new Answer();
         
         createCategoryButtons();
@@ -65,101 +119,192 @@ public class GameWindow extends JPanel implements ActionListener
         
         resetScores();
         
-        setPlayerNameOnLabel(CurrentPlayerNum);
+        setHeaderLabels();
+        
+        setPlayerNameOnLabel(CurrentPlayerNum, false);
         
     }
     
 
     
-    public void setPlayerNameOnLabel(int PlayerNumber)
+    public void setPlayerNameOnLabel(int PlayerNumber, boolean AnimateScoreOnAdd)
     {
+        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 11);
+        Font fontB = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+                
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            if (pCurrent.getPlayer() == PlayerNumber)
-            {            
-                lPlayerName.setText(pCurrent.getName());
-                lScore.setText(String.valueOf(pCurrent.getScore()));            
+            //String cScore = String.valueOf(pCurrent.getTScore());
+            int cScore = pCurrent.getTScore();
+            String cName = pCurrent.getName();
+            int cPlayerNum = pCurrent.getPlayer();
+            
+            switch (cPlayerNum)
+            {
+                case 1:
+                    gameHeader.lP1.setText(cName);
+                    gameHeader.lP1.setFont(font);
+                    gameHeader.lP1.setForeground(Color.gray);
+                    //gameHeader.lPScore1.setText(cScore); //animate
+                    AnimateScore(gameHeader.lPScore1, Integer.parseInt(gameHeader.lPScore1.getText()), cScore, AnimateScoreOnAdd);
+                    gameHeader.lPScore1.setFont(font);
+                    gameHeader.lPScore1.setForeground(Color.gray);
+                    break;
+                case 2:
+                    gameHeader.lP2.setText(cName);
+                    gameHeader.lP2.setFont(font);
+                    gameHeader.lP2.setForeground(Color.gray);
+                    //gameHeader.lPScore2.setText(cScore); //animate
+                    gameHeader.lPScore2.setFont(font);
+                    gameHeader.lPScore2.setForeground(Color.gray);
+                    break;
+                case 3:
+                    gameHeader.lP3.setText(cName);
+                    gameHeader.lP3.setFont(font);
+                    gameHeader.lP3.setForeground(Color.gray);
+                    //gameHeader.lPScore3.setText(cScore); //animate
+                    gameHeader.lPScore3.setFont(font);
+                    gameHeader.lPScore3.setForeground(Color.gray);
+                    break;
+            }
+            
+            if (cPlayerNum == PlayerNumber)
+            {
+                switch (cPlayerNum)
+                {
+                    case 1:
+                        gameHeader.lP1.setFont(fontB);
+                        gameHeader.lP1.setForeground(Color.white);
+                        gameHeader.lPScore1.setFont(fontB);                        
+                        gameHeader.lPScore1.setForeground(Color.white);
+                        break;
+                    case 2:
+                        gameHeader.lP2.setFont(fontB);
+                        gameHeader.lP2.setForeground(Color.white);
+                        gameHeader.lPScore2.setFont(fontB);
+                        gameHeader.lPScore2.setForeground(Color.white);
+                        break;
+                    case 3:
+                        gameHeader.lP3.setFont(fontB);
+                        gameHeader.lP3.setForeground(Color.white);
+                        gameHeader.lPScore3.setFont(fontB);
+                        gameHeader.lPScore3.setForeground(Color.white);
+                        break;
+                }
             }
         }
     }
     
+    public void UpdateLables()
+    {                  
+        int MaxScore=0;
+        String Winner = "";
+        for (Object obj: CurrentPlayers.toArray())
+        {
+            Person pCurrent = (Person)obj;
+            if (pCurrent.getTScore() > MaxScore)
+            {
+                MaxScore = pCurrent.getTScore();
+                Winner = pCurrent.getName();
+            }
+        }
+        
+        if (Winner.equals(""))
+        {
+            Winner = "No one ";
+            gameHeader.lWinner.setForeground(Color.red);
+        }
+        
+        gameHeader.lWinner.setText(Winner + " Won!");
+        gameHeader.lWinner.setForeground(Color.green);
+    }
+    
     public void addScore(int Score)
-    {        
+    {    
+        boolean AnimateScoreOnAdd = false;
+        if (Score > 0 ) AnimateScoreOnAdd = true;
+        
+        System.out.println("GameWindow addScore score = "+Score);
+        
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
             if (pCurrent.getPlayer() == CurrentPlayerNum)
             {            
-                int oldScore = pCurrent.getScore();
-                pCurrent.setScore(Score+oldScore);
+                int oldScore = pCurrent.getTScore();
+                pCurrent.setTScore(Score+oldScore);             
+                
             }
         }
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) 
-    {
-        System.out.println("myJPanelstd actionPerformed ");
-        numberAvailableAnswers -= 1;
-        for (int i = 0; i < answerButtons.length; i++)
+
+        //setPlayerNameOnLabel(CurrentPlayerNum);
+        
+        CheckIfGameIsEnding();
+        
+        if (Score < 0)
         {
-            if (e.getSource() == answerButtons[i])
+            if (CurrentPlayerNum == CurrentPlayers.getSize())
             {
-                answerButtons[i].onButtonPressed();
+                CurrentPlayerNum=1;
+            }
+            else
+            {
+                CurrentPlayerNum++;
             }
         }
-        if (0 == numberAvailableAnswers)
+        
+        setPlayerNameOnLabel(CurrentPlayerNum, AnimateScoreOnAdd);
+    }
+    
+    public void CheckIfGameIsEnding()
+    {
+         if (0 == numberAvailableAnswers)
         {
-            //Complete the board and move to double jeopardy
+            //Update lables telling who won
+            UpdateLables();
+
+            //Update full player list
+            UpdateAllPlayerList();
+            
+            ParentFrame.timerFrame.hideWindow();
+            
+            ParentFrame.setupWindow.SaveDataInXML();
         }
     }
     
-     public final void createLabels()
+    public void UpdateAllPlayerList()
     {
-
-        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 14);      
-
-        JLabel lTemp = new JLabel("Player Name: ");
-        lTemp.setFont(font);
-        lTemp.setForeground(Color.white);
-        lTemp.setHorizontalAlignment(SwingConstants.RIGHT);
-        add(lTemp);
-        
-        lPlayerName = new JLabel();
-        lPlayerName.setForeground(Color.white);
-        lPlayerName.setFont(font);
-        add(lPlayerName);
-               
-        JLabel lTemp2 = new JLabel();
-        add(lTemp2);
-        
-        JLabel lTemp3 = new JLabel();
-        add(lTemp3);
-        
-        lTemp = new JLabel("Score: ");
-        lTemp.setForeground(Color.white);
-        lTemp.setHorizontalAlignment(SwingConstants.RIGHT);
-        lTemp.setFont(font);
-        add(lTemp);
-        
-        lScore = new JLabel();
-        lScore.setForeground(Color.white);
-        lScore.setFont(font);
-        add(lScore);
-
-            
+        //Date date = new Date();
+        for (Object obj: CurrentPlayers.toArray())
+        {
+            Person pCurrent = (Person)obj;
+            for (Object obj2: ParentFrame.setupWindow.ListOfAllPlayers.toArray())
+            {
+                Person pAll = (Person)obj2;
+                if (pCurrent.getName().equals(pAll.getName()))
+                {
+                    if (pCurrent.getTScore() > pAll.getScore())
+                    {
+                        pAll.setScore(pCurrent.getTScore());
+                    }
+                    pAll.setTScore(pCurrent.getTScore());
+                    pAll.setDateLastPlayed(new Date());
+                    break;
+                }
+            }
+        }
     }
     
     public void createAnswerButtons()
     {
         String label = "";
-        int categoryOneIndex = 0;
-        int categoryTwoIndex = 11;
-        int categoryThreeIndex = 21;
-        int categoryFourIndex = 31;
-        int categoryFiveIndex = 41;
-        int categorySixIndex = 0;
+        int categoryOneIndex = answer.getRandomQuestionNumberForCategory(1);
+        int categoryTwoIndex = answer.getRandomQuestionNumberForCategory(2);
+        int categoryThreeIndex = answer.getRandomQuestionNumberForCategory(3);
+        int categoryFourIndex = answer.getRandomQuestionNumberForCategory(4);
+        int categoryFiveIndex = answer.getRandomQuestionNumberForCategory(5);
+        int categorySixIndex = answer.getRandomQuestionNumberForCategory(6);
         for (int i = 0; i < answerButtons.length; i++)
         {
             //Temp till we have questions read from XML
@@ -191,8 +336,13 @@ public class GameWindow extends JPanel implements ActionListener
                 case 12:
                 case 18:
                 case 24:
+                    System.out.println("GameWindow categoryOneIndex = "+categoryOneIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryOneIndex].questionId,DifficultyLevel);
                     categoryOneIndex++;
+                    if (categoryOneIndex >= answer.getLastQuestionIdByCategoryId(1))
+                    {
+                        categoryOneIndex = answer.getFirstQuestionIdByCategoryId(1);
+                    }
                     break;
                 case 1:
                 case 7:
@@ -201,6 +351,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 25:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryTwoIndex].questionId,DifficultyLevel);
                     categoryTwoIndex++;
+                    if (categoryTwoIndex >= answer.getLastQuestionIdByCategoryId(2))
+                    {
+                        categoryTwoIndex = answer.getFirstQuestionIdByCategoryId(2);
+                    }
                     break;
                 case 2:
                 case 8:
@@ -209,6 +363,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 26:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryThreeIndex].questionId,DifficultyLevel);
                     categoryThreeIndex++;
+                    if (categoryThreeIndex >= answer.getLastQuestionIdByCategoryId(3))
+                    {
+                        categoryThreeIndex = answer.getFirstQuestionIdByCategoryId(3);
+                    }
                     break;
                 case 3:
                 case 9:
@@ -217,6 +375,10 @@ public class GameWindow extends JPanel implements ActionListener
                 case 27:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFourIndex].questionId,DifficultyLevel);
                     categoryFourIndex++;
+                    if (categoryFourIndex >= answer.getLastQuestionIdByCategoryId(4))
+                    {
+                        categoryFourIndex = answer.getFirstQuestionIdByCategoryId(4);
+                    }
                     break;
                 case 4:
                 case 10:
@@ -225,14 +387,25 @@ public class GameWindow extends JPanel implements ActionListener
                 case 28:
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFiveIndex].questionId,DifficultyLevel);
                     categoryFiveIndex++;
+                    if (categoryFiveIndex >= answer.getLastQuestionIdByCategoryId(5))
+                    {
+                        categoryFiveIndex = answer.getFirstQuestionIdByCategoryId(5);
+                    }
                     break;
                 case 5:
                 case 11:
                 case 17:
                 case 23:
                 case 29:
+                    System.out.println("GameWindow categorySixIndex = "+categorySixIndex+" before increment");
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categorySixIndex].questionId,DifficultyLevel);
                     categorySixIndex++;
+                    System.out.println("GameWindow categorySixIndex = "+categorySixIndex);
+                    System.out.println("GameWindow last question category 6 = "+answer.getLastQuestionIdByCategoryId(6));
+                    if (categorySixIndex >= answer.getLastQuestionIdByCategoryId(6))
+                    {
+                        categorySixIndex = answer.getFirstQuestionIdByCategoryId(6);
+                    }
                     break;
             }
             answerButtons[i].addActionListener(this);
@@ -267,6 +440,62 @@ public class GameWindow extends JPanel implements ActionListener
         {
             Person pCurrent = (Person)obj;           
             pCurrent.setScore(0);
+            pCurrent.setTScore(0);
         }
+    }
+
+    private void setHeaderLabels() 
+    {
+        gameHeader.lWinner.setForeground(new Color(51,51,51));
+        
+        switch (DifficultyLevel)
+        {
+            case 1:
+                gameHeader.lDifficultyLevel.setText("K12");
+                break;
+            case 2:
+                gameHeader.lDifficultyLevel.setText("Under Grad");
+                break;
+            case 3:
+                gameHeader.lDifficultyLevel.setText("Grad");
+                break;
+        }
+        
+        
+        int TNumOfPlayers = CurrentPlayers.getSize();
+        switch (TNumOfPlayers)
+        {
+            case 1:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(false);
+                gameHeader.lPScore2.setVisible(false);
+                gameHeader.lP3.setVisible(false);
+                gameHeader.lPScore3.setVisible(false);
+                break;
+            case 2:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(true);
+                gameHeader.lPScore2.setVisible(true);
+                gameHeader.lP3.setVisible(false);
+                gameHeader.lPScore3.setVisible(false);
+                break;
+            case 3:
+                gameHeader.lP1.setVisible(true);
+                gameHeader.lPScore1.setVisible(true);
+                gameHeader.lP2.setVisible(true);
+                gameHeader.lPScore2.setVisible(true);
+                gameHeader.lP3.setVisible(true);
+                gameHeader.lPScore3.setVisible(true);
+                break;
+        }
+    }
+
+    private void AnimateScore(JLabel lPScore, int currentScore,int newScore, boolean AnimateScoreOnAdd) 
+    {
+        AnimateNumbersTimer tAnimate = new AnimateNumbersTimer(10,this,lPScore,currentScore,newScore,AnimateScoreOnAdd);
+        tAnimate.addActionListener(this);        
+        tAnimate.start();
     }
 }

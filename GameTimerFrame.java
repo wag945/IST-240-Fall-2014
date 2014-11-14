@@ -29,6 +29,7 @@ public class GameTimerFrame extends JDialog implements ActionListener
         getContentPane().add(window,BorderLayout.CENTER);
         this.setFocusable(false);
         this.setFocusableWindowState(false);
+        this.setAlwaysOnTop(true);
         //------------------------------------------------------
         //do not let timer window close manualy
         this.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);

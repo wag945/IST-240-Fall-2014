@@ -270,7 +270,7 @@
     <string>How do change my PSU account password?</string>
     <string>How do I find a course?</string>
     <string>How to i register for a courses</string>
-    <int>2</int>
+    <int>1</int>
 
     <int>35</int>
     <string>PSU Web</string>
@@ -318,7 +318,7 @@
     <string>Where can I find PSU visitor guide?</string>
     <string>Where can I find PSU faculty guide?</string>
     <string>Where can I find PSU student guide?</string>
-    <int>2</int>
+    <int>1</int>
 
     <int>41</int>
     <string>Famous PSU Alum</string>

@@ -82,82 +82,82 @@
 
     <int>11</int>
     <string>History</string>
-    <string>Year Penn State University was chartered</string> 
-    <string>What is 1776?</string>
-    <string>What is 1982?</string>
-    <string>What is 1855?</string> 
+    <string>Date Penn State University was founded</string> 
+    <string>What is December 2, 1855?</string>
+    <string>What is August 18, 1855?</string>
+    <string>What is February 22, 1855?</string> 
     <int>3</int> 
     
     <int>12</int>
     <string>History</string>
-    <string>Pennsylvania county of main campus</string> 
-    <string>What is Philadelphia County?</string>
-    <string>What is Centre County?</string>
-    <string>What is Nittany County?</string> 
-    <int>2</int> 
+    <string>Name of land donor for Main Campus</string> 
+    <string>Who is James Irvin?</string>
+    <string>Who is Harry Bellefonte?</string>
+    <string>Who is Johny Walker?</string> 
+    <int>1</int> 
 
     <int>13</int>
     <string>History</string>
-    <string>Penn State's founding president</string> 
-    <string>Who is James Bond?</string>
-    <string>Who is Nathan Nittany?</string>
-    <string>Who is Evan Pugh?</string> 
+    <string>Size of Penn State Main Campus originally</string> 
+    <string>What is 5 acres?</string>
+    <string>What is 12 acres?</string>
+    <string>What is 200 acres?</string> 
     <int>3</int> 
 
     <int>14</int>
     <string>History</string>
-    <string>Year Penn State first offered advanced degrees</string> 
-    <string>What is 1855?</string>
-    <string>What is 1996?</string>
-    <string>What is 1924?</string> 
-    <int>3</int> 
+    <string>Name college changed to in 1862</string> 
+    <string>What is Centre College?</string>
+    <string>What is Agricultural College of Pennsylvania?</string>
+    <string>What is Nittany University?</string> 
+    <int>2</int> 
     
     <int>15</int>
     <string>History</string>
-    <string>Year Penn State graduated its first class</string> 
-    <string>What is 1861?</string>
-    <string>What is 1859?</string>
-    <string>What is 1858?</string> 
+    <string>Name college changed to in 1875</string> 
+    <string>What is Pennsylvania State College?</string>
+    <string>What is Pennsylvania State University?</string>
+    <string>What is Nittany University?</string> 
     <int>1</int> 
 
     <int>16</int>
     <string>History</string>
-    <string>Name of university when it was founded</string> 
-    <string>What is Penn State?</string>
-    <string>What is Central College?</string>
-    <string>What is Farmers High School of Pennsylvania?</string> 
-    <int>3</int> 
+    <string>Year Penn State hired Milton Eisenhower as President</string> 
+    <string>What is 1922?</string>
+    <string>What is 1950?</string>
+    <string>What is 1968?</string> 
+    <int>2</int> 
 
     <int>17</int>
     <string>History</string>
-    <string>Year university name changed to Penn State</string> 
-    <string>What is 1855?</string>
-    <string>What is 1988?</string>
-    <string>What is 1953?</string> 
-    <int>3</int> 
+    <string>Name of commencement speaker June 1955</string> 
+    <string>Who is Dwight Eisenhower?</string>
+    <string>Who is Elvis Presley?</string>
+    <string>Who is Richard Nixon?</string> 
+    <int>1</int> 
 
     <int>18</int>
     <string>History</string>
-    <string>Largest university in Pennsylvania</string> 
-    <string>What is Penn State?</string>
-    <string>What is Pitt?</string>
-    <string>What is Slippery Rock?</string> 
-    <int>1</int> 
+    <string>Year Penn States College of Medicine opened</string> 
+    <string>What is 1921?</string>
+    <string>What is 1963?</string>
+    <string>What is 1972?</string> 
+    <int>2</int> 
 
     <int>19</int>
     <string>History</string>
-    <string>University motto</string> 
-    <string>What is making life better?</string>
-    <string>What is everything is going to be alright?</string>
-    <string>What is we are...?</string> 
-    <int>1</int> 
+    <string>Name of Penn State educational television station</string> 
+    <string>What is WPEN?</string>
+    <string>What is WPSU?</string>
+    <string>What is WPSX-TV?</string> 
+    <int>3</int> 
 
     <int>20</int>
     <string>History</string>
-    <string>Year Dickinson school of law merged with Penn State</string> 
-    <string>What is 1855?</string>
-    <string>What is 2000?</string>
-    <string>What is 1776?</string> 
+    <string>Year Penn State celebrated its sesquicentennial</string> 
+    <string>What is 1905?</string>
+    <string>What is 2005?</string>
+    <string>What is 1955?</string> 
     <int>2</int>
     
     <int>21</int>

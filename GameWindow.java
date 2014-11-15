@@ -146,7 +146,6 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP1.setText(cName);
                     gameHeader.lP1.setFont(font);
                     gameHeader.lP1.setForeground(Color.gray);
-                    //gameHeader.lPScore1.setText(cScore); //animate
                     AnimateScore(gameHeader.lPScore1, Integer.parseInt(gameHeader.lPScore1.getText()), cScore, AnimateScoreOnAdd);
                     gameHeader.lPScore1.setFont(font);
                     gameHeader.lPScore1.setForeground(Color.gray);
@@ -155,7 +154,7 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP2.setText(cName);
                     gameHeader.lP2.setFont(font);
                     gameHeader.lP2.setForeground(Color.gray);
-                    //gameHeader.lPScore2.setText(cScore); //animate
+                    AnimateScore(gameHeader.lPScore2, Integer.parseInt(gameHeader.lPScore2.getText()), cScore, AnimateScoreOnAdd);
                     gameHeader.lPScore2.setFont(font);
                     gameHeader.lPScore2.setForeground(Color.gray);
                     break;
@@ -163,7 +162,7 @@ public class GameWindow extends JPanel implements ActionListener
                     gameHeader.lP3.setText(cName);
                     gameHeader.lP3.setFont(font);
                     gameHeader.lP3.setForeground(Color.gray);
-                    //gameHeader.lPScore3.setText(cScore); //animate
+                    AnimateScore(gameHeader.lPScore3, Integer.parseInt(gameHeader.lPScore3.getText()), cScore, AnimateScoreOnAdd);
                     gameHeader.lPScore3.setFont(font);
                     gameHeader.lPScore3.setForeground(Color.gray);
                     break;

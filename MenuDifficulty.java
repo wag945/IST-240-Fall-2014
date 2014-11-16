@@ -159,6 +159,7 @@ public class MenuDifficulty extends JPanel implements ActionListener
                     setup.DifficultyLevel = DifficultyLevel;
                     setup.bDifficulty.setVisible(true);
                     setup.bPlayers.setVisible(true);
+                    setup.colorSelection.setVisible(true);
                     if (setup.DifficultyLevel>0 && !setup.SelectedPlayers.isEmpty())
                     {                        
                         setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);

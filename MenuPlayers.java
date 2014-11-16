@@ -427,6 +427,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                             setup.SelectedPlayers = SelectedPlayers;
                             setup.ListOfAllPlayers = listOfAllPlayers;
                             setup.bDifficulty.setVisible(true);
+                            setup.colorSelection.setVisible(true);
                             setup.bPlayers.setVisible(true);
                             if (setup.DifficultyLevel>0 && !setup.SelectedPlayers.isEmpty())
                             {                        

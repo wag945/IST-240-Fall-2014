@@ -1,12 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
+ * @Course: IST 240 (FA 14)
+ * @Section: 001
  *
- * @author Ron
+ * @Group 08
  */
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -29,7 +25,7 @@ public class ColorSelection extends JPanel implements ActionListener
     ButtonGroup intColorSelection;
     Color c_blue;
     Color c_white;
-    Color c_darkgray;
+    Color c_gray;
     
     ColorSelection(int informedColorSelection)
     {
@@ -156,7 +152,7 @@ public class ColorSelection extends JPanel implements ActionListener
                     
                     if(intColorSelection.getSelection().equals(3))
                     {
-                        setup.ParentFrame.setGameButtonColor(c_darkgray);
+                        setup.ParentFrame.setGameButtonColor(c_gray);
                     }
                     
                     else

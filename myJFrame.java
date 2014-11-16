@@ -26,6 +26,9 @@ public class myJFrame extends JFrame implements WindowListener
     AudioPlayer SoundPlayer;
     //PlayerSelectsFrame playerTurnFrame;
     Color buttonColor;
+    Color c_blue;
+    Color c_white;
+    Color c_gray;
     
     public myJFrame () 
     {
@@ -43,6 +46,9 @@ public class myJFrame extends JFrame implements WindowListener
         //playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer();
         buttonColor = Color.DARK_GRAY;
+        c_blue = Color.BLUE;
+        c_white = Color.WHITE;
+        c_gray = Color.GRAY;
         
         this.addWindowListener(this);
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
@@ -327,6 +333,9 @@ public class myJFrame extends JFrame implements WindowListener
     public void setGameButtonColor(Color color)
     {
         buttonColor = color;
+//        c_blue = color;
+//        c_white = color;
+//        c_gray = color;
     }
 
     public Color getGameButtonColor()

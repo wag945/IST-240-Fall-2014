@@ -62,8 +62,8 @@ public class ColorSelection extends JPanel implements ActionListener
         c3_Color.setFont(font);
         
         c1_Color.setMnemonic(KeyEvent.VK_W);
-        c1_Color.setMnemonic(KeyEvent.VK_X);
-        c1_Color.setMnemonic(KeyEvent.VK_Y);
+        c2_Color.setMnemonic(KeyEvent.VK_X);
+        c3_Color.setMnemonic(KeyEvent.VK_Y);
         
         c1_Color.setActionCommand("1");
         c2_Color.setActionCommand("2");

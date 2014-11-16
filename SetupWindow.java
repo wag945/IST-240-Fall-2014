@@ -22,13 +22,16 @@ public class SetupWindow extends JPanel implements ActionListener
 {
     JButton bPlayers;
     JButton bDifficulty;
+    JButton colorSelection;
     PlayersList SelectedPlayers = new PlayersList();
     PlayersList ListOfAllPlayers = new PlayersList();
     myJFrame ParentFrame;
     int DifficultyLevel = 1; //Set level to K12 by default
+    int ColorSelection = 1; //Set color blue by default
     
     MenuDifficulty DifficultyMenu;
     MenuPlayers PlayerMenu;
+    ColorSelection ColorSelectionMenu;
     
     public SetupWindow(myJFrame mjf)
     {
@@ -49,7 +52,13 @@ public class SetupWindow extends JPanel implements ActionListener
         bDifficulty.setText("Select Difficulty");
         bDifficulty.setName("bDifficulty");
         bDifficulty.addActionListener(this);
-        add(bDifficulty);    
+        add(bDifficulty);   
+        
+        colorSelection = new JButton();
+        colorSelection.setText("Color Options");
+        colorSelection.setName("colorSelection");
+        colorSelection.addActionListener(this);
+        add(colorSelection);
         
         LoadDataFromXML();
     }
@@ -64,6 +73,7 @@ public class SetupWindow extends JPanel implements ActionListener
             bTemp = (JButton)obj;
             bDifficulty.setVisible(false);
             bPlayers.setVisible(false);
+            colorSelection.setVisible(false);
         
             setLayout(null);
             switch (bTemp.getName())
@@ -74,6 +84,10 @@ public class SetupWindow extends JPanel implements ActionListener
 
                 case "bDifficulty":   
                     bDifficulty_Pressed();
+                    break;
+                    
+                case "colorSelection":
+                    colorSelection_Pressed();
                     break;
             }
         }
@@ -94,6 +108,14 @@ public class SetupWindow extends JPanel implements ActionListener
         add(DifficultyMenu);
         DifficultyMenu.setBounds(148, 50, 500, 500);
     }
+    
+    void colorSelection_Pressed()
+    {
+        ColorSelectionMenu = new ColorSelection(ColorSelection);
+        ColorSelectionMenu.setVisible(true);
+        add(ColorSelectionMenu);
+        ColorSelectionMenu.setBounds(148, 50, 500, 500);
+    }
 
     void SaveDataInXML()
     {        
@@ -104,7 +126,8 @@ public class SetupWindow extends JPanel implements ActionListener
         XMLWriter.openWriterXML("//settings//setup.xml");
         XMLWriter.writeObject(ListOfAllPlayers);
         XMLWriter.writeObject(SelectedPlayers);
-        XMLWriter.writeObject(DifficultyLevel);        
+        XMLWriter.writeObject(DifficultyLevel);
+//        XMLWriter.writeObject(ColorSelectionMenu);
         XMLWriter.closeWriterXML();
         
         UploadSetupXML();        

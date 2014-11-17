@@ -23,7 +23,7 @@ public class ColorSelection extends JPanel implements ActionListener
 {
     JPanel pColorSelection;
     ButtonGroup intColorSelection;
-    Color c_blue;
+    Color c_blue; //colors are not defined
     Color c_white;
     Color c_gray;
     
@@ -132,7 +132,7 @@ public class ColorSelection extends JPanel implements ActionListener
                 if (intColorSelection.getSelection()!=null)
                 {
                     int ColorSelection = Integer.parseInt(intColorSelection.getSelection().getActionCommand());
-                    System.out.print("Color is " + intColorSelection + "\r\n");
+                    System.out.print("Color is " + ColorSelection + "\r\n"); //use ColorSelection here
 
                     SetupWindow setup = (SetupWindow)this.getParent();
                     setup.ColorSelection = ColorSelection;
@@ -140,7 +140,7 @@ public class ColorSelection extends JPanel implements ActionListener
                     setup.bDifficulty.setVisible(true);
                     setup.bPlayers.setVisible(true);
                     
-                    if(intColorSelection.getSelection().equals(1))
+                    if(intColorSelection.getSelection().equals(1)) //use ColorSelection here, intColorSelection is not integer
                     {
                         setup.ParentFrame.setGameButtonColor(c_blue);
                     }
@@ -157,7 +157,8 @@ public class ColorSelection extends JPanel implements ActionListener
                     
                     else
                     {
-                        intColorSelection.getSelection().equals(1);
+                        intColorSelection.getSelection().equals(1); //i suppose you are trying to make blue color as default?
+                        //if so... then you have to set the color in ParentFrame also not just the selection.
                     }
 
                     if (setup.DifficultyLevel>0 && setup.ColorSelection>0 && !setup.SelectedPlayers.isEmpty())

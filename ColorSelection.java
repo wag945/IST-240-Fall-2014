@@ -23,10 +23,10 @@ public class ColorSelection extends JPanel implements ActionListener
 {
     JPanel pColorSelection;
     ButtonGroup intColorSelection;
-    Color c_blue; //colors are not defined
-    Color c_white;
-    Color c_gray;
-    
+//    Color c_blue = new Color(Color.blue); //colors are not defined
+//    Color c_white;
+//    Color c_gray;
+//    
     ColorSelection(int informedColorSelection)
     {
         super();
@@ -133,32 +133,29 @@ public class ColorSelection extends JPanel implements ActionListener
                 {
                     int ColorSelection = Integer.parseInt(intColorSelection.getSelection().getActionCommand());
                     System.out.print("Color is " + ColorSelection + "\r\n"); //use ColorSelection here
+                    
 
                     SetupWindow setup = (SetupWindow)this.getParent();
+
                     setup.ColorSelection = ColorSelection;
                     setup.colorSelection.setVisible(true);
                     setup.bDifficulty.setVisible(true);
                     setup.bPlayers.setVisible(true);
                     
-                    if(intColorSelection.getSelection().equals(1)) //use ColorSelection here, intColorSelection is not integer
+                    
+                    if (ColorSelection == 1) //use ColorSelection here, intColorSelection is not integer
                     {
-                        setup.ParentFrame.setGameButtonColor(c_blue);
+                        setup.ParentFrame.setGameButtonColor(Color.blue);
                     }
                     
-                    if(intColorSelection.getSelection().equals(2))
+                    if(ColorSelection == 2)
                     {
-                        setup.ParentFrame.setGameButtonColor(c_white);
+                        setup.ParentFrame.setGameButtonColor(Color.white);
                     }
                     
-                    if(intColorSelection.getSelection().equals(3))
+                    if(ColorSelection == 3)
                     {
-                        setup.ParentFrame.setGameButtonColor(c_gray);
-                    }
-                    
-                    else
-                    {
-                        intColorSelection.getSelection().equals(1); //i suppose you are trying to make blue color as default?
-                        //if so... then you have to set the color in ParentFrame also not just the selection.
+                        setup.ParentFrame.setGameButtonColor(Color.gray);
                     }
 
                     if (setup.DifficultyLevel>0 && setup.ColorSelection>0 && !setup.SelectedPlayers.isEmpty())

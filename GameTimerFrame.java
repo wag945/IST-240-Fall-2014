@@ -15,13 +15,15 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class GameTimerFrame extends JDialog implements ActionListener
 {
     GameTimerWindow window;
-    public GameTimerFrame ()
+    myJFrame parentFrame;
+    
+    public GameTimerFrame (myJFrame frame)
     {
-        //super("Timer");
         super();
+        parentFrame = frame;
         //------------------------------------------------------
         // Create components
-        window = new GameTimerWindow();
+        window = new GameTimerWindow(this);
         //------------------------------------------------------
         // Choose a Layout for JFrame and 
         // add Jpanel to JFrame according to layout    	

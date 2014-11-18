@@ -16,10 +16,12 @@ public class GameTimerWindow extends JPanel implements ActionListener {
     int timeLeft;
     Timer timer;
     Integer minutes,seconds;
+    GameTimerFrame parentFrame;
     
-    public GameTimerWindow()
+    public GameTimerWindow(GameTimerFrame frame)
     {
         super();
+        parentFrame = frame;
         setBackground(Color.DARK_GRAY);
         setVisible(true);        
         timeTextField = new JTextField();
@@ -78,8 +80,8 @@ public class GameTimerWindow extends JPanel implements ActionListener {
             {
                 timeTextField.setText("GAME OVER");
                 timer.stop();
-                AudioPlayer player = new AudioPlayer();
-                player.play("endround.wav");
+                //AudioPlayer player = new AudioPlayer();
+                parentFrame.parentFrame.SoundPlayer.play("endround.wav");
                 timeTextField.setBounds(20, 5,200,50);
             }
         }

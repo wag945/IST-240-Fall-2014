@@ -324,15 +324,16 @@ public class MenuPlayers extends JPanel implements ActionListener
         
         //Create label
         JLabel lPlayerName = new JLabel("Player Name:");
-        lPlayerName.setBounds(10, 64, 100, 27);
+        lPlayerName.setBounds(30, 64, 100, 27);
         lPlayerName.setForeground(Color.white);
         pCreatePlayerProfile.add(lPlayerName);
 
         tName = new JTextField();
-        tName.setBounds(100, 64, 110, 27);        
+        tName.setBounds(120, 64, 120, 27);        
+        tName.setBorder(null);
         pCreatePlayerProfile.add(tName);
 
-        bAdd.setBounds(220, 64, 60, 27); 
+        bAdd.setBounds(120, 64+34, 120, 27); 
         bAdd.setName("bAdd");
         bAdd.addActionListener(this);
         pCreatePlayerProfile.add(bAdd);

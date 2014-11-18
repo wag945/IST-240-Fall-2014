@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 public class AboutWindow extends JPanel implements ActionListener
 {
 
-//    myJFrame ParentJFrame;
+    myJFrame ParentJFrame;
     JPanel aboutPanel;
     JPanel instructionsPanel;
     JButton aboutAuthors, instructionButton;
@@ -34,14 +34,14 @@ public class AboutWindow extends JPanel implements ActionListener
 //        text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
 //        add(text);
         
-        aboutAuthors = new JButton("About the Authors");
+        aboutAuthors = new JButton("Credits");
         aboutAuthors.addActionListener(this);
-        aboutAuthors.setBounds(165, 0, 226, 27);
+        aboutAuthors.setBounds(260, 5, 150, 27);
         add(aboutAuthors);
 
         instructionButton = new JButton("Instructions");
         instructionButton.addActionListener(this);
-        instructionButton.setBounds(395, 0, 226, 27);
+        instructionButton.setBounds(420, 5, 150, 27);
         add(instructionButton);
         
 //        aboutJPanel = new JPanel();
@@ -56,22 +56,36 @@ public class AboutWindow extends JPanel implements ActionListener
 //        instructionButton.setIcon(instructionsImage);
 //        add(instructionButton);
         
-//        ParentJFrame = mjf;        
+        ParentJFrame = mjf;        
         setVisible(true);
-        
+        setTheme();
  
+    }
+    
+    public void setTheme()
+    {
+        Color bColor = ParentJFrame.buttonColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        aboutAuthors.setBackground(bColor);
+        aboutAuthors.setForeground(fColor);
+        instructionButton.setBackground(bColor);
+        instructionButton.setForeground(fColor);
     }
 
     static String aboutText = ""
-        + "Developed by: \n"
-        + " \n"
-        + "Zunair Fayaz, William Ganley, Ron Avila";
+        + "\n\n\n\n"
+        + " Developed by\n\n"
+        + "   Ron Avila\n"
+        + " Zunair Fayaz\n"
+        + "William Ganley"
+        + "";
 
-    static String instructionsText = ""
-            + "Welcome to PSU Jeopardy! \n"
-
-            + "Instructions: \n"
-            + "\n "
+    static String instructionsText = "\n\n"
+//            + "Welcome to PSU Jeopardy! \n"
+//
+//            + "Instructions: \n"
+//            + "\n"
             + "Each game begins with user(s) selecting the number of \n"
             + "players, by pressing the Setup button at the top. \n"
             + "\n"
@@ -89,11 +103,11 @@ public class AboutWindow extends JPanel implements ActionListener
             + "with player 1 going first, next player 2, then 3 and so on \n"
             + "\n"
             + "Player 1 starts the game by picking a category and the\n"
-            + " square dollar amount under each category and clicking it. \n"
+            + "square dollar amount under each category and clicking it. \n"
             + "a pop-up screen will appear and the player will have \n"
             + "10 seconds to click/check the correct answer. \n"
             + "If the player1 gets it wrong then it becomes player 2's turn \n"
-            + " and so on, until all the squares on the board has \n"
+            + "and so on, until all the squares on the board has \n"
             + "been picked. \n"
             + "\n"
             + "High Scores are recorded and the player with the most cash"
@@ -129,12 +143,16 @@ public class AboutWindow extends JPanel implements ActionListener
         aboutPanel = new JPanel();
         JTextArea jta1 = new JTextArea(aboutText);
         jta1.setFont(font);
+        jta1.setWrapStyleWord(true);
         jta1.setBackground(Color.gray);
         jta1.setForeground(Color.white);
-        aboutPanel.setBounds(148, 50, 500, 500);
+        jta1.setFocusable(false);
+        jta1.setEditable(false);
+        aboutPanel.setBounds(148, 50, 500, 560);
         aboutPanel.setBackground(Color.gray);
         aboutPanel.setForeground(Color.white);
         aboutPanel.add(jta1);
+        aboutPanel.setBorder(BorderFactory.createLineBorder(Color.black));
         aboutPanel.setVisible(true);
         this.add(aboutPanel);
         validate();
@@ -149,17 +167,19 @@ public class AboutWindow extends JPanel implements ActionListener
         //Font font = new Font(Font.SANS_SERIF, Font.BOLD, 16); 
         Font font = new Font("Times", Font.BOLD, 14); 
         instructionsPanel = new JPanel();
-//        JTextArea jta2 = new JTextArea(instructionsText, 23, 30);
-        JTextArea jta2 = new JTextArea(instructionsText, 20, 35);
+        JTextArea jta2 = new JTextArea(instructionsText, 28, 35);
+        jta2.setFocusable(false);
         jta2.setFont(font);
         jta2.setLineWrap(true);
         jta2.setBackground(Color.gray);
         jta2.setForeground(Color.white);
         jta2.setEditable(false);
-        instructionsPanel.setBounds(148, 50, 500, 500);
+        instructionsPanel.setBounds(148, 50, 500, 650);
         instructionsPanel.setBackground(Color.gray);
         instructionsPanel.setForeground(Color.white);
-        instructionsPanel.add(new JScrollPane(jta2));
+        instructionsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //instructionsPanel.add(new JScrollPane(jta2));
+        instructionsPanel.add(jta2);
         instructionsPanel.setVisible(true);
         this.add(instructionsPanel);
         validate();

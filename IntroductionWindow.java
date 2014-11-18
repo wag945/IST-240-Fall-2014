@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class IntroductionWindow extends JPanel implements ActionListener {
-    JButton instructionsButton,setupButton,aboutButton,highScoresButton,newGameButton;
+    JButton setupButton,aboutButton,highScoresButton,newGameButton;
     myJFrame parentFrame;
     //AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
     public IntroductionWindow(myJFrame mjf) {
@@ -18,38 +18,56 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         setBackground(Color.DARK_GRAY);
 
         parentFrame = mjf;
-        instructionsButton = new JButton();
-        instructionsButton.setText("Instructions");
-        instructionsButton.addActionListener(this);
+        //instructionsButton = new JButton();
+        //instructionsButton.setText("Instructions");
+        //instructionsButton.addActionListener(this);
         setupButton = new JButton();
         setupButton.setText("Setup");        
-        setupButton.addActionListener(this);
-        highScoresButton = new JButton();
-        highScoresButton.setText("High Scores");
-        highScoresButton.addActionListener(this);
+        setupButton.addActionListener(this);        
         newGameButton = new JButton();
         newGameButton.setText("New Game");
         newGameButton.setEnabled(false);
         newGameButton.addActionListener(this);
+        highScoresButton = new JButton();
+        highScoresButton.setText("High Scores");
+        highScoresButton.addActionListener(this);
         aboutButton = new JButton();
         aboutButton.setText("About");
         aboutButton.addActionListener(this);
 
-        add(instructionsButton);
+        //add(instructionsButton);
         add(setupButton);
         add(highScoresButton);
         add(newGameButton);
         add(aboutButton);
+        
+        setTheme();
+    }
+    
+    public void setTheme()
+    {
+        Color bColor = parentFrame.buttonColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        setupButton.setBackground(bColor);
+        setupButton.setForeground(fColor);
+        newGameButton.setBackground(bColor);
+        newGameButton.setForeground(fColor);
+        highScoresButton.setBackground(bColor);
+        highScoresButton.setForeground(fColor);
+        aboutButton.setBackground(bColor);
+        aboutButton.setForeground(fColor);               
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (instructionsButton == e.getSource())
-        {
-            System.out.println("instructionsButton pressed");
-            parentFrame.instructions();
-        }
-        else if (setupButton == e.getSource())
+//        if (instructionsButton == e.getSource())
+//        {
+//            System.out.println("instructionsButton pressed");
+//            parentFrame.instructions();
+//        }
+//        else 
+        if (setupButton == e.getSource())
         {
             System.out.println("setupButton pressed");
             parentFrame.setup();

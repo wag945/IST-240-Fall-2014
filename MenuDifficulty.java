@@ -24,8 +24,9 @@ public class MenuDifficulty extends JPanel implements ActionListener
     
     JPanel pDifficultySelection;
     ButtonGroup intDifficultyLevel;
+    JButton bNext;
     
-    MenuDifficulty (int informedDifficultyLevel)
+    MenuDifficulty (int informedDifficultyLevel, Color ThemeColor)
     {
         super();
         setLayout(null);
@@ -117,7 +118,7 @@ public class MenuDifficulty extends JPanel implements ActionListener
         pDifficultySelection.add(r3_Difficulty);
         
         //Create next button
-        JButton bNext;
+        //JButton bNext;
         bNext = new JButton();
         bNext.setText("Select");  
         bNext.setName("bSave");
@@ -140,12 +141,22 @@ public class MenuDifficulty extends JPanel implements ActionListener
             default:
                 break;
         }
+       setTheme(ThemeColor);
     }
 
+    public void setTheme(Color ThemeColor)
+    {
+        Color bColor = ThemeColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        bNext.setBackground(bColor);
+        bNext.setForeground(fColor);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent ae) 
     {
-        if (ae.getSource().getClass().toString().equals("class javax.swing.JButton"))
+        if (ae.getSource().equals(bNext))
         {
             JButton bTemp = (JButton)ae.getSource();
             if (bTemp.getName().equals("bSave"))

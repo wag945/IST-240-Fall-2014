@@ -30,17 +30,29 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         
         bAHS = new JButton("All Time High Score");
         bAHS.addActionListener(this);
-        bAHS.setBounds(165, 0, 226, 27);
+        bAHS.setBounds(165, 5, 226, 27);
         add(bAHS);
         
         bTHS = new JButton("Today's High Score");
         bTHS.addActionListener(this);
-        bTHS.setBounds(395, 0, 226, 27);
+        bTHS.setBounds(395, 5, 226, 27);
         add(bTHS);
            
         ParentJFrame = mjf;
         
         setVisible(true);
+        setTheme();
+    }
+    
+    public void setTheme()
+    {
+        Color bColor = ParentJFrame.buttonColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        bAHS.setBackground(bColor);
+        bAHS.setForeground(fColor);
+        bTHS.setBackground(bColor);
+        bTHS.setForeground(fColor);
     }
 
     @Override

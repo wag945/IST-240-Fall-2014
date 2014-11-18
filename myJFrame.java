@@ -17,7 +17,7 @@ public class myJFrame extends JFrame implements WindowListener
     GameHeader gameHeader;
     SetupWindow setupWindow;
     IntroductionWindow introductionWindow;
-    InstructionsWindow instructionsWindow;
+    //InstructionsWindow instructionsWindow;
     AboutWindow aboutWindow;
     HighScoresWindow highScoresWindow;
     SplashWindow splashWindow;
@@ -34,16 +34,17 @@ public class myJFrame extends JFrame implements WindowListener
         //------------------------------------------------------
         // Create components
         //gameWindow = new GameWindow(this);
+        buttonColor = Color.DARK_GRAY;
         setupWindow = new SetupWindow(this);
         introductionWindow = new IntroductionWindow(this);
-        instructionsWindow = new InstructionsWindow();
+        //instructionsWindow = new InstructionsWindow();
         aboutWindow = new AboutWindow(this);
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame(this);
         //playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer(this);
-        buttonColor = Color.DARK_GRAY;
+        
 //        Color c_blue = Color.BLUE;
 //        Color c_white = Color.WHITE;
 //        Color c_gray = Color.GRAY;
@@ -81,7 +82,7 @@ public class myJFrame extends JFrame implements WindowListener
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(introductionWindow,BorderLayout.NORTH);
         //getContentPane().add(gameWindow,BorderLayout.CENTER);
-        getContentPane().add(instructionsWindow,BorderLayout.CENTER);
+        //getContentPane().add(instructionsWindow,BorderLayout.CENTER);
         getContentPane().add(highScoresWindow,BorderLayout.CENTER);
         getContentPane().add(aboutWindow,BorderLayout.CENTER);
 
@@ -108,7 +109,7 @@ public class myJFrame extends JFrame implements WindowListener
     public void instructions()
     {
         allOff();
-        instructionsWindowOn();
+        //instructionsWindowOn();
     }
     
     public void setup()
@@ -192,23 +193,23 @@ public class myJFrame extends JFrame implements WindowListener
         }
     }
     
-    public void instructionsWindowOn()
-    {
-        if (false == instructionsWindow.isVisible())
-        {
-            getContentPane().add(instructionsWindow,BorderLayout.CENTER);
-            instructionsWindow.setVisible(true);
-        }
-    }
-    
-    public void instructionsWindowOff()
-    {
-        if (true == instructionsWindow.isVisible())
-        {
-            getContentPane().remove(instructionsWindow);
-            instructionsWindow.setVisible(false);
-        }
-    }
+//    public void instructionsWindowOn()
+//    {
+//        if (false == instructionsWindow.isVisible())
+//        {
+//            getContentPane().add(instructionsWindow,BorderLayout.CENTER);
+//            instructionsWindow.setVisible(true);
+//        }
+//    }
+//    
+//    public void instructionsWindowOff()
+//    {
+//        if (true == instructionsWindow.isVisible())
+//        {
+//            getContentPane().remove(instructionsWindow);
+//            instructionsWindow.setVisible(false);
+//        }
+//    }
     
     public void introductionWindowOff()
     {
@@ -307,7 +308,7 @@ public class myJFrame extends JFrame implements WindowListener
     {
         gameBoardOff();
         setupWindowOff();
-        instructionsWindowOff();
+        //instructionsWindowOff();
         aboutWindowOff();
         highScoresWindowOff();
         splashWindowOff();

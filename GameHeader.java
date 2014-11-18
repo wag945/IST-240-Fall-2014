@@ -1,3 +1,7 @@
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /*
  * @Course: IST 240 (FA 14)
  * @Section: 001
@@ -92,15 +96,23 @@ public class GameHeader extends javax.swing.JPanel {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Difficulty Level:");
 
-        tSound.setBackground(new java.awt.Color(51, 51, 51));
+        tSound.setBackground(new java.awt.Color(102, 102, 102));
         tSound.setFont(new java.awt.Font("Tahoma", 0, 5)); // NOI18N
         tSound.setForeground(new java.awt.Color(255, 255, 255));
-        tSound.setText("OFF");
+        tSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/unmute.png"))); // NOI18N
+        tSound.setBorderPainted(false);
+        tSound.setContentAreaFilled(false);
         tSound.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tSound.setFocusPainted(false);
         tSound.setMaximumSize(new java.awt.Dimension(20, 20));
         tSound.setMinimumSize(new java.awt.Dimension(20, 20));
-        tSound.setPreferredSize(new java.awt.Dimension(42, 20));
+        tSound.setPreferredSize(new java.awt.Dimension(20, 20));
+        tSound.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mute.png"))); // NOI18N
+        tSound.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tSoundActionPerformed(evt);
+            }
+        });
 
         lDifficultyLevel.setForeground(new java.awt.Color(255, 255, 255));
         lDifficultyLevel.setText("Under Grad");
@@ -155,22 +167,18 @@ public class GameHeader extends javax.swing.JPanel {
                 .addGap(99, 99, 99)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel8)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel11))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lDifficultyLevel)
                     .addComponent(lTheme)
-                    .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lDifficultyLevel))
-                .addGap(36, 36, 36)
+                    .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -202,10 +210,11 @@ public class GameHeader extends javax.swing.JPanel {
                             .addComponent(jLabel11)
                             .addComponent(lTheme))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 6, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tSound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         lP1.getAccessibleContext().setAccessibleName("lP1");
@@ -231,6 +240,18 @@ public class GameHeader extends javax.swing.JPanel {
             ParentFrame.splashWindow();            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tSoundActionPerformed
+
+        if (tSound.isSelected())
+        {
+            ParentFrame.soundTurnedOn = false;
+        }
+        else
+        {
+            ParentFrame.soundTurnedOn = true;
+        }
+    }//GEN-LAST:event_tSoundActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

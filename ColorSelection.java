@@ -23,11 +23,12 @@ public class ColorSelection extends JPanel implements ActionListener
 {
     JPanel pColorSelection;
     ButtonGroup intColorSelection;
+    JButton bNext;
 //    Color c_blue = new Color(Color.blue); //colors are not defined
 //    Color c_white;
 //    Color c_gray;
 //    
-    ColorSelection(int informedColorSelection)
+    ColorSelection(int informedColorSelection, Color ThemeColor)
     {
         super();
         setLayout(null);
@@ -45,7 +46,7 @@ public class ColorSelection extends JPanel implements ActionListener
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);
         
         JLabel mHeading = new JLabel();
-        mHeading.setText("Color Selection");
+        mHeading.setText("Theme Selection");
         mHeading.setForeground(Color.white);
         mHeading.setFont(font);
         mHeading.setBounds(150, 10, 300, 36);
@@ -96,7 +97,7 @@ public class ColorSelection extends JPanel implements ActionListener
         pColorSelection.add(c2_Color);
         pColorSelection.add(c3_Color);
         
-        JButton bNext;
+        
         bNext = new JButton();
         bNext.setText("Select");  
         bNext.setName("bSave");
@@ -119,6 +120,16 @@ public class ColorSelection extends JPanel implements ActionListener
                 break;
         }        
  
+        setTheme(ThemeColor);
+    }
+    
+    public void setTheme(Color ThemeColor)
+    {
+        Color bColor = ThemeColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        bNext.setBackground(bColor);
+        bNext.setForeground(fColor);
     }
 
     @Override

@@ -54,10 +54,12 @@ public class GameWindow extends JPanel implements ActionListener
                 {        
                     if (tAnimateScore.isAnimatePlusOrMinus())
                     {
+                        ParentFrame.SoundPlayer.play("score_up.au");
                         cScore++;                    
                     }
                     else
                     {
+                        ParentFrame.SoundPlayer.play("score_down.au");
                         cScore--;
                     }
                     tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));

@@ -40,7 +40,7 @@ public class MenuPlayers extends JPanel implements ActionListener
     
     PanelAnimate PanelToAnimate;
     
-    public MenuPlayers(PlayersList previousSelectedPlayers, PlayersList previouslistOfAllPlayers) 
+    public MenuPlayers(PlayersList previousSelectedPlayers, PlayersList previouslistOfAllPlayers, Color ThemeColor) 
     {
         super();
         setLayout(null);
@@ -61,6 +61,16 @@ public class MenuPlayers extends JPanel implements ActionListener
         bNext.addActionListener(this);
         add(bNext);
         
+        setTheme(ThemeColor);
+    }
+    
+    public void setTheme(Color ThemeColor)
+    {
+        Color bColor = ThemeColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        bNext.setBackground(bColor);
+        bNext.setForeground(fColor);
     }
     
     private void CreatePlayerSelectionMenu()

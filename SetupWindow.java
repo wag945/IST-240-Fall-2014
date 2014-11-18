@@ -61,6 +61,21 @@ public class SetupWindow extends JPanel implements ActionListener
         add(colorSelection);
         
         LoadDataFromXML();
+        
+        setTheme();
+    }
+    
+    public void setTheme()
+    {
+        Color bColor = ParentFrame.buttonColor.darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+
+        bPlayers.setBackground(bColor);
+        bPlayers.setForeground(fColor);
+        bDifficulty.setBackground(bColor);
+        bDifficulty.setForeground(fColor);
+        colorSelection.setBackground(bColor);
+        colorSelection.setForeground(fColor);           
     }
 
     @Override
@@ -95,7 +110,7 @@ public class SetupWindow extends JPanel implements ActionListener
     
     void bPlayers_Pressed()
     {
-        PlayerMenu = new MenuPlayers(SelectedPlayers, ListOfAllPlayers);
+        PlayerMenu = new MenuPlayers(SelectedPlayers, ListOfAllPlayers,ParentFrame.buttonColor);
         PlayerMenu.setVisible(true);
         add(PlayerMenu);
         PlayerMenu.setBounds(148, 50, 500, 500);
@@ -103,7 +118,7 @@ public class SetupWindow extends JPanel implements ActionListener
     
     void bDifficulty_Pressed()
     {
-        DifficultyMenu = new MenuDifficulty(DifficultyLevel);
+        DifficultyMenu = new MenuDifficulty(DifficultyLevel,ParentFrame.buttonColor);
         DifficultyMenu.setVisible(true);
         add(DifficultyMenu);
         DifficultyMenu.setBounds(148, 50, 500, 500);
@@ -111,7 +126,7 @@ public class SetupWindow extends JPanel implements ActionListener
     
     void colorSelection_Pressed()
     {
-        ColorSelectionMenu = new ColorSelection(ColorSelection);
+        ColorSelectionMenu = new ColorSelection(ColorSelection,ParentFrame.buttonColor);
         ColorSelectionMenu.setVisible(true);
         add(ColorSelectionMenu);
         ColorSelectionMenu.setBounds(148, 50, 500, 500);

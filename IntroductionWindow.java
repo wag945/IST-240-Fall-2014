@@ -12,7 +12,7 @@ import javax.swing.*;
 public class IntroductionWindow extends JPanel implements ActionListener {
     JButton instructionsButton,setupButton,aboutButton,highScoresButton,newGameButton;
     myJFrame parentFrame;
-    AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
+    //AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
     public IntroductionWindow(myJFrame mjf) {
         super();
         setBackground(Color.DARK_GRAY);
@@ -62,7 +62,7 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         else if (newGameButton == e.getSource())
         {
             System.out.println("newGameButton pressed");
-            SoundPlayer.play("jboardfill.wav");
+            parentFrame.SoundPlayer.play("jboardfill.wav");
             parentFrame.newGame();
         }
         else if (aboutButton == e.getSource())

@@ -29,6 +29,7 @@ public class myJFrame extends JFrame implements WindowListener
     Color c_blue;
     Color c_white;
     Color c_gray;
+    boolean soundTurnedOn;
     
     public myJFrame () 
     {
@@ -42,13 +43,14 @@ public class myJFrame extends JFrame implements WindowListener
         aboutWindow = new AboutWindow(this);
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
-        timerFrame = new GameTimerFrame();
+        timerFrame = new GameTimerFrame(this);
         //playerTurnFrame = new PlayerSelectsFrame();
-        SoundPlayer = new AudioPlayer();
+        SoundPlayer = new AudioPlayer(this);
         buttonColor = Color.DARK_GRAY;
         c_blue = Color.BLUE;
         c_white = Color.WHITE;
         c_gray = Color.GRAY;
+        soundTurnedOn = true;
         
         this.addWindowListener(this);
         this.getContentPane().addHierarchyBoundsListener(new HierarchyBoundsListener()
@@ -342,6 +344,17 @@ public class myJFrame extends JFrame implements WindowListener
     {
         return buttonColor;
     }
+    
+    public boolean isSoundEnabled()
+    {
+        return soundTurnedOn;
+    }
+    
+    public void setSoundEnabled(boolean value)
+    {
+        soundTurnedOn = value;
+    }
+    
     @Override
     public void windowOpened(WindowEvent we) 
     {

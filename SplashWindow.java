@@ -58,7 +58,8 @@ public class SplashWindow extends JPanel implements ActionListener {
     {
         if (e.getSource().equals(t))
         {
-            int centerX = this.getWidth() / 2;
+            int centerX;// = this.getWidth() / 2;
+            centerX = 420;
             int imageHalfWidth = jeopardy.getWidth()/2;
             
             if (jeopardy.getHeight() < 700)

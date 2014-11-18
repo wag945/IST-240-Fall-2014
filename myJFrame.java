@@ -44,9 +44,9 @@ public class myJFrame extends JFrame implements WindowListener
         //playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer(this);
         buttonColor = Color.DARK_GRAY;
-        c_blue = Color.BLUE;
-        c_white = Color.WHITE;
-        c_gray = Color.GRAY;
+//        Color c_blue = Color.BLUE;
+//        Color c_white = Color.WHITE;
+//        Color c_gray = Color.GRAY;
         soundTurnedOn = true;
         
         this.addWindowListener(this);

@@ -13,27 +13,37 @@ import javax.sound.sampled.*;
 public class AudioPlayer {
    
    Clip clip;
+   myJFrame parentFrame;
    // Constructor
-   public AudioPlayer() 
+   public AudioPlayer(myJFrame frame) 
    {
+       parentFrame = frame;
    }
    
    void play(String fileName)
    {
         try {
-            // Open an audio input stream.
-            //URL url = this.getClass().getClassLoader().getResource(fileName);
-            URL url = this.getClass().getResource("/sounds/" + fileName);            
+            if (isSoundEnabled())
+            {
+                // Open an audio input stream.
+                //URL url = this.getClass().getClassLoader().getResource(fileName);
+                URL url = this.getClass().getResource("/sounds/" + fileName);            
 
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
-            // Get a sound clip resource.
-            clip = AudioSystem.getClip();
-            // Open audio clip and load samples from the audio input stream.
-            clip.open(audioIn);
-            clip.start();
+                AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+                // Get a sound clip resource.
+                clip = AudioSystem.getClip();
+                // Open audio clip and load samples from the audio input stream.
+                clip.open(audioIn);
+                clip.start();
+            }
         } 
         catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.out.println("AudioPlayer caugher exception");
         }       
+   }
+   
+   public boolean isSoundEnabled()
+   {
+       return parentFrame.isSoundEnabled();
    }
 }

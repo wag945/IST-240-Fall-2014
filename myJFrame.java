@@ -26,9 +26,6 @@ public class myJFrame extends JFrame implements WindowListener
     AudioPlayer SoundPlayer;
     //PlayerSelectsFrame playerTurnFrame;
     Color buttonColor;
-    Color c_blue;
-    Color c_white;
-    Color c_gray;
     boolean soundTurnedOn;
     
     public myJFrame () 
@@ -335,9 +332,7 @@ public class myJFrame extends JFrame implements WindowListener
     public void setGameButtonColor(Color color)
     {
         buttonColor = color;
-//        c_blue = color;
-//        c_white = color;
-//        c_gray = color;
+        
     }
 
     public Color getGameButtonColor()

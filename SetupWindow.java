@@ -142,6 +142,7 @@ public class SetupWindow extends JPanel implements ActionListener
         XMLWriter.writeObject(ListOfAllPlayers);
         XMLWriter.writeObject(SelectedPlayers);
         XMLWriter.writeObject(DifficultyLevel);
+        XMLWriter.writeObject(ColorSelection);
 //        XMLWriter.writeObject(ColorSelectionMenu);
         XMLWriter.closeWriterXML();
         
@@ -180,6 +181,11 @@ public class SetupWindow extends JPanel implements ActionListener
         if (tempObj!=null)
         {
             DifficultyLevel = (int)tempObj;
+        }
+        tempObj = XMLReader.ReadObject();
+        if (tempObj!=null)
+        {
+            ColorSelection = (int)tempObj;
         }
 
         if (ListOfAllPlayers == null)

@@ -36,9 +36,9 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         aboutButton.addActionListener(this);
 
         //add(instructionsButton);
-        add(setupButton);
-        add(highScoresButton);
+        add(setupButton);        
         add(newGameButton);
+        add(highScoresButton);
         add(aboutButton);
         
         setTheme();

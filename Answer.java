@@ -110,9 +110,9 @@ class Answer {
 
     int getCategoryIdByName(String categoryByName) {
         int categoryId = 0;
-        if (categoryByName.equals("Football")) {
+        if (categoryByName.equals("PSU Football")) {
             categoryId = 1;
-        } else if (categoryByName.equals("History")) {
+        } else if (categoryByName.equals("PSU History")) {
             categoryId = 2;
         } else if (categoryByName.equals("JAVA")) {
             categoryId = 3;
@@ -130,10 +130,10 @@ class Answer {
         String name = "";
         switch (categoryId) {
             case 1:
-                name = "Football";
+                name = "PSU Football";
                 break;
             case 2:
-                name = "History";
+                name = "PSU History";
                 break;
             case 3:
                 name = "JAVA";

@@ -47,8 +47,8 @@ public class IntroductionWindow extends JPanel implements ActionListener {
     public void setTheme()
     {
         Color bColor = parentFrame.buttonColor.darker();
-        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
-
+//        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+        Color fColor = Color.BLACK;
         setupButton.setBackground(bColor);
         setupButton.setForeground(fColor);
         newGameButton.setBackground(bColor);

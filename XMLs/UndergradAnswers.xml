@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <java version="1.6.0_65" class="java.beans.XMLDecoder"> 
     <int>1</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Coach Joe Paterno replaced</string> 
     <string>Who is Rip Engle?</string>
     <string>Who is Bill Bergey?</string>
@@ -9,7 +9,7 @@
     <int>1</int> 
     
     <int>2</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Year Penn State Football joined the Big Ten Conference</string> 
     <string>What is 1994?</string>
     <string>What is 1855?</string>
@@ -17,7 +17,7 @@
     <int>1</int> 
 
     <int>3</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Number of championships won by Penn State football</string> 
     <string>What is 4?</string>
     <string>What is 3?</string>
@@ -25,7 +25,7 @@
     <int>3</int> 
 
     <int>4</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Number of post season bowl game appearances for Penn State</string> 
     <string>What is 21?</string>
     <string>What is 44?</string>
@@ -33,7 +33,7 @@
     <int>2</int> 
     
     <int>5</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Official seating capacity of Beaver Stadium</string> 
     <string>What is 106,572?</string>
     <string>What is 83,458?</string>
@@ -41,7 +41,7 @@
     <int>1</int> 
 
     <int>6</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Year Penn State football played its first game</string> 
     <string>What is 1855?</string>
     <string>What is 1921?</string>
@@ -49,7 +49,7 @@
     <int>3</int> 
 
     <int>7</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>First football coach of Penn State</string> 
     <string>Who is George W. Hoskins?</string>
     <string>Who is John Madden?</string>
@@ -57,7 +57,7 @@
     <int>1</int> 
 
     <int>8</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Name of first Penn State football stadium</string> 
     <string>What is HUB?</string>
     <string>What is Nittany Lion Stadium?</string>
@@ -65,7 +65,7 @@
     <int>3</int> 
 
     <int>9</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Number of seasons Joe Paterno was head coach at Penn State?</string> 
     <string>What is 45?</string>
     <string>What is 46?</string>
@@ -73,7 +73,7 @@
     <int>2</int> 
 
     <int>10</int>
-    <string>Football</string>
+    <string>PSU Football</string>
     <string>Name of Joe Paterno successor as head football coach</string> 
     <string>Who is Jay Paterno?</string>
     <string>Who is Kijana Carter?</string>

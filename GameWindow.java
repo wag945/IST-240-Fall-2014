@@ -54,16 +54,19 @@ public class GameWindow extends JPanel implements ActionListener
                 {        
                     if (tAnimateScore.isAnimatePlusOrMinus())
                     {
-                        ParentFrame.SoundPlayer.play("score_up.au");
+                        if (Integer.toString(cScore).endsWith("0")) ParentFrame.SoundPlayer.play("score_up.au");
                         cScore++;                    
                     }
                     else
                     {
-                        ParentFrame.SoundPlayer.play("score_down.au");
+                        if (Integer.toString(cScore).endsWith("0"))ParentFrame.SoundPlayer.play("score_down.au");
                         cScore--;
                     }
-                    tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
+                    
+                    if (Integer.toString(cScore).endsWith("0")) tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
+                    
                     tAnimateScore.setCurrentScore(cScore);
+                    
                 }
 //            }
 //            else

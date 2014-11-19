@@ -34,9 +34,10 @@ public class myJFrame extends JFrame implements WindowListener
         //------------------------------------------------------
         // Create components
         //gameWindow = new GameWindow(this);
-        buttonColor = Color.DARK_GRAY;
-        setupWindow = new SetupWindow(this);
+        //buttonColor = Color.DARK_GRAY;
+        setupWindow = new SetupWindow(this);  
         introductionWindow = new IntroductionWindow(this);
+
         //instructionsWindow = new InstructionsWindow();
         aboutWindow = new AboutWindow(this);
         highScoresWindow = new HighScoresWindow(this);
@@ -180,6 +181,7 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == setupWindow.isVisible())
         {
             getContentPane().add(setupWindow,BorderLayout.CENTER);
+            setupWindow.setTheme();
             setupWindow.setVisible(true);
         }
     }
@@ -225,6 +227,7 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == introductionWindow.isVisible())
         {
             getContentPane().add(introductionWindow,BorderLayout.NORTH);
+            introductionWindow.setTheme();
             introductionWindow.setVisible(true);
         }
     }
@@ -243,6 +246,7 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == gameHeader.isVisible())
         {
             getContentPane().add(gameHeader,BorderLayout.NORTH);
+            //gameHeader.setTheme();
             gameHeader.setVisible(true);
         }
     }
@@ -254,6 +258,7 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == aboutWindow.isVisible())
         {
             getContentPane().add(aboutWindow,BorderLayout.CENTER);
+            aboutWindow.setTheme();
             aboutWindow.setVisible(true);
         }
     }
@@ -272,6 +277,7 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == highScoresWindow.isVisible())
         {
             getContentPane().add(highScoresWindow,BorderLayout.CENTER);
+            highScoresWindow.setTheme();
             highScoresWindow.setVisible(true);
         }
     }
@@ -326,6 +332,7 @@ public class myJFrame extends JFrame implements WindowListener
         gameHeader = new GameHeader(this);
         gameHeader.setVisible(false);
         gameWindow = new GameWindow(this, timerFrame.window, gameHeader);
+        //gameWindow.setTheme();
         
         //getContentPane().add(gameWindow,BorderLayout.CENTER);
     }

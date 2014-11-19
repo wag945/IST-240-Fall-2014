@@ -116,9 +116,19 @@ public class GameHeader extends javax.swing.JPanel {
 
         lDifficultyLevel.setForeground(new java.awt.Color(255, 255, 255));
         lDifficultyLevel.setText("Under Grad");
+        lDifficultyLevel.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                lDifficultyLevelComponentAdded(evt);
+            }
+        });
 
         lTheme.setForeground(new java.awt.Color(255, 255, 255));
         lTheme.setText("Gray");
+        lTheme.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                lThemeComponentAdded(evt);
+            }
+        });
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -245,13 +255,46 @@ public class GameHeader extends javax.swing.JPanel {
 
         if (tSound.isSelected())
         {
-            ParentFrame.soundTurnedOn = false;
+            ParentFrame.soundTurnedOn = false;            
         }
         else
         {
             ParentFrame.soundTurnedOn = true;
         }
     }//GEN-LAST:event_tSoundActionPerformed
+
+    private void lDifficultyLevelComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_lDifficultyLevelComponentAdded
+        // TODO add your handling code here:
+        switch (ParentFrame.setupWindow.DifficultyLevel)
+        {
+            case 1:
+                lDifficultyLevel.setText("K12"); 
+                break;
+            case 2:
+                lDifficultyLevel.setText("Under Grad"); 
+                break;
+            case 3:
+                lDifficultyLevel.setText("Grad"); 
+                break;
+        }
+        
+    }//GEN-LAST:event_lDifficultyLevelComponentAdded
+
+    private void lThemeComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_lThemeComponentAdded
+        // TODO add your handling code here:
+        switch (ParentFrame.setupWindow.ColorSelection)
+        {
+            case 1:
+                lDifficultyLevel.setText("Blue"); 
+                break;
+            case 2:
+                lDifficultyLevel.setText("Gray"); 
+                break;
+            case 3:
+                lDifficultyLevel.setText("Dark Gray"); 
+                break;
+        }
+    }//GEN-LAST:event_lThemeComponentAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

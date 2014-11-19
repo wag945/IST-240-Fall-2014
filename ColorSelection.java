@@ -53,8 +53,8 @@ public class ColorSelection extends JPanel implements ActionListener
         mHeading.setVisible(true);
         add(mHeading);
         
-        JRadioButton c1_Color = new JRadioButton("Blue");
-        JRadioButton c2_Color = new JRadioButton("White");
+        JRadioButton c1_Color = new JRadioButton("Navy");
+        JRadioButton c2_Color = new JRadioButton("Gray");
         JRadioButton c3_Color = new JRadioButton("Dark Gray");
         
         font = new Font(Font.SANS_SERIF, Font.BOLD, 14);
@@ -62,8 +62,8 @@ public class ColorSelection extends JPanel implements ActionListener
         c2_Color.setFont(font);
         c3_Color.setFont(font);
         
-        c1_Color.setMnemonic(KeyEvent.VK_B);
-        c2_Color.setMnemonic(KeyEvent.VK_W);
+        c1_Color.setMnemonic(KeyEvent.VK_N);
+        c2_Color.setMnemonic(KeyEvent.VK_G);
         c3_Color.setMnemonic(KeyEvent.VK_D);
         
         c1_Color.setActionCommand("1");
@@ -153,25 +153,24 @@ public class ColorSelection extends JPanel implements ActionListener
                     setup.bDifficulty.setVisible(true);
                     setup.bPlayers.setVisible(true);
                     
-                    
-                    if (ColorSelection == 1) //use ColorSelection here, intColorSelection is not integer
+                    switch (ColorSelection)
                     {
-                        setup.ParentFrame.setGameButtonColor(Color.blue);
-                    }
-                    
-                    if(ColorSelection == 2)
-                    {
-                        setup.ParentFrame.setGameButtonColor(Color.white);
-                    }
-                    
-                    if(ColorSelection == 3)
-                    {
-                        setup.ParentFrame.setGameButtonColor(Color.gray);
+                        case 1:                     
+                            setup.ParentFrame.setGameButtonColor(new Color(0,0,132));
+                            break;
+                        case 2:
+                            setup.ParentFrame.setGameButtonColor(Color.white);
+                            break;
+                        case 3:
+                            setup.ParentFrame.setGameButtonColor(Color.gray);
+                            break;
                     }
 
                     if (setup.DifficultyLevel>0 && setup.ColorSelection>0 && !setup.SelectedPlayers.isEmpty())
-                    {                        
-                        setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);
+                    {   
+                        setup.ParentFrame.introductionWindow.setTheme();
+                        setup.ParentFrame.setupWindow.setTheme();
+                        setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);                        
                         setup.SaveDataInXML();
                     }
                     //this.removeAll();

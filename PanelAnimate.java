@@ -53,7 +53,7 @@ public class PanelAnimate implements ActionListener
             case "Left":
                 if (PanelToAnimate.getX() > -420)
                 {
-                    PanelToAnimate.setBounds(PanelToAnimate.getX()-2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
+                    PanelToAnimate.setBounds(PanelToAnimate.getX()-12,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
                 else
                 {
@@ -65,7 +65,7 @@ public class PanelAnimate implements ActionListener
             case "Right":
                 if (PanelToAnimate.getX() < 420)
                 {
-                    PanelToAnimate.setBounds(PanelToAnimate.getX()+2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
+                    PanelToAnimate.setBounds(PanelToAnimate.getX()+12,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
                 else
                 {
@@ -80,11 +80,11 @@ public class PanelAnimate implements ActionListener
                 
                 if (PanelToAnimate.getX() < 105)
                 {
-                    PanelToAnimate.setBounds(PanelToAnimate.getX()+2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
+                    PanelToAnimate.setBounds(PanelToAnimate.getX()+12,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
                 else if (PanelToAnimate.getX() > 105)
                 {
-                    PanelToAnimate.setBounds(PanelToAnimate.getX()-2,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
+                    PanelToAnimate.setBounds(PanelToAnimate.getX()-12,PanelToAnimate.getY(),PanelToAnimate.getWidth(),PanelToAnimate.getHeight());        
                 }
                 else
                 {                    

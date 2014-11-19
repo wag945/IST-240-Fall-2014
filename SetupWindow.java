@@ -55,14 +55,14 @@ public class SetupWindow extends JPanel implements ActionListener
         add(bDifficulty);   
         
         colorSelection = new JButton();
-        colorSelection.setText("Color Options");
+        colorSelection.setText("Select Theme");
         colorSelection.setName("colorSelection");
         colorSelection.addActionListener(this);
         add(colorSelection);
         
         LoadDataFromXML();
         
-        setTheme();
+        //setTheme();
     }
     
     public void setTheme()
@@ -199,6 +199,19 @@ public class SetupWindow extends JPanel implements ActionListener
         }
         
         XMLReader.closeReaderXML();
+        
+        switch (ColorSelection)
+        {
+            case 1:                     
+                ParentFrame.setGameButtonColor(new Color(0,0,132));
+                break;
+            case 2:
+                ParentFrame.setGameButtonColor(Color.white);
+                break;
+            case 3:
+                ParentFrame.setGameButtonColor(Color.gray);
+                break;
+        }
     }
     
     private void DownloadSetupXML()

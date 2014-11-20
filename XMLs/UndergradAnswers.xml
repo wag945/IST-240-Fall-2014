@@ -401,82 +401,82 @@
     <int>1</int>
 
     <int>51</int>
-    <string>Football</string>
-    <string>University Joe Paterno played football for</string> 
-    <string>What is Penn State?</string>
-    <string>What is Brown?</string>
-    <string>What is Michigan?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of state song</string> 
+    <string>What is O' Susana?</string>
+    <string>What is Pennsylvania?</string>
+    <string>What is For The Glory?</string> 
     <int>2</int> 
     
     <int>52</int>
-    <string>Football</string>
-    <string>Conference Penn State football plays in</string> 
-    <string>What is the ACC?</string>
-    <string>What is the SEC?</string>
-    <string>What is Big Ten?</string> 
-    <int>3</int> 
-
-    <int>53</int>
-    <string>Football</string>
-    <string>Name of annual spring football scrimmage</string> 
-    <string>What is the Blue and White game?</string>
-    <string>What is the spring scrimmage?</string>
-    <string>What is Nittany Lion Bowl?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Historical figure state was name for</string> 
+    <string>Who is William Penn?</string>
+    <string>Who is Gloria Pennsyl?</string>
+    <string>Who is Joe Paterno?</string> 
     <int>1</int> 
 
+    <int>53</int>
+    <string>Pennsylvania Facts</string>
+    <string>Name of state bird</string> 
+    <string>What is the Grey Goose?</string>
+    <string>What is the Bluejay?</string>
+    <string>What is Ruffed Grouse?</string> 
+    <int>3</int> 
+
     <int>54</int>
-    <string>Football</string>
-    <string>Color of home football jersey</string> 
-    <string>What is blue?</string>
-    <string>What is green?</string>
-    <string>What is red?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of state mammal</string> 
+    <string>What is white tailed deer?</string>
+    <string>What is beaver?</string>
+    <string>What is nittany lion?</string> 
     <int>1</int> 
     
     <int>55</int>
-    <string>Football</string>
-    <string>Name of Penn State football stadium</string> 
-    <string>What is recreation hall?</string>
-    <string>What is Beaver Stadium?</string>
-    <string>What is Nittany Stadium?</string> 
-    <int>2</int> 
-
-    <int>56</int>
-    <string>Football</string>
-    <string>Name of football team mascot</string> 
-    <string>What is Joe Penn State?</string>
-    <string>What is Sparty?</string>
-    <string>What is Nittany Lion?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of state fish</string> 
+    <string>What is bluefish?</string>
+    <string>What is flounder?</string>
+    <string>What is brook trout?</string> 
     <int>3</int> 
 
-    <int>57</int>
-    <string>Football</string>
-    <string>Current football coach of Penn State</string> 
-    <string>Who is James Franklin?</string>
-    <string>Who is John Madden?</string>
-    <string>Who is Bobby Bowden?</string> 
+    <int>56</int>
+    <string>Pennsylvania Facts</string>
+    <string>Name of state flower</string> 
+    <string>What is mountain laurel?</string>
+    <string>What is blue rose?</string>
+    <string>What is daffodil?</string> 
     <int>1</int> 
 
+    <int>57</int>
+    <string>Pennsylvania Facts</string>
+    <string>Current location of Liberty Bell</string> 
+    <string>What is Gettysburg?</string>
+    <string>What is Philadelphia?</string>
+    <string>What is Bellefonte?</string> 
+    <int>2</int> 
+
     <int>58</int>
-    <string>Football</string>
-    <string>Finish the Penn State football cheer We are.....</string> 
-    <string>What is excited?</string>
-    <string>What is on fire?</string>
-    <string>What is Penn State?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Ground Hog Day originated in this Pennsylvania city</string> 
+    <string>What is Erie?</string>
+    <string>What is Pittsburgh?</string>
+    <string>What is Punxsutawney?</string> 
     <int>3</int> 
 
     <int>59</int>
-    <string>Football</string>
-    <string>What is the Penn State band named?</string> 
-    <string>What is Penn State Band?</string>
-    <string>What is Blue Band?</string>
-    <string>What is The Band?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Pennsylvania is the __ largest state in the union</string> 
+    <string>What is 22nd?</string>
+    <string>What is 33rd?</string>
+    <string>What is 44th?</string> 
     <int>2</int> 
 
     <int>60</int>
-    <string>Football</string>
-    <string>Who is the only Penn State Heisman winner?</string> 
-    <string>Who is John Cappelletti?</string>
-    <string>Who is Kijana Carter?</string>
-    <string>Who is Tony Sacca?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of largest lake</string> 
+    <string>What is Lake Erie?</string>
+    <string>Who is Lake Huron?</string>
+    <string>Who is Lake Ontario?</string> 
     <int>1</int> 
 </java> 

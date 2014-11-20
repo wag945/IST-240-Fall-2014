@@ -401,82 +401,82 @@
     <int>1</int>
 
     <int>51</int>
-    <string>Football</string>
-    <string>University Joe Paterno played football for</string> 
-    <string>What is Penn State?</string>
-    <string>What is Brown?</string>
-    <string>What is Michigan?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Pennsylvania State Abbreviation</string> 
+    <string>What is PE?</string>
+    <string>What is PA?</string>
+    <string>What is PY?</string> 
     <int>2</int> 
     
     <int>52</int>
-    <string>Football</string>
-    <string>Conference Penn State football plays in</string> 
-    <string>What is the ACC?</string>
-    <string>What is the SEC?</string>
-    <string>What is Big Ten?</string> 
-    <int>3</int> 
+    <string>Pennsylvania Facts</string>
+    <string>State Capital</string> 
+    <string>What is Harrisburg?</string>
+    <string>What is State College?</string>
+    <string>What is Philadelphia?</string> 
+    <int>1</int> 
 
     <int>53</int>
-    <string>Football</string>
-    <string>Name of annual spring football scrimmage</string> 
-    <string>What is the Blue and White game?</string>
-    <string>What is the spring scrimmage?</string>
-    <string>What is Nittany Lion Bowl?</string> 
-    <int>1</int> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of largest city</string> 
+    <string>What is Pittsburgh?</string>
+    <string>What is Erie?</string>
+    <string>What is Philadelphia?</string> 
+    <int>3</int> 
 
     <int>54</int>
-    <string>Football</string>
-    <string>Color of home football jersey</string> 
-    <string>What is blue?</string>
-    <string>What is green?</string>
-    <string>What is red?</string> 
-    <int>1</int> 
+    <string>Pennsylvania Facts</string>
+    <string>State Population</string> 
+    <string>What is 5,000,000?</string>
+    <string>What is 12,000,000?</string>
+    <string>What is 18,000,000?</string> 
+    <int>2</int> 
     
     <int>55</int>
-    <string>Football</string>
-    <string>Name of Penn State football stadium</string> 
-    <string>What is recreation hall?</string>
-    <string>What is Beaver Stadium?</string>
-    <string>What is Nittany Stadium?</string> 
-    <int>2</int> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of state residents</string> 
+    <string>What is Pennsylvanians?</string>
+    <string>What is Pennsylvites?</string>
+    <string>What is Penn People?</string> 
+    <int>1</int> 
 
     <int>56</int>
-    <string>Football</string>
-    <string>Name of football team mascot</string> 
-    <string>What is Joe Penn State?</string>
-    <string>What is Sparty?</string>
-    <string>What is Nittany Lion?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Number of counties in the state</string> 
+    <string>What is 44?</string>
+    <string>What is 55?</string>
+    <string>What is 66?</string> 
     <int>3</int> 
 
     <int>57</int>
-    <string>Football</string>
-    <string>Current football coach of Penn State</string> 
-    <string>Who is James Franklin?</string>
-    <string>Who is John Madden?</string>
-    <string>Who is Bobby Bowden?</string> 
-    <int>1</int> 
-
-    <int>58</int>
-    <string>Football</string>
-    <string>Finish the Penn State football cheer We are.....</string> 
-    <string>What is excited?</string>
-    <string>What is on fire?</string>
-    <string>What is Penn State?</string> 
-    <int>3</int> 
-
-    <int>59</int>
-    <string>Football</string>
-    <string>What is the Penn State band named?</string> 
-    <string>What is Penn State Band?</string>
-    <string>What is Blue Band?</string>
-    <string>What is The Band?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>Name of only state NOT bordering Pennsylvania</string> 
+    <string>What is New York?</string>
+    <string>What is Virginia?</string>
+    <string>What is Maryland?</string> 
     <int>2</int> 
 
+    <int>58</int>
+    <string>Pennsylvania Facts</string>
+    <string>State nickname</string> 
+    <string>What is Keystone State?</string>
+    <string>What is Central State?</string>
+    <string>What is Quaker State?</string> 
+    <int>1</int> 
+
+    <int>59</int>
+    <string>Pennsylvania Facts</string>
+    <string>What is year Pennsylvania became a state?</string> 
+    <string>What is 1801?</string>
+    <string>What is 1776?</string>
+    <string>What is 1787?</string> 
+    <int>3</int> 
+
     <int>60</int>
-    <string>Football</string>
-    <string>Who is the only Penn State Heisman winner?</string> 
-    <string>Who is John Cappelletti?</string>
-    <string>Who is Kijana Carter?</string>
-    <string>Who is Tony Sacca?</string> 
+    <string>Pennsylvania Facts</string>
+    <string>State Motto?</string> 
+    <string>What is Virtue, Liberty, and Independence?</string>
+    <string>What is We Are...?</string>
+    <string>What is Give Me Liberty?</string> 
     <int>1</int> 
 </java> 

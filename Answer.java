@@ -120,7 +120,7 @@ class Answer {
             categoryId = 4;
         } else if (categoryByName.equals("Famous PSU Alum")) {
             categoryId = 5;
-        } else if (categoryByName.equals("TBD")) {
+        } else if (categoryByName.equals("PA Facts")) {
             categoryId = 6;
         }
         return categoryId;
@@ -145,7 +145,7 @@ class Answer {
                 name = "Famous PSU Alum";
                 break;
             case 6:
-                name = "TBD";
+                name = "PA Facts";
                 break;
         }
 

@@ -93,10 +93,9 @@ class Answer {
         double r = Math.random();
         //Get random number between 0 and 9
         number = (int) (r * (float) NUM_ANSWERS_PER_CATEGORY);
-        //Make number between 1 and 10
-        number++;
         //Make number fall into range of answers for this category 1..10,11..20,etc
-        if (category > 1) {
+        if (category > 1) 
+        {
             //Could this be more complicated?!?
             number = (((category - 1) * NUM_ANSWERS_PER_CATEGORY) + number);
         }

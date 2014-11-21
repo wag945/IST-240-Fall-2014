@@ -18,6 +18,8 @@ public class AnimateNumbersTimer extends Timer
     private int NewScore;
     private boolean AnimatePlusOrMinus;
     private int CurrentScore;
+    private boolean isStopping;
+    
     
 
     public AnimateNumbersTimer(int i, ActionListener al, JLabel lPScore, int currentScore, int newScore, boolean AnimateScoreOnAdd) 
@@ -27,6 +29,7 @@ public class AnimateNumbersTimer extends Timer
         NewScore = newScore;
         CurrentScore = currentScore;
         AnimatePlusOrMinus = AnimateScoreOnAdd;
+        isStopping = false;
     }
 
     /**
@@ -83,5 +86,19 @@ public class AnimateNumbersTimer extends Timer
      */
     public void setCurrentScore(int CurrentScore) {
         this.CurrentScore = CurrentScore;
+    }
+
+    /**
+     * @return the isStopping
+     */
+    public boolean isIsStopping() {
+        return isStopping;
+    }
+
+    /**
+     * @param isStopping the isStopping to set
+     */
+    public void setIsStopping(boolean isStopping) {
+        this.isStopping = isStopping;
     }
 }

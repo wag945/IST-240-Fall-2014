@@ -42,25 +42,32 @@ public class GameWindow extends JPanel implements ActionListener
             int cScore;
             AnimateNumbersTimer tAnimateScore = (AnimateNumbersTimer)e.getSource();
             
+            if (!tAnimateScore.isIsStopping())
+            {
             newScore = tAnimateScore.getNewScore();
             cScore = tAnimateScore.getCurrentScore();
 //            if (newScore>=0)
 //            {   
+            
                 if (cScore == tAnimateScore.getNewScore())
                 {
+                    tAnimateScore.setIsStopping(true);
+                    tAnimateScore.stop();                                        
+                    setNextPlayer(tAnimateScore.isAnimatePlusOrMinus());
+                    HighlightPlayer(CurrentPlayerNum);
+                    CheckIfGameIsEnding();
                     ParentFrame.setEnabled(true);
-                    tAnimateScore.stop();
                 }
                 else
                 {        
                     if (tAnimateScore.isAnimatePlusOrMinus())
                     {
-                        if (Integer.toString(cScore).endsWith("0")) ParentFrame.SoundPlayer.play("score_up.au");
+                        if (Integer.toString(cScore).endsWith("99")) ParentFrame.SoundPlayer.play("score_up.au");
                         cScore++;                    
                     }
                     else
                     {
-                        if (Integer.toString(cScore).endsWith("0"))ParentFrame.SoundPlayer.play("score_down.au");
+                        if (Integer.toString(cScore).endsWith("99"))ParentFrame.SoundPlayer.play("score_down.au");
                         cScore--;
                     }
                     
@@ -69,6 +76,7 @@ public class GameWindow extends JPanel implements ActionListener
                     tAnimateScore.setCurrentScore(cScore);
                     
                 }
+            }
 //            }
 //            else
 //            {    
@@ -127,52 +135,91 @@ public class GameWindow extends JPanel implements ActionListener
         
         setHeaderLabels();
         
-        setPlayerNameOnLabel(CurrentPlayerNum, false);
-        
+        setPlayerNameOnLabel(false);
+        HighlightPlayer(CurrentPlayerNum);
     }
     
 
     
-    public void setPlayerNameOnLabel(int PlayerNumber, boolean AnimateScoreOnAdd)
+    public void setPlayerNameOnLabel(boolean AnimateScoreOnAdd)
     {
-        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 11);
-        Font fontB = new Font(Font.SANS_SERIF, Font.BOLD, 12);
                 
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            //String cScore = String.valueOf(pCurrent.getTScore());
-            int cScore = pCurrent.getTScore();
+            int cScore = pCurrent.getTodaysTempScore();
             String cName = pCurrent.getName();
             int cPlayerNum = pCurrent.getPlayer();
+            int ScoreOnHeader;
             
             switch (cPlayerNum)
             {
                 case 1:
                     gameHeader.lP1.setText(cName);
-                    gameHeader.lP1.setFont(font);
-                    gameHeader.lP1.setForeground(Color.gray);
-                    AnimateScore(gameHeader.lPScore1, Integer.parseInt(gameHeader.lPScore1.getText()), cScore, AnimateScoreOnAdd);
-                    gameHeader.lPScore1.setFont(font);
-                    gameHeader.lPScore1.setForeground(Color.gray);
+                    ScoreOnHeader = Integer.parseInt(gameHeader.lPScore1.getText());
+                    if (ScoreOnHeader!=cScore) AnimateScore(gameHeader.lPScore1, Integer.parseInt(gameHeader.lPScore1.getText()), cScore, AnimateScoreOnAdd);
+                    
                     break;
                 case 2:
                     gameHeader.lP2.setText(cName);
-                    gameHeader.lP2.setFont(font);
-                    gameHeader.lP2.setForeground(Color.gray);
-                    AnimateScore(gameHeader.lPScore2, Integer.parseInt(gameHeader.lPScore2.getText()), cScore, AnimateScoreOnAdd);
-                    gameHeader.lPScore2.setFont(font);
-                    gameHeader.lPScore2.setForeground(Color.gray);
+                    ScoreOnHeader = Integer.parseInt(gameHeader.lPScore2.getText());
+                    if (ScoreOnHeader!=cScore) AnimateScore(gameHeader.lPScore2, Integer.parseInt(gameHeader.lPScore2.getText()), cScore, AnimateScoreOnAdd);
                     break;
                 case 3:
                     gameHeader.lP3.setText(cName);
-                    gameHeader.lP3.setFont(font);
-                    gameHeader.lP3.setForeground(Color.gray);
-                    AnimateScore(gameHeader.lPScore3, Integer.parseInt(gameHeader.lPScore3.getText()), cScore, AnimateScoreOnAdd);
-                    gameHeader.lPScore3.setFont(font);
-                    gameHeader.lPScore3.setForeground(Color.gray);
+                    ScoreOnHeader = Integer.parseInt(gameHeader.lPScore3.getText());
+                    if (ScoreOnHeader!=cScore) AnimateScore(gameHeader.lPScore3, Integer.parseInt(gameHeader.lPScore3.getText()), cScore, AnimateScoreOnAdd);
                     break;
             }
+        }
+    }
+    
+    public void HighlightPlayer(int PlayerNumber)
+    {
+        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 11);
+        Font fontB = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+        
+        int NumOfPlayers = CurrentPlayers.getSize();
+        //Dim/unhighlight players
+        switch (NumOfPlayers)
+        {
+            case 1:
+                gameHeader.lP1.setFont(font);
+                gameHeader.lP1.setForeground(Color.gray);
+                gameHeader.lPScore1.setFont(font);
+                gameHeader.lPScore1.setForeground(Color.gray);
+                break;
+            case 2:
+                gameHeader.lP1.setFont(font);
+                gameHeader.lP1.setForeground(Color.gray);
+                gameHeader.lPScore1.setFont(font);
+                gameHeader.lPScore1.setForeground(Color.gray);
+                gameHeader.lP2.setFont(font);
+                gameHeader.lP2.setForeground(Color.gray);
+                gameHeader.lPScore2.setFont(font);
+                gameHeader.lPScore2.setForeground(Color.gray);
+                break;
+            case 3:
+                gameHeader.lP1.setFont(font);
+                gameHeader.lP1.setForeground(Color.gray);
+                gameHeader.lPScore1.setFont(font);
+                gameHeader.lPScore1.setForeground(Color.gray);
+                gameHeader.lP2.setFont(font);
+                gameHeader.lP2.setForeground(Color.gray);
+                gameHeader.lPScore2.setFont(font);
+                gameHeader.lPScore2.setForeground(Color.gray);
+                gameHeader.lP3.setFont(font);
+                gameHeader.lP3.setForeground(Color.gray);
+                gameHeader.lPScore3.setFont(font);
+                gameHeader.lPScore3.setForeground(Color.gray);
+                break;
+        }
+        
+        //Hilight player
+        for (Object obj: CurrentPlayers.toArray())
+        {
+            Person pCurrent = (Person)obj;
+            int cPlayerNum = pCurrent.getPlayer();
             
             if (cPlayerNum == PlayerNumber)
             {
@@ -197,6 +244,7 @@ public class GameWindow extends JPanel implements ActionListener
                         gameHeader.lPScore3.setForeground(Color.white);
                         break;
                 }
+                break;
             }
         }
     }
@@ -208,9 +256,9 @@ public class GameWindow extends JPanel implements ActionListener
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
-            if (pCurrent.getTScore() > MaxScore)
+            if (pCurrent.getTodaysTempScore() > MaxScore)
             {
-                MaxScore = pCurrent.getTScore();
+                MaxScore = pCurrent.getTodaysTempScore();
                 Winner = pCurrent.getName();
             }
         }
@@ -230,6 +278,10 @@ public class GameWindow extends JPanel implements ActionListener
         boolean AnimateScoreOnAdd = false;
         if (Score > 0 ) AnimateScoreOnAdd = true;
         
+        //for testing!
+        //if (Score < 0 ) Score=Score*-1;
+        //AnimateScoreOnAdd = true;
+        
         System.out.println("GameWindow addScore score = "+Score);
         
         for (Object obj: CurrentPlayers.toArray())
@@ -237,17 +289,17 @@ public class GameWindow extends JPanel implements ActionListener
             Person pCurrent = (Person)obj;
             if (pCurrent.getPlayer() == CurrentPlayerNum)
             {            
-                int oldScore = pCurrent.getTScore();
-                pCurrent.setTScore(Score+oldScore);             
-                
+                int oldScore = pCurrent.getTodaysTempScore();
+                pCurrent.setTodaysTempScore(Score+oldScore);
             }
         }
 
-        //setPlayerNameOnLabel(CurrentPlayerNum);
-        
-        CheckIfGameIsEnding();
-        
-        if (Score < 0)
+        setPlayerNameOnLabel(AnimateScoreOnAdd);
+    }
+    
+    public void setNextPlayer(boolean DontChangePlayer)
+    {
+        if (!DontChangePlayer)
         {
             if (CurrentPlayerNum == CurrentPlayers.getSize())
             {
@@ -258,14 +310,14 @@ public class GameWindow extends JPanel implements ActionListener
                 CurrentPlayerNum++;
             }
         }
-        
-        setPlayerNameOnLabel(CurrentPlayerNum, AnimateScoreOnAdd);
     }
     
     public void CheckIfGameIsEnding()
     {
-         if (0 == numberAvailableAnswers)
+        if (0 == numberAvailableAnswers)
         {
+            //9000 Perfect score
+            
             //Update lables telling who won
             UpdateLables();
 
@@ -289,11 +341,11 @@ public class GameWindow extends JPanel implements ActionListener
                 Person pAll = (Person)obj2;
                 if (pCurrent.getName().equals(pAll.getName()))
                 {
-                    if (pCurrent.getTScore() > pAll.getScore())
+                    if (pCurrent.getTodaysTempScore() > pAll.getScore())
                     {
-                        pAll.setScore(pCurrent.getTScore());
+                        pAll.setScore(pCurrent.getTodaysTempScore());
                     }
-                    pAll.setTScore(pCurrent.getTScore());
+                    pAll.setTScore(pCurrent.getTodaysTempScore());
                     pAll.setDateLastPlayed(new Date());
                     break;
                 }
@@ -444,7 +496,7 @@ public class GameWindow extends JPanel implements ActionListener
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;           
-            pCurrent.setScore(0);
+            //pCurrent.setScore(0);
             pCurrent.setTScore(0);
         }
     }

@@ -16,6 +16,7 @@ public class Person
     private String Name;
     private Integer Score;
     private Integer TScore;
+    private Integer TodaysTempScore;
     private int Level;
     private int Player;
     private Date DateLastPlayed;
@@ -72,7 +73,7 @@ public class Person
      * @return the TScore
      */
     public int getTScore() {
-         if (TScore != null)
+        if (TScore != null)
         {
             return TScore;
         }
@@ -129,6 +130,27 @@ public class Person
      */
     public void setDateLastPlayed(Date DateLastPlayed) {
         this.DateLastPlayed = DateLastPlayed;
+    }
+
+    /**
+     * @return the TodaysTempScore
+     */
+    public Integer getTodaysTempScore() {
+        if (TodaysTempScore != null)
+        {
+            return TodaysTempScore;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    /**
+     * @param TodaysTempScore the TodaysTempScore to set
+     */
+    public void setTodaysTempScore(Integer TodaysTempScore) {
+        this.TodaysTempScore = TodaysTempScore;
     }
 
    

@@ -24,7 +24,7 @@ public class MenuPlayers extends JPanel implements ActionListener
     ButtonGroup NumberOfPlayers; //used for radio button
 
     PlayersList SelectedPlayers; // used for saving selected players
-    PlayersList listOfAllPlayers = new PlayersList(); //list of all Players using Player Class
+    FullPlayersList listOfAllPlayers = new FullPlayersList(); //list of all Players using Player Class
     
     JPanel pPlayerSelection;
     JPanel pPlayerProfileMenu;
@@ -42,7 +42,7 @@ public class MenuPlayers extends JPanel implements ActionListener
     
     PanelAnimate PanelToAnimate;
     
-    public MenuPlayers(PlayersList previousSelectedPlayers, PlayersList previouslistOfAllPlayers, Color ThemeColor) 
+    public MenuPlayers(PlayersList previousSelectedPlayers, FullPlayersList previouslistOfAllPlayers, Color ThemeColor) 
     {
         super();
         setLayout(null);
@@ -60,11 +60,16 @@ public class MenuPlayers extends JPanel implements ActionListener
         bNext.setText("Select");  
         bNext.setName("bNext");
         bNext.setBounds(324, 420, 80, 27);
-        bNext.addActionListener(this);
+        bNext.addActionListener(this);        
         add(bNext);
         
-        bCreatePlayer = new JButton("Create Player...");
         bAdd = new JButton("Add");
+        bAdd.addActionListener(this);
+        
+        bCreatePlayer = new JButton("Create Player...");
+        bCreatePlayer.addActionListener(this);
+        
+        
         
         setTheme(ThemeColor);
     }
@@ -234,7 +239,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         
         bCreatePlayer.setBounds(120, lableLocationY + 47, 130, 27); 
         bCreatePlayer.setName("bCreatePlayer");
-        bCreatePlayer.addActionListener(this);
         pPlayerProfileMenu.add(bCreatePlayer);
 
         //Create label
@@ -291,7 +295,7 @@ public class MenuPlayers extends JPanel implements ActionListener
             }
         }
         
-        lError.setBounds(40, 230, 280, 27);
+        lError.setBounds(30, 250, 280, 27);
         lError.setForeground(Color.red);
         lError.setText("");
         pPlayerProfileMenu.add(lError);
@@ -335,7 +339,6 @@ public class MenuPlayers extends JPanel implements ActionListener
 
         bAdd.setBounds(120, 64+34, 120, 27); 
         bAdd.setName("bAdd");
-        bAdd.addActionListener(this);
         pCreatePlayerProfile.add(bAdd);
                 
         //Create error lable
@@ -492,6 +495,7 @@ public class MenuPlayers extends JPanel implements ActionListener
                     }
                     if (!pFound) //if player already exist, dont add
                     {
+                        lError.setText("");
                         listOfAllPlayers.addElement(tempPlayer);
                     
                         hidepCreatePlayerProfile();
@@ -509,10 +513,13 @@ public class MenuPlayers extends JPanel implements ActionListener
     void hidepCreatePlayerProfile()
     {
         PanelToAnimate = new PanelAnimate(1,pCreatePlayerProfile);
-        PanelToAnimate.RemovePanelAfterAnimation(true);
+        PanelToAnimate.RemovePanelAfterAnimation(false);
         PanelToAnimate.SlideLeft();
-
-        pPlayerProfileMenu.removeAll();
-        pPlayerProfileMenu = null;
+        //SetupWindow ParentFrame = (SetupWindow)this.getParent().getParent();
+        //ParentFrame.remove(pCreatePlayerProfile);
+                
+        //this.remove(pCreatePlayerProfile);
+        //pPlayerProfileMenu.removeAll();
+        //pPlayerProfileMenu = null;
     }
 }

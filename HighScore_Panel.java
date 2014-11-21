@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 public class HighScore_Panel extends JPanel
 {   
-    HighScore_Panel(PlayersList ListOfAllPlayers, String Heading, boolean AllTime)
+    HighScore_Panel(FullPlayersList ListOfAllPlayers, String Heading, boolean AllTime)
     {
         super();
         setLayout(null);
@@ -57,7 +57,7 @@ public class HighScore_Panel extends JPanel
         
         String[][] ArrayOfPlayersAndScores = GetScores(ListOfAllPlayers, AllTime);
         
-        for(int i=0; i<10 ; i++) //reverse order of array
+        for(int i=0; i<10 ; i++)
         {                  
                 lNum[i] = new JLabel();
                 lNum[i].setName("lNum_" + (i+1));                
@@ -71,7 +71,7 @@ public class HighScore_Panel extends JPanel
         lY = 30;
         if (ArrayOfPlayersAndScores!=null)
         {
-            for(int i=0; i<10 ; i++) //reverse order of array
+            for(int i=0; i<10 ; i++)
             {
                 if (!ArrayOfPlayersAndScores[i][1].trim().equals("0"))
                 {
@@ -101,7 +101,7 @@ public class HighScore_Panel extends JPanel
 
     }
 
-    private String[][] GetScores(PlayersList ListOfAllPlayers, boolean AllTime)  
+    private String[][] GetScores(FullPlayersList ListOfAllPlayers, boolean AllTime)  
     {
         String[][] ArrayOfAllPlayersAndScores;
         int PlayerCount;

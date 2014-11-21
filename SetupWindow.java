@@ -24,7 +24,7 @@ public class SetupWindow extends JPanel implements ActionListener
     JButton bDifficulty;
     JButton colorSelection;
     PlayersList SelectedPlayers = new PlayersList();
-    PlayersList ListOfAllPlayers = new PlayersList();
+    FullPlayersList ListOfAllPlayers = new FullPlayersList();
     myJFrame ParentFrame;
     int DifficultyLevel = 1; //Set level to K12 by default
     int ColorSelection = 1; //Set color blue by default
@@ -170,12 +170,12 @@ public class SetupWindow extends JPanel implements ActionListener
     
     private void LoadDataFromXML()
     {         
-        DownloadSetupXML();
+        //DownloadSetupXML();
         
         //Load all players and their high score in ListOfAllPlayers;        
         XML_240 XMLReader = new XML_240();
         XMLReader.openReaderXML("\\settings\\setup.xml");
-        ListOfAllPlayers = (PlayersList) XMLReader.ReadObject();
+        ListOfAllPlayers = (FullPlayersList) XMLReader.ReadObject();
         SelectedPlayers = (PlayersList) XMLReader.ReadObject();
         Object tempObj = XMLReader.ReadObject();
         if (tempObj!=null)
@@ -190,7 +190,7 @@ public class SetupWindow extends JPanel implements ActionListener
 
         if (ListOfAllPlayers == null)
         {
-            ListOfAllPlayers = new PlayersList();
+            ListOfAllPlayers = new FullPlayersList();
         }
 
         if (SelectedPlayers == null)

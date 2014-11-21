@@ -34,7 +34,7 @@ public class GameWindow extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        System.out.println("myJPanelstd actionPerformed ");
+//        System.out.println("myJPanelstd actionPerformed ");
         String sClass = e.getSource().getClass().toString();
         if (sClass.equals("class AnimateNumbersTimer"))
         {

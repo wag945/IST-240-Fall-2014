@@ -67,15 +67,16 @@ public class HighScoresWindow extends JPanel implements ActionListener {
             LoadTodaysTimeHighScore();
         }     
     }
-
-    private void LoadAllTimeHighScore() 
-    {        
+    
+    public void RemoveScorePanels()
+    {
         if (TodaysHighScore!=null)
         {
             TodaysHighScore.setVisible(false);
             TodaysHighScore.removeAll();
             TodaysHighScore.repaint();
-            TodaysHighScore = null;
+            this.remove(TodaysHighScore);
+            //TodaysHighScore = null;
         }
         
         if (AllTimeHighScore!=null)
@@ -83,8 +84,14 @@ public class HighScoresWindow extends JPanel implements ActionListener {
             AllTimeHighScore.setVisible(false);
             AllTimeHighScore.removeAll();
             AllTimeHighScore.repaint();
-            AllTimeHighScore = null;
+            this.remove(AllTimeHighScore);
+            //AllTimeHighScore = null;
         }
+    }
+
+    private void LoadAllTimeHighScore() 
+    {        
+        RemoveScorePanels();
          
         AllTimeHighScore= new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "All Time High Scores", true);                
         AllTimeHighScore.setBounds(148, 50, 500, 500);
@@ -97,21 +104,7 @@ public class HighScoresWindow extends JPanel implements ActionListener {
 
     private void LoadTodaysTimeHighScore() 
     {
-        if (AllTimeHighScore!=null)
-        {
-            AllTimeHighScore.setVisible(false);
-            AllTimeHighScore.removeAll();
-            AllTimeHighScore.repaint();
-            AllTimeHighScore = null;
-        }
-        
-        if (TodaysHighScore!=null)
-        {
-            TodaysHighScore.setVisible(false);
-            TodaysHighScore.removeAll();
-            TodaysHighScore.repaint();
-            TodaysHighScore = null;
-        }        
+        RemoveScorePanels();     
         
         TodaysHighScore = new HighScore_Panel(ParentJFrame.setupWindow.ListOfAllPlayers, "Today's High Scores", false);
         TodaysHighScore.setBounds(148, 50, 500, 500); 

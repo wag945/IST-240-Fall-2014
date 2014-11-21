@@ -278,6 +278,7 @@ public class myJFrame extends JFrame implements WindowListener
         {
             getContentPane().add(highScoresWindow,BorderLayout.CENTER);
             highScoresWindow.setTheme();
+            highScoresWindow.RemoveScorePanels();
             highScoresWindow.setVisible(true);
         }
     }

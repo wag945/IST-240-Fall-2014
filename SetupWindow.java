@@ -143,7 +143,6 @@ public class SetupWindow extends JPanel implements ActionListener
         XMLWriter.writeObject(SelectedPlayers);
         XMLWriter.writeObject(DifficultyLevel);
         XMLWriter.writeObject(ColorSelection);
-//        XMLWriter.writeObject(ColorSelectionMenu);
         XMLWriter.closeWriterXML();
         
         UploadSetupXML();        
@@ -170,7 +169,7 @@ public class SetupWindow extends JPanel implements ActionListener
     
     private void LoadDataFromXML()
     {         
-        //DownloadSetupXML();
+        DownloadSetupXML();
         
         //Load all players and their high score in ListOfAllPlayers;        
         XML_240 XMLReader = new XML_240();

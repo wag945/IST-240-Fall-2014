@@ -497,7 +497,8 @@ public class GameWindow extends JPanel implements ActionListener
         {
             Person pCurrent = (Person)obj;           
             //pCurrent.setScore(0);
-            pCurrent.setTScore(0);
+            pCurrent.setTodaysTempScore(0);
+            //pCurrent.setTScore(0);
         }
     }
 

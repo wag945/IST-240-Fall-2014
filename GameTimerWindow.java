@@ -41,6 +41,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
 
     public void displayWindow()
     {
+        timeTextField.setForeground(Color.GREEN);
         timer.start();
     }
     

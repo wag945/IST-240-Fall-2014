@@ -7,10 +7,11 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 public class IntroductionWindow extends JPanel implements ActionListener {
-    JButton setupButton,aboutButton,highScoresButton,newGameButton;
+    JButton setupButton,aboutButton,highScoresButton,newGameButton, quitButton;
     myJFrame parentFrame;
     //AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
     public IntroductionWindow(myJFrame mjf) {
@@ -34,21 +35,25 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         aboutButton = new JButton();
         aboutButton.setText("About");
         aboutButton.addActionListener(this);
+        quitButton = new JButton();
+        quitButton.setText("Quit");
+        quitButton.addActionListener(this);
 
         //add(instructionsButton);
         add(setupButton);        
         add(newGameButton);
         add(highScoresButton);
         add(aboutButton);
+        add(quitButton);
         
         setTheme();
     }
     
     public void setTheme()
     {
-        Color bColor = parentFrame.buttonColor.darker();
-//        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
-        Color fColor = Color.BLACK;
+        Color bColor = parentFrame.buttonColor.darker().darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
+        //Color fColor = Color.BLACK;
         setupButton.setBackground(bColor);
         setupButton.setForeground(fColor);
         newGameButton.setBackground(bColor);
@@ -56,7 +61,9 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         highScoresButton.setBackground(bColor);
         highScoresButton.setForeground(fColor);
         aboutButton.setBackground(bColor);
-        aboutButton.setForeground(fColor);               
+        aboutButton.setForeground(fColor);   
+        quitButton.setBackground(bColor);
+        quitButton.setForeground(fColor);   
     }
 
     @Override
@@ -87,6 +94,11 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         {
             System.out.println("aboutButton pressed");
             parentFrame.about();
+        }
+        else if (quitButton == e.getSource())
+        {
+            System.out.println("quitButton pressed");
+            parentFrame.getToolkit().getSystemEventQueue().postEvent(new WindowEvent(parentFrame, WindowEvent.WINDOW_CLOSING));
         }
     }
 }

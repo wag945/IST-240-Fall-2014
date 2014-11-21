@@ -101,7 +101,7 @@ public class QuestionWindow extends JPanel implements ActionListener {
     public void hideWindow()
     {
         //Enable the parent game window
-        parentFrame.parentFrame.setEnabled(true);
+        //parentFrame.parentFrame.setEnabled(true);
         timer.stop();
         answerCorrect = isAnswerCorrect();
         System.out.println("answerCorrect = "+answerCorrect);

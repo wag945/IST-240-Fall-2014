@@ -67,8 +67,8 @@ public class SetupWindow extends JPanel implements ActionListener
     
     public void setTheme()
     {
-        Color bColor = ParentFrame.buttonColor.darker();
-        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+        Color bColor = ParentFrame.buttonColor.darker().darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
 
         bPlayers.setBackground(bColor);
         bPlayers.setForeground(fColor);
@@ -203,7 +203,7 @@ public class SetupWindow extends JPanel implements ActionListener
         switch (ColorSelection)
         {
             case 1:                     
-                ParentFrame.setGameButtonColor(new Color(0,0,132));
+                ParentFrame.setGameButtonColor(new Color(0,50,200));
                 break;
             case 2:
                 ParentFrame.setGameButtonColor(Color.white);

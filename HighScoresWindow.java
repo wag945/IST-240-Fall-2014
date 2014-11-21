@@ -46,8 +46,8 @@ public class HighScoresWindow extends JPanel implements ActionListener {
     
     public void setTheme()
     {
-        Color bColor = ParentJFrame.buttonColor.darker();
-        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+        Color bColor = ParentJFrame.buttonColor.darker().darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
 
         bAHS.setBackground(bColor);
         bAHS.setForeground(fColor);

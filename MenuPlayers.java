@@ -71,8 +71,8 @@ public class MenuPlayers extends JPanel implements ActionListener
     
     public void setTheme(Color ThemeColor)
     {
-        Color bColor = ThemeColor.darker();
-        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+        Color bColor = ThemeColor.darker().darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
 
         bNext.setBackground(bColor);
         bNext.setForeground(fColor);

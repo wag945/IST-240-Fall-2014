@@ -47,7 +47,8 @@ public class GameWindow extends JPanel implements ActionListener
 //            if (newScore>=0)
 //            {   
                 if (cScore == tAnimateScore.getNewScore())
-                {            
+                {
+                    ParentFrame.setEnabled(true);
                     tAnimateScore.stop();
                 }
                 else

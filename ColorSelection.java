@@ -125,8 +125,8 @@ public class ColorSelection extends JPanel implements ActionListener
     
     public void setTheme(Color ThemeColor)
     {
-        Color bColor = ThemeColor.darker();
-        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter();
+        Color bColor = ThemeColor.darker().darker();
+        Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
 
         bNext.setBackground(bColor);
         bNext.setForeground(fColor);
@@ -156,7 +156,7 @@ public class ColorSelection extends JPanel implements ActionListener
                     switch (ColorSelection)
                     {
                         case 1:                     
-                            setup.ParentFrame.setGameButtonColor(new Color(0,0,132));
+                            setup.ParentFrame.setGameButtonColor(new Color(0,50,200));
                             break;
                         case 2:
                             setup.ParentFrame.setGameButtonColor(Color.white);

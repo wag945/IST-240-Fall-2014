@@ -25,7 +25,7 @@ class AnswerButton extends JButton {
         super();
         parentFrame = frame;
         setOpaque(true);
-        setBackground(parentFrame.getGameButtonColor());
+        setBackground(parentFrame.getGameButtonColor().darker().darker());
         setFont(new Font("Dialog", 1, 20));
         this.setForeground(new Color(0, 205, 0, 255));
         buttonValue = label;

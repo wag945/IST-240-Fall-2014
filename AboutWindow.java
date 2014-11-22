@@ -108,7 +108,7 @@ public class AboutWindow extends JPanel implements ActionListener
             + "10 seconds to click/check the correct answer. \n"
             + "If the player1 gets it wrong then it becomes player 2's turn \n"
             + "and so on, until all the squares on the board has \n"
-            + "been picked. \n"
+            + "been picked or until time runs out. \n"
             + "\n"
             + "High Scores are recorded and the player with the most cash"
             + "accumulated at the end of the game wins.\n"

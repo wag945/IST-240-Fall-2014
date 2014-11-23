@@ -92,7 +92,11 @@ public class HighScore_Panel extends JPanel
                     lY += 30;   
                 }
 
-                if (ArrayOfPlayersAndScores[i+1][0] == null)
+                if (ArrayOfPlayersAndScores.length == (i+1))
+                {
+                    //break;
+                }
+                else if (ArrayOfPlayersAndScores[i+1][0] == null )
                 {
                     break;
                 }

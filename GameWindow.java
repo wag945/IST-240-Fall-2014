@@ -72,21 +72,22 @@ public class GameWindow extends JPanel implements ActionListener
                     if (Integer.toString(cScore).endsWith("0")) tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
                     
                     tAnimateScore.setCurrentScore(cScore);
-                    ParentFrame.setVisible(true);
                 }
             }
         }
         else if (sClass.equals("class AnswerButton"))
         {
-            numberAvailableAnswers -= 1;
-            for (int i = 0; i < answerButtons.length; i++)
+            if (!QuestionButtonsDisabled)
             {
-                if (e.getSource() == answerButtons[i])
+                numberAvailableAnswers -= 1;
+                for (int i = 0; i < answerButtons.length; i++)
                 {
-                    answerButtons[i].onButtonPressed();
+                    if (e.getSource() == answerButtons[i])
+                    {
+                        answerButtons[i].onButtonPressed();
+                    }
                 }
-            }
-            
+            }           
         }
     }
     
@@ -272,8 +273,6 @@ public class GameWindow extends JPanel implements ActionListener
         //if (Score < 0 ) Score=Score*-1;
         //AnimateScoreOnAdd = true;
         
-        System.out.println("GameWindow addScore score = "+Score);
-        
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
@@ -322,7 +321,6 @@ public class GameWindow extends JPanel implements ActionListener
     
     public void UpdateAllPlayerList()
     {
-        //Date date = new Date();
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;
@@ -352,12 +350,7 @@ public class GameWindow extends JPanel implements ActionListener
         int categoryFourIndex = answer.getRandomQuestionNumberForCategory(4);
         int categoryFiveIndex = answer.getRandomQuestionNumberForCategory(5);
         int categorySixIndex = answer.getRandomQuestionNumberForCategory(6);
-//        System.out.println("starting with categoryOneIndex = "+categoryOneIndex);
-//        System.out.println("starting with categoryTwoIndex = "+categoryTwoIndex);
-//        System.out.println("starting with categoryThreeIndex = "+categoryThreeIndex);
-//        System.out.println("starting with categoryFourIndex = "+categoryFourIndex);
-//        System.out.println("starting with categoryFiveIndex = "+categoryFiveIndex);
-//        System.out.println("starting with categorySixIndex = "+categorySixIndex);
+
         for (int i = 0; i < answerButtons.length; i++)
         {
             //Temp till we have questions read from XML
@@ -389,7 +382,6 @@ public class GameWindow extends JPanel implements ActionListener
                 case 12:
                 case 18:
                 case 24:
-//                    System.out.println("GameWindow category one category = "+answer.k12Answers[categoryOneIndex].getCategory());
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryOneIndex].questionId,DifficultyLevel);
                     categoryOneIndex++;
                     if (categoryOneIndex >= answer.getLastQuestionIdByCategoryId(1))
@@ -402,7 +394,6 @@ public class GameWindow extends JPanel implements ActionListener
                 case 13:
                 case 19:
                 case 25:
-//                    System.out.println("GameWindow category two category = "+answer.k12Answers[categoryTwoIndex].getCategory()+" categoryTwoIndex = "+categoryTwoIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryTwoIndex].questionId,DifficultyLevel);
                     categoryTwoIndex++;
                     if (categoryTwoIndex >= answer.getLastQuestionIdByCategoryId(2))
@@ -415,7 +406,6 @@ public class GameWindow extends JPanel implements ActionListener
                 case 14:
                 case 20:
                 case 26:
-//                    System.out.println("GameWindow category three category = "+answer.k12Answers[categoryThreeIndex].getCategory()+" categoryThreeIndex = "+categoryThreeIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryThreeIndex].questionId,DifficultyLevel);
                     categoryThreeIndex++;
                     if (categoryThreeIndex >= answer.getLastQuestionIdByCategoryId(3))
@@ -428,7 +418,6 @@ public class GameWindow extends JPanel implements ActionListener
                 case 15:
                 case 21:
                 case 27:
-//                    System.out.println("GameWindow category four category = "+answer.k12Answers[categoryFourIndex].getCategory()+" categoryFourIndex = "+categoryFourIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFourIndex].questionId,DifficultyLevel);
                     categoryFourIndex++;
                     if (categoryFourIndex >= answer.getLastQuestionIdByCategoryId(4))
@@ -441,7 +430,6 @@ public class GameWindow extends JPanel implements ActionListener
                 case 16:
                 case 22:
                 case 28:
-//                    System.out.println("GameWindow category five category = "+answer.k12Answers[categoryFiveIndex].getCategory()+" categoryFiveIndex = "+categoryFiveIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categoryFiveIndex].questionId,DifficultyLevel);
                     categoryFiveIndex++;
                     if (categoryFiveIndex >= answer.getLastQuestionIdByCategoryId(5))
@@ -454,11 +442,8 @@ public class GameWindow extends JPanel implements ActionListener
                 case 17:
                 case 23:
                 case 29:
-//                    System.out.println("GameWindow category six category = "+answer.k12Answers[categorySixIndex].getCategory()+" categorySixIndex = "+categorySixIndex);
                     answerButtons[i] = new AnswerButton(label,ParentFrame,answer,answer.k12Answers[categorySixIndex].questionId,DifficultyLevel);
                     categorySixIndex++;
-//                    System.out.println("GameWindow categorySixIndex = "+categorySixIndex);
-//                    System.out.println("GameWindow last question category 6 = "+answer.getLastQuestionIdByCategoryId(6));
                     if (categorySixIndex >= answer.getLastQuestionIdByCategoryId(6))
                     {
                         categorySixIndex = answer.getFirstQuestionIdByCategoryId(6);
@@ -496,9 +481,7 @@ public class GameWindow extends JPanel implements ActionListener
         for (Object obj: CurrentPlayers.toArray())
         {
             Person pCurrent = (Person)obj;           
-            //pCurrent.setScore(0);
             pCurrent.setTodaysTempScore(0);
-            //pCurrent.setTScore(0);
         }
     }
 

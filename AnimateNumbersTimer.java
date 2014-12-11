@@ -1,17 +1,14 @@
+/*
+ * @Course: IST 240 (FA 14)
+ * @Section: 001
+ *
+ * @Group 08
+ */
 
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author zfayaz
- */
 public class AnimateNumbersTimer extends Timer
 {
     private JLabel LabelPScore;

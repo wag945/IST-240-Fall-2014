@@ -4,10 +4,10 @@
  *
  * @Group 08
  */
+
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 class AnswerButton extends JButton {
     QuestionFrame questionFrame;
@@ -45,10 +45,7 @@ class AnswerButton extends JButton {
                 difficultyStr = "Grad";
                 break;
         }
-        //System.out.println("Answer difficultyStr = "+difficultyStr);
         answerData = answer.getAnswerDataByQuestionId(difficultyStr, answerDataId);
-        //System.out.println("AnswerButton ");
-        //answer.printAnswerData(answerData);
     } 
     
     public void onButtonPressed()

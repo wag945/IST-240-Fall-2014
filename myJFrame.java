@@ -55,7 +55,6 @@ public class myJFrame extends JFrame implements WindowListener
             @Override
             public void ancestorResized(HierarchyEvent e) 
             {
-                //System.out.println(e);                 
             }           
         });
 
@@ -195,9 +194,7 @@ public class myJFrame extends JFrame implements WindowListener
             gameHeader.setVisible(true);
         }
     }
-    
-    
-    
+
     public void aboutWindowOn()
     {
         if (false == aboutWindow.isVisible())

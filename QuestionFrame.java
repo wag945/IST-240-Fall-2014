@@ -30,8 +30,6 @@ public class QuestionFrame extends JFrame
         // add Jpanel to JFrame according to layout    	
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(window,BorderLayout.CENTER);
-
-        
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(400,200,400,400);

@@ -1,13 +1,10 @@
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
 /*
  * @Course: IST 240 (FA 14)
  * @Section: 001
  *
  * @Group 08
  */
+
 public class GameHeader extends javax.swing.JPanel {
 
     /**

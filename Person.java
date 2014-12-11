@@ -1,12 +1,11 @@
-
-import java.util.Date;
-
 /*
  * @Course: IST 240 (FA 14)
  * @Section: 001
  *
  * @Group 08
  */
+
+import java.util.Date;
 
 /**
  * This class is used keep the user info together
@@ -152,6 +151,4 @@ public class Person
     public void setTodaysTempScore(Integer TodaysTempScore) {
         this.TodaysTempScore = TodaysTempScore;
     }
-
-   
 }

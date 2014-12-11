@@ -44,7 +44,6 @@ public class HighScore_Panel extends JPanel
 
         scoreListDisplay.setLayout(null);
         scoreListDisplay.setBounds(105, 60, 300, 350);
-        //scoreListDisplay.setBorder(BorderFactory.createEtchedBorder(10,Color.darkGray,Color.gray));
         scoreListDisplay.setBackground(Color.gray);
         scoreListDisplay.setBorder(BorderFactory.createLineBorder(Color.black));
         add(scoreListDisplay);
@@ -59,13 +58,13 @@ public class HighScore_Panel extends JPanel
         
         for(int i=0; i<10 ; i++)
         {                  
-                lNum[i] = new JLabel();
-                lNum[i].setName("lNum_" + (i+1));                
-                lNum[i].setText("" + (i+1));
-                lNum[i].setBounds(lX, lY, 16, 27);
-                lNum[i].setForeground(Color.white);
-                scoreListDisplay.add(lNum[i]);
-                lY += 30; 
+            lNum[i] = new JLabel();
+            lNum[i].setName("lNum_" + (i+1));                
+            lNum[i].setText("" + (i+1));
+            lNum[i].setBounds(lX, lY, 16, 27);
+            lNum[i].setForeground(Color.white);
+            scoreListDisplay.add(lNum[i]);
+            lY += 30; 
         }
         
         lY = 30;
@@ -136,8 +135,6 @@ public class HighScore_Panel extends JPanel
         }
         ArrayOfAllPlayersAndScores = new String [PlayerCount][2];       
          
-        
-        
         int i=0;
         for (Object obj : ListOfAllPlayers.toArray()) // Extract score from each person
         {
@@ -200,9 +197,3 @@ public class HighScore_Panel extends JPanel
         }        
     }
 }
-
-
-//                FOREACH
-//                for (String row1 : row) { 
-//                    System.out.print(row1 + " | ");
-//                }

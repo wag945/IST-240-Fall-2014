@@ -5,7 +5,6 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-
 /*
  * This class reads and writes XML files based on Java Beans DTD
  * It uses the standard Java classes
@@ -34,6 +33,7 @@ import java.io.FileOutputStream;
  *
  * @author fredfonseca
  */
+
 public class XML_240 
 {
     

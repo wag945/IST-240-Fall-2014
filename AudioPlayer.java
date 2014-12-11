@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 import java.io.*;
 import java.net.URL;
 import javax.sound.sampled.*;
@@ -26,9 +27,7 @@ public class AudioPlayer {
             if (isSoundEnabled())
             {
                 // Open an audio input stream.
-                //URL url = this.getClass().getClassLoader().getResource(fileName);
                 URL url = this.getClass().getResource("/sounds/" + fileName);            
-
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
                 // Get a sound clip resource.
                 clip = AudioSystem.getClip();

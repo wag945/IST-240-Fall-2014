@@ -4,14 +4,11 @@
  *
  * @Group 08
  */
-public class app {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+public class app 
+{
+    public static void main(String[] args) 
+    {
         myJFrame mjf = new myJFrame();
         mjf.setVisible(true);
     }    

@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -20,9 +21,7 @@ import javax.swing.JTextField;
 
 public class MenuPlayers extends JPanel implements ActionListener
 {
-    //int NumberOfPlayers;    
     ButtonGroup NumberOfPlayers; //used for radio button
-
     PlayersList SelectedPlayers; // used for saving selected players
     FullPlayersList listOfAllPlayers = new FullPlayersList(); //list of all Players using Player Class
     
@@ -69,8 +68,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         bCreatePlayer = new JButton("Create Player...");
         bCreatePlayer.addActionListener(this);
         
-        
-        
         setTheme(ThemeColor);
     }
     
@@ -100,9 +97,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         pPlayerSelection.setBounds(105, 60, 300, 350);
         add(pPlayerSelection);
         
-        //Create Label
-        //JLabel lPlayer = new JLabel();
-        //lPlayer.setText("Select Number of Players:");
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);      
 
         JLabel lHeading = new JLabel();
@@ -131,8 +125,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         r2_Player.setActionCommand("W");
         r3_Player.setActionCommand("R");
         
-        //r1_Player.setSelected(true);
-        
         //Add player choices in a group
         NumberOfPlayers = new ButtonGroup();
         NumberOfPlayers.add(r1_Player);
@@ -140,35 +132,25 @@ public class MenuPlayers extends JPanel implements ActionListener
         NumberOfPlayers.add(r3_Player);
         
         //SetLocation
-        //lPlayer.setBounds(50, 060, 200, 40);
         r1_Player.setBounds(50, 70, 200, 37);
         r2_Player.setBounds(50, 137, 200, 37);
         r3_Player.setBounds(50, 204, 200, 37);
 
         setOpaque(true);
-        //lPlayer.setOpaque(true);
         r1_Player.setOpaque(true);
         r2_Player.setOpaque(true);
         r3_Player.setOpaque(true);
         
         setBackground(Color.DARK_GRAY);
-        //lPlayer.setBackground(null);
         r1_Player.setBackground(null);
         r2_Player.setBackground(null);
         r3_Player.setBackground(null);
         
-        
-        //lPlayer.setForeground(Color.white);
         r1_Player.setForeground(Color.white);
         r2_Player.setForeground(Color.white);
         r3_Player.setForeground(Color.white);
 
-        //NumberOfPlayers.clearSelection();
-        
-        //bNext.setEnabled(false);
-                
         //Add elements to the panel
-        //pPlayerSelection.add(lPlayer);
         pPlayerSelection.add(r1_Player);
         pPlayerSelection.add(r2_Player);
         pPlayerSelection.add(r3_Player);      
@@ -234,19 +216,12 @@ public class MenuPlayers extends JPanel implements ActionListener
             }            
             
             pPlayerProfileMenu.add(tPlayerNames);
-            
         }
         
         bCreatePlayer.setBounds(120, lableLocationY + 47, 130, 27); 
         bCreatePlayer.setName("bCreatePlayer");
         pPlayerProfileMenu.add(bCreatePlayer);
 
-        //Create label
-//        JLabel lPlayerSelection = new JLabel("Add Player:");
-//        lPlayerSelection.setBounds(5, 0, 280, 37);
-//        lPlayerSelection.setForeground(Color.white);
-//        pPlayerProfileMenu.add(lPlayerSelection);
-        
         //Load previous players on current run   
         for (Object objPCheck : SelectedPlayers.toArray())
         {        
@@ -321,12 +296,6 @@ public class MenuPlayers extends JPanel implements ActionListener
         add(pCreatePlayerProfile);
         
         //Create label
-//        JLabel CreatePlayerProfile = new JLabel("Create Profile");
-//        CreatePlayerProfile.setBounds(5, 0, 280, 37);
-//        CreatePlayerProfile.setForeground(Color.white);
-//        pCreatePlayerProfile.add(CreatePlayerProfile);
-        
-        //Create label
         JLabel lPlayerName = new JLabel("Player Name:");
         lPlayerName.setBounds(30, 64, 100, 27);
         lPlayerName.setForeground(Color.white);
@@ -388,7 +357,6 @@ public class MenuPlayers extends JPanel implements ActionListener
                             System.out.print("Number of player(s): " + NumOfPlayers + "\r\n");
                             PanelToAnimate = new PanelAnimate(1,pPlayerSelection);
                             PanelToAnimate.SlideLeft();
-                            //bNext.setEnabled(false);
                             CreatePlayerProfileMenu();
                         }
                         break;
@@ -450,7 +418,6 @@ public class MenuPlayers extends JPanel implements ActionListener
                         else
                         {
                             intMenu = 4;
-                            System.out.println("\r\n\r\nSave Players\r\n");
                             SetupWindow setup = (SetupWindow)this.getParent();
                             setup.SelectedPlayers = SelectedPlayers;
                             setup.ListOfAllPlayers = listOfAllPlayers;
@@ -462,7 +429,6 @@ public class MenuPlayers extends JPanel implements ActionListener
                                 setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);
                                 setup.SaveDataInXML();
                             }
-                            //this.removeAll();
                             PanelToAnimate = new PanelAnimate(1,this);
                             PanelToAnimate.RemovePanelAfterAnimation(true);
                             PanelToAnimate.SlideLeft();
@@ -515,11 +481,5 @@ public class MenuPlayers extends JPanel implements ActionListener
         PanelToAnimate = new PanelAnimate(1,pCreatePlayerProfile);
         PanelToAnimate.RemovePanelAfterAnimation(false);
         PanelToAnimate.SlideLeft();
-        //SetupWindow ParentFrame = (SetupWindow)this.getParent().getParent();
-        //ParentFrame.remove(pCreatePlayerProfile);
-                
-        //this.remove(pCreatePlayerProfile);
-        //pPlayerProfileMenu.removeAll();
-        //pPlayerProfileMenu = null;
     }
 }

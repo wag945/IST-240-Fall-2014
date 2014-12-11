@@ -12,15 +12,15 @@ class ColumnComparator implements Comparator
 	int columnToSort;
 	ColumnComparator(int columnToSort) 
         {
-		this.columnToSort = columnToSort;
+            this.columnToSort = columnToSort;
 	}
 	
         @Override
 	public int compare(Object o1, Object o2) 
         {
-		String[] row1 = (String[]) o1;
-		String[] row2 = (String[]) o2;
-		//compare the columns to sort
-		return row1[columnToSort].compareTo(row2[columnToSort]);
+            String[] row1 = (String[]) o1;
+            String[] row2 = (String[]) o2;
+            //compare the columns to sort
+            return row1[columnToSort].compareTo(row2[columnToSort]);
 	}
 }

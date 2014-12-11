@@ -36,9 +36,7 @@ public class SetupWindow extends JPanel implements ActionListener
     public SetupWindow(myJFrame mjf)
     {
         super();
-        //setLayout(new GridLayout(2,2));
         setBackground(Color.DARK_GRAY);
-        //setLayout(null);
         ParentFrame = mjf;
         
         bPlayers = new JButton();
@@ -61,8 +59,6 @@ public class SetupWindow extends JPanel implements ActionListener
         add(colorSelection);
         
         LoadDataFromXML();
-        
-        //setTheme();
     }
     
     public void setTheme()
@@ -153,7 +149,7 @@ public class SetupWindow extends JPanel implements ActionListener
         InputStream f;
         try 
         {
-            f = new FileInputStream(System.getProperty("user.dir") + "\\settings\\setup.xml");
+            f = new FileInputStream(System.getProperty("user.dir") + "//settings//setup.xml");
             FTP_javabeat fUpload = new FTP_javabeat ();
             try {
                 fUpload.upload("ftp.ai-dot.net", "xml%40ai-dot.net ", "XMLReadWrite!1", "setup.xml", f);
@@ -173,7 +169,7 @@ public class SetupWindow extends JPanel implements ActionListener
         
         //Load all players and their high score in ListOfAllPlayers;        
         XML_240 XMLReader = new XML_240();
-        XMLReader.openReaderXML("\\settings\\setup.xml");
+        XMLReader.openReaderXML("//settings//setup.xml");
         ListOfAllPlayers = (FullPlayersList) XMLReader.ReadObject();
         SelectedPlayers = (PlayersList) XMLReader.ReadObject();
         Object tempObj = XMLReader.ReadObject();
@@ -224,7 +220,7 @@ public class SetupWindow extends JPanel implements ActionListener
         FileOutputStream f;
         try 
         {
-            f = new FileOutputStream(System.getProperty("user.dir") + "\\settings\\setup.xml");
+            f = new FileOutputStream(System.getProperty("user.dir") + "//settings//setup.xml");
             FTP_javabeat fDownload = new FTP_javabeat ();
             try 
             {

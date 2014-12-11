@@ -4,14 +4,12 @@
  *
  * @Group 08
  */
-import java.awt.BasicStroke;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -21,7 +19,6 @@ import javax.swing.JRadioButton;
 
 public class MenuDifficulty extends JPanel implements ActionListener
 {
-    
     JPanel pDifficultySelection;
     ButtonGroup intDifficultyLevel;
     JButton bNext;
@@ -31,7 +28,6 @@ public class MenuDifficulty extends JPanel implements ActionListener
         super();
         setLayout(null);
         setBackground(Color.gray);
-                
         
         pDifficultySelection = new JPanel();
         pDifficultySelection.setOpaque(true);
@@ -43,8 +39,6 @@ public class MenuDifficulty extends JPanel implements ActionListener
         add(pDifficultySelection);
         
          //Create Label
-        //JLabel lDifficulty = new JLabel();
-        //lDifficulty.setText("Select Difficulty Level:");
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);      
 
         JLabel lHeading = new JLabel();
@@ -73,8 +67,6 @@ public class MenuDifficulty extends JPanel implements ActionListener
         r2_Difficulty.setActionCommand("2");
         r3_Difficulty.setActionCommand("3");
         
-        //r1_Difficulty.setSelected(true);
-        
         //Add player choices in a group
         intDifficultyLevel = new ButtonGroup();
         intDifficultyLevel.add(r1_Difficulty);
@@ -82,50 +74,36 @@ public class MenuDifficulty extends JPanel implements ActionListener
         intDifficultyLevel.add(r3_Difficulty);
         
         //SetLocation
-        //lDifficulty.setBounds(50, 060, 200, 40);
         r1_Difficulty.setBounds(50, 80, 200, 37);
         r2_Difficulty.setBounds(50, 137, 200, 37);
         r3_Difficulty.setBounds(50, 194, 200, 37);
 
-        //r1_Difficulty.setSelected(true);
-        
         setOpaque(true);
-        //lDifficulty.setOpaque(true);
         r1_Difficulty.setOpaque(true);
         r2_Difficulty.setOpaque(true);
         r3_Difficulty.setOpaque(true);
         
         setBackground(Color.DARK_GRAY);
-        //lDifficulty.setBackground(null);
         r1_Difficulty.setBackground(null);
         r2_Difficulty.setBackground(null);
         r3_Difficulty.setBackground(null);
         
-        
-        //lDifficulty.setForeground(Color.white);
         r1_Difficulty.setForeground(Color.white);
         r2_Difficulty.setForeground(Color.white);
         r3_Difficulty.setForeground(Color.white);
 
-        //intDifficultyLevel.clearSelection();
-        
-        //bNext.setEnabled(false);
-                
         //Add elements to the panel
-        //pDifficultySelection.add(lDifficulty);
         pDifficultySelection.add(r1_Difficulty);
         pDifficultySelection.add(r2_Difficulty);
         pDifficultySelection.add(r3_Difficulty);
         
         //Create next button
-        //JButton bNext;
         bNext = new JButton();
         bNext.setText("Select");  
         bNext.setName("bSave");
         bNext.setBounds(324, 420, 80, 27);
         bNext.addActionListener(this);
         add(bNext);
-        
 
         switch (informedDifficultyLevel)
         {
@@ -176,7 +154,6 @@ public class MenuDifficulty extends JPanel implements ActionListener
                         setup.ParentFrame.introductionWindow.newGameButton.setEnabled(true);
                         setup.SaveDataInXML();
                     }
-                    //this.removeAll();
                     PanelAnimate PanelToAnimate = new PanelAnimate(1,this);
                     PanelToAnimate.RemovePanelAfterAnimation(true);
                     PanelToAnimate.SlideLeft();
@@ -184,5 +161,4 @@ public class MenuDifficulty extends JPanel implements ActionListener
             }        
         }
     }
-    
 }

@@ -5,16 +5,11 @@
  * @Group 08
  */
 
-import java.awt.AlphaComposite;
-import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,7 +39,6 @@ public class SplashWindow extends JPanel implements ActionListener {
         setBackground(Color.DARK_GRAY);
         setLayout(null);
         jeopardy = new JLabel("");
-        //File imgFile = new File(getClass().getResource("/images/psu.png"));
         jeopardy.setBounds(215, 150, 50, 50);
         add(jeopardy);
         
@@ -58,7 +52,7 @@ public class SplashWindow extends JPanel implements ActionListener {
     {
         if (e.getSource().equals(t))
         {
-            int centerX;// = this.getWidth() / 2;
+            int centerX;// = this.getWidth() / 2; //getWidth is glitchy on MACs
             centerX = 420;
             int imageHalfWidth = jeopardy.getWidth()/2;
             

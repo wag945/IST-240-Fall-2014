@@ -4,14 +4,12 @@
  *
  * @Group 08
  */
-import java.awt.BasicStroke;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -24,10 +22,7 @@ public class ColorSelection extends JPanel implements ActionListener
     JPanel pColorSelection;
     ButtonGroup intColorSelection;
     JButton bNext;
-//    Color c_blue = new Color(Color.blue); //colors are not defined
-//    Color c_white;
-//    Color c_gray;
-//    
+
     ColorSelection(int informedColorSelection, Color ThemeColor)
     {
         super();
@@ -97,7 +92,6 @@ public class ColorSelection extends JPanel implements ActionListener
         pColorSelection.add(c2_Color);
         pColorSelection.add(c3_Color);
         
-        
         bNext = new JButton();
         bNext.setText("Select");  
         bNext.setName("bSave");
@@ -144,7 +138,6 @@ public class ColorSelection extends JPanel implements ActionListener
                 {
                     int ColorSelection = Integer.parseInt(intColorSelection.getSelection().getActionCommand());
                     System.out.print("Color is " + ColorSelection + "\r\n"); //use ColorSelection here
-                    
 
                     SetupWindow setup = (SetupWindow)this.getParent();
 
@@ -180,7 +173,5 @@ public class ColorSelection extends JPanel implements ActionListener
                 }
             }        
         }        
-        
     }
-    
 }

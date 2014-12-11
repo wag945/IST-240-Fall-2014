@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 class Answer {
 
     XML_240 x2;
@@ -194,7 +195,6 @@ class Answer {
             correctAnswer = (Integer) x2.ReadObject();
             k12Answers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
         }
-        //printK12Answers();
         x2.closeReaderXML();
 
         x2.openReaderXMLFromStream("/XMLs/UndergradAnswers.xml");
@@ -208,7 +208,6 @@ class Answer {
             correctAnswer = (Integer) x2.ReadObject();
             undergradAnswers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
         }
-        //printUndergradAnswers();
         x2.closeReaderXML();
         
         x2.openReaderXMLFromStream("/XMLs/GradAnswers.xml");
@@ -222,7 +221,6 @@ class Answer {
             correctAnswer = (Integer) x2.ReadObject();
             gradAnswers[i] = new AnswerData(questionId, category, question, answer1, answer2, answer3, correctAnswer);
         }
-        //printGradAnswers();
         x2.closeReaderXML();
     }
 }

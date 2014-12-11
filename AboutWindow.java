@@ -4,16 +4,13 @@
  *
  * @Group 08
  */
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.*;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.UIManager;
 
 public class AboutWindow extends JPanel implements ActionListener
 {
@@ -28,11 +25,6 @@ public class AboutWindow extends JPanel implements ActionListener
         super();
         setLayout(null);
         setBackground(Color.DARK_GRAY);
-//        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 28);
-
-//        text = new JTextField();
-//        text.setText("Developed by :    Zunair Fayaz, Ronnel Avila, and William Ganley");
-//        add(text);
         
         aboutAuthors = new JButton("Credits");
         aboutAuthors.addActionListener(this);
@@ -44,22 +36,9 @@ public class AboutWindow extends JPanel implements ActionListener
         instructionButton.setBounds(420, 5, 150, 27);
         add(instructionButton);
         
-//        aboutJPanel = new JPanel();
-//        aboutJPanel.add(new JTextArea(aboutText));
-        
-//        instructionsJPanel = new JPanel();
-//        instructionsJPanel.add(new JTextArea(instructionsText));
-        
-        
-//        ImageIcon instructionsImage = new ImageIcon(getClass().getResource("/images/JeopardyInstructions-1.jpg"));
-//        instructionButton = new JButton(instructionsImage);
-//        instructionButton.setIcon(instructionsImage);
-//        add(instructionButton);
-        
         ParentJFrame = mjf;        
         setVisible(true);
         setTheme();
- 
     }
     
     public void setTheme()
@@ -82,10 +61,6 @@ public class AboutWindow extends JPanel implements ActionListener
         + "";
 
     static String instructionsText = "\n\n"
-//            + "Welcome to PSU Jeopardy! \n"
-//
-//            + "Instructions: \n"
-//            + "\n"
             + "Each game begins with user(s) selecting the number of \n"
             + "players, by pressing the Setup button at the top. \n"
             + "\n"
@@ -116,8 +91,6 @@ public class AboutWindow extends JPanel implements ActionListener
             + "Players' records are kept for the most cash awarded. \n"
             + "\n"
             + "Please press Setup to begin!\n";
-
-            
 
     @Override
     public void actionPerformed(ActionEvent e) 
@@ -157,14 +130,12 @@ public class AboutWindow extends JPanel implements ActionListener
         this.add(aboutPanel);
         validate();
         this.repaint();
-        
     }
         
     private void loadInsructions()
     {
         if (aboutPanel != null) remove(aboutPanel);
         if (instructionsPanel != null) remove(instructionsPanel);
-        //Font font = new Font(Font.SANS_SERIF, Font.BOLD, 16); 
         Font font = new Font("Times", Font.BOLD, 14); 
         instructionsPanel = new JPanel();
         JTextArea jta2 = new JTextArea(instructionsText, 28, 35);
@@ -178,12 +149,10 @@ public class AboutWindow extends JPanel implements ActionListener
         instructionsPanel.setBackground(Color.gray);
         instructionsPanel.setForeground(Color.white);
         instructionsPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-        //instructionsPanel.add(new JScrollPane(jta2));
         instructionsPanel.add(jta2);
         instructionsPanel.setVisible(true);
         this.add(instructionsPanel);
         validate();
         this.repaint();
     }
-
 }

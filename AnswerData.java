@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 public class AnswerData {
 
     int questionId;
@@ -12,13 +13,14 @@ public class AnswerData {
     String answer1, answer2, answer3;
     int correctAnswer;
 
-    public AnswerData(int id,
-            String theCategory,
-            String theQuestion,
-            String theAnswer1,
-            String theAnswer2,
-            String theAnswer3,
-            int theCorrectAnswer) {
+    public AnswerData(  int id,
+                        String theCategory,
+                        String theQuestion,
+                        String theAnswer1,
+                        String theAnswer2,
+                        String theAnswer3,
+                        int theCorrectAnswer) 
+    {
         setQuestionId(id);
         setCategory(theCategory);
         setQuestion(theQuestion);

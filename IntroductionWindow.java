@@ -4,24 +4,23 @@
  *
  * @Group 08
  */
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import javax.swing.*;
 
-public class IntroductionWindow extends JPanel implements ActionListener {
+public class IntroductionWindow extends JPanel implements ActionListener 
+{    
     JButton setupButton,aboutButton,highScoresButton,newGameButton, quitButton;
     myJFrame parentFrame;
-    //AudioPlayer SoundPlayer = new AudioPlayer();  //Done in the constructor
-    public IntroductionWindow(myJFrame mjf) {
+    public IntroductionWindow(myJFrame mjf) 
+    {
         super();
         setBackground(Color.DARK_GRAY);
 
         parentFrame = mjf;
-        //instructionsButton = new JButton();
-        //instructionsButton.setText("Instructions");
-        //instructionsButton.addActionListener(this);
         setupButton = new JButton();
         setupButton.setText("Setup");        
         setupButton.addActionListener(this);        
@@ -39,7 +38,6 @@ public class IntroductionWindow extends JPanel implements ActionListener {
         quitButton.setText("Quit");
         quitButton.addActionListener(this);
 
-        //add(instructionsButton);
         add(setupButton);        
         add(newGameButton);
         add(highScoresButton);
@@ -53,7 +51,6 @@ public class IntroductionWindow extends JPanel implements ActionListener {
     {
         Color bColor = parentFrame.buttonColor.darker().darker();
         Color fColor = bColor.brighter().brighter().brighter().brighter().brighter().brighter();
-        //Color fColor = Color.BLACK;
         setupButton.setBackground(bColor);
         setupButton.setForeground(fColor);
         newGameButton.setBackground(bColor);
@@ -67,13 +64,8 @@ public class IntroductionWindow extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-//        if (instructionsButton == e.getSource())
-//        {
-//            System.out.println("instructionsButton pressed");
-//            parentFrame.instructions();
-//        }
-//        else 
+    public void actionPerformed(ActionEvent e) 
+    {
         if (setupButton == e.getSource())
         {
             System.out.println("setupButton pressed");

@@ -19,7 +19,6 @@ public class HighScoresWindow extends JPanel implements ActionListener {
     JButton bAHS;
     JButton bTHS;
     
-    
     public HighScoresWindow(myJFrame mjf)
     {
         super();
@@ -76,7 +75,6 @@ public class HighScoresWindow extends JPanel implements ActionListener {
             TodaysHighScore.removeAll();
             TodaysHighScore.repaint();
             this.remove(TodaysHighScore);
-            //TodaysHighScore = null;
         }
         
         if (AllTimeHighScore!=null)
@@ -85,7 +83,6 @@ public class HighScoresWindow extends JPanel implements ActionListener {
             AllTimeHighScore.removeAll();
             AllTimeHighScore.repaint();
             this.remove(AllTimeHighScore);
-            //AllTimeHighScore = null;
         }
     }
 
@@ -99,7 +96,6 @@ public class HighScoresWindow extends JPanel implements ActionListener {
         AllTimeHighScore.setVisible(true);
         this.add(AllTimeHighScore);
         this.repaint();
-        
     }
 
     private void LoadTodaysTimeHighScore() 

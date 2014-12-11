@@ -27,7 +27,6 @@ public class QuestionWindow extends JPanel implements ActionListener {
     JCheckBox answerButton1,answerButton2,answerButton3;
     boolean answerCorrect = false;
     AnswerData answerData;
-    //AudioPlayer player;
     
     public QuestionWindow(QuestionFrame frame,AnswerData data)
     {
@@ -88,20 +87,16 @@ public class QuestionWindow extends JPanel implements ActionListener {
         doneButton.setText("Done");
         doneButton.addActionListener(this);
         add(doneButton,BorderLayout.SOUTH);
-        //player = new AudioPlayer();
     }
 
     public void displayWindow()
     {
-        //Disable the parent game window
         parentFrame.parentFrame.setEnabled(false);
         timer.start();
     }
     
     public void hideWindow()
     {
-        //Enable the parent game window
-        //parentFrame.parentFrame.setEnabled(true);
         timer.stop();
         answerCorrect = isAnswerCorrect();
         System.out.println("answerCorrect = "+answerCorrect);
@@ -202,5 +197,6 @@ public class QuestionWindow extends JPanel implements ActionListener {
         
         //Notify the game window of the new score
         parentFrame.parentButton.parentFrame.gameWindow.addScore(score);
+        parentFrame.parentButton.parentFrame.setVisible(true);
     }
 }

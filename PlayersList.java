@@ -15,12 +15,11 @@ public class PlayersList extends DefaultListModel
     
     public PlayersList(boolean b)
     {
-        //super();          
+        super();          
     }
     
     public void add(Person p)
     {
         this.addElement(p);
     }
-
 }

@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 import java.awt.*;
 import java.awt.event.HierarchyBoundsListener;
 import java.awt.event.HierarchyEvent;
@@ -17,14 +18,12 @@ public class myJFrame extends JFrame implements WindowListener
     GameHeader gameHeader;
     SetupWindow setupWindow;
     IntroductionWindow introductionWindow;
-    //InstructionsWindow instructionsWindow;
     AboutWindow aboutWindow;
     HighScoresWindow highScoresWindow;
     SplashWindow splashWindow;
     JButton jeopardy;
     GameTimerFrame timerFrame;
     AudioPlayer SoundPlayer;
-    //PlayerSelectsFrame playerTurnFrame;
     Color buttonColor;
     boolean soundTurnedOn;
     
@@ -33,22 +32,13 @@ public class myJFrame extends JFrame implements WindowListener
         super("PSU Jeopardy");
         //------------------------------------------------------
         // Create components
-        //gameWindow = new GameWindow(this);
-        //buttonColor = Color.DARK_GRAY;
         setupWindow = new SetupWindow(this);  
         introductionWindow = new IntroductionWindow(this);
-
-        //instructionsWindow = new InstructionsWindow();
         aboutWindow = new AboutWindow(this);
         highScoresWindow = new HighScoresWindow(this);
         splashWindow = new SplashWindow();
         timerFrame = new GameTimerFrame(this);
-        //playerTurnFrame = new PlayerSelectsFrame();
         SoundPlayer = new AudioPlayer(this);
-        
-//        Color c_blue = Color.BLUE;
-//        Color c_white = Color.WHITE;
-//        Color c_gray = Color.GRAY;
         soundTurnedOn = true;
         
         this.addWindowListener(this);
@@ -59,21 +49,14 @@ public class myJFrame extends JFrame implements WindowListener
             {
                 if (timerFrame.isVisible())
                 {
-                    //timerFrame.setBounds(getBounds().x+840+4, getBounds().y-4, 300, 100);
                     timerFrame.setLocation(getBounds().x+840+4, getBounds().y-5);
                 }
-                
-//                if (playerTurnFrame.isVisible())
-//                {
-//                    playerTurnFrame.setLocation(getBounds().x+840+4, getBounds().y+100);
-//                }
             }
             @Override
             public void ancestorResized(HierarchyEvent e) 
             {
                 //System.out.println(e);                 
             }           
-
         });
 
 
@@ -82,19 +65,11 @@ public class myJFrame extends JFrame implements WindowListener
         // add Jpanel to JFrame according to layout    	
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(introductionWindow,BorderLayout.NORTH);
-        //getContentPane().add(gameWindow,BorderLayout.CENTER);
-        //getContentPane().add(instructionsWindow,BorderLayout.CENTER);
         getContentPane().add(highScoresWindow,BorderLayout.CENTER);
         getContentPane().add(aboutWindow,BorderLayout.CENTER);
-
-        //jeopardy = new JButton("");
-        //jeopardy.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/jeopardy.jpg")));
-        //getContentPane().add(jeopardy,BorderLayout.CENTER);
-        
         //------------------------------------------------------
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize (840, 800);
-        //setMinimumSize(new Dimension(840,800));
+        this.setBounds(10, 10, 840, 800);
         this.setResizable(false);
         setVisible(true);
         splashWindow();
@@ -110,7 +85,6 @@ public class myJFrame extends JFrame implements WindowListener
     public void instructions()
     {
         allOff();
-        //instructionsWindowOn();
     }
     
     public void setup()
@@ -142,16 +116,11 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == gameWindow.isVisible())
         {
             introductionWindowOff();
-            //getContentPane().add(gameHeader,BorderLayout.NORTH);
             gameHeaderOn();
             getContentPane().add(gameWindow,BorderLayout.CENTER);            
             gameWindow.setVisible(true);
-            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);
             timerFrame.displayWindow();
-            //repaint();
-            //playerTurnFrame.setBounds(getBounds().x+840+4, getBounds().y+100, 260, 100);
-            //playerTurnFrame.displayWindow();
-            
+            timerFrame.setBounds(getBounds().x+840+4, getBounds().y-5, 260, 100);            
         }
     }
     
@@ -159,20 +128,15 @@ public class myJFrame extends JFrame implements WindowListener
     {
         if (gameWindow!=null)
         {
-//            if (true == gameWindow.isVisible())
-//            {
-//                getContentPane().remove(gameWindow);
-                gameWindow.setVisible(false);
-                timerFrame.hideWindow();
-                //playerTurnFrame.hideWindow();
-//            }
+            gameWindow.QuestionButtonsDisabled = false;
+            gameWindow.setVisible(false);
+            timerFrame.hideWindow();
             gameHeaderOff();
             introductionWindowOn();
             gameWindow.removeAll();
             gameWindow.repaint();
             getContentPane().remove(gameWindow);
             gameWindow = null;
-            
         }
     }
     
@@ -194,24 +158,6 @@ public class myJFrame extends JFrame implements WindowListener
             setupWindow.setVisible(false);
         }
     }
-    
-//    public void instructionsWindowOn()
-//    {
-//        if (false == instructionsWindow.isVisible())
-//        {
-//            getContentPane().add(instructionsWindow,BorderLayout.CENTER);
-//            instructionsWindow.setVisible(true);
-//        }
-//    }
-//    
-//    public void instructionsWindowOff()
-//    {
-//        if (true == instructionsWindow.isVisible())
-//        {
-//            getContentPane().remove(instructionsWindow);
-//            instructionsWindow.setVisible(false);
-//        }
-//    }
     
     public void introductionWindowOff()
     {
@@ -246,7 +192,6 @@ public class myJFrame extends JFrame implements WindowListener
         if (false == gameHeader.isVisible())
         {
             getContentPane().add(gameHeader,BorderLayout.NORTH);
-            //gameHeader.setTheme();
             gameHeader.setVisible(true);
         }
     }
@@ -315,7 +260,6 @@ public class myJFrame extends JFrame implements WindowListener
     {
         gameBoardOff();
         setupWindowOff();
-        //instructionsWindowOff();
         aboutWindowOff();
         highScoresWindowOff();
         splashWindowOff();
@@ -333,15 +277,11 @@ public class myJFrame extends JFrame implements WindowListener
         gameHeader = new GameHeader(this);
         gameHeader.setVisible(false);
         gameWindow = new GameWindow(this, timerFrame.window, gameHeader);
-        //gameWindow.setTheme();
-        
-        //getContentPane().add(gameWindow,BorderLayout.CENTER);
     }
     
     public void setGameButtonColor(Color color)
     {
         buttonColor = color;
-        
     }
 
     public Color getGameButtonColor()

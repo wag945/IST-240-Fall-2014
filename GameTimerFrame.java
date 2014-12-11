@@ -7,10 +7,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.*;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class GameTimerFrame extends JDialog implements ActionListener
 {

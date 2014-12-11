@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -79,6 +80,7 @@ public class GameTimerWindow extends JPanel implements ActionListener {
             }
             else
             {
+                parentFrame.parentFrame.gameWindow.QuestionButtonsDisabled = true;
                 timeTextField.setText("GAME OVER");
                 timer.stop();
                 parentFrame.parentFrame.SoundPlayer.play("endround.wav");

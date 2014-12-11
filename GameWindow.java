@@ -4,6 +4,7 @@
  *
  * @Group 08
  */
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +22,7 @@ public class GameWindow extends JPanel implements ActionListener
     int numberAvailableAnswers;
     
     int CurrentPlayerNum;
+    boolean QuestionButtonsDisabled;
     
     myJFrame ParentFrame;
     Answer answer;
@@ -34,7 +36,6 @@ public class GameWindow extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-//        System.out.println("myJPanelstd actionPerformed ");
         String sClass = e.getSource().getClass().toString();
         if (sClass.equals("class AnimateNumbersTimer"))
         {
@@ -46,9 +47,6 @@ public class GameWindow extends JPanel implements ActionListener
             {
             newScore = tAnimateScore.getNewScore();
             cScore = tAnimateScore.getCurrentScore();
-//            if (newScore>=0)
-//            {   
-            
                 if (cScore == tAnimateScore.getNewScore())
                 {
                     tAnimateScore.setIsStopping(true);
@@ -74,14 +72,9 @@ public class GameWindow extends JPanel implements ActionListener
                     if (Integer.toString(cScore).endsWith("0")) tAnimateScore.getLabelPScore().setText(String.format("%d",cScore));
                     
                     tAnimateScore.setCurrentScore(cScore);
-                    
+                    ParentFrame.setVisible(true);
                 }
             }
-//            }
-//            else
-//            {    
-//                tAnimateScore.stop();
-//            }
         }
         else if (sClass.equals("class AnswerButton"))
         {
@@ -93,10 +86,7 @@ public class GameWindow extends JPanel implements ActionListener
                     answerButtons[i].onButtonPressed();
                 }
             }
-            if (0 == numberAvailableAnswers)
-            {
-                //Complete the board and move to double jeopardy
-            }
+            
         }
     }
     
